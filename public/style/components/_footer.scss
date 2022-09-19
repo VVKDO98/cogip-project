@@ -59,6 +59,12 @@ footer{
                     gap: 15%;
                     list-style: none;
                     text-transform: uppercase;
+                    .footer__item{
+                        transition: all 0.1s ease;
+                        &:hover{
+                            color: $colorYellow;
+                        }
+                    }
                 }
             }
             .footer__copyright{
