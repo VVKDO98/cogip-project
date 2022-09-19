@@ -1,0 +1,41 @@
+@import '../variables';
+nav{
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .nav__left{
+        width: 20%;
+        .nav__logo{
+            height: 100%;
+        }
+    }
+    .nav__middle{
+        width: 60%;
+        .nav__list{
+            display: flex;
+            flex-direction: row;
+            gap: 10%;
+            list-style: none;
+            a{
+                color: $colorBlack;
+                text-decoration: none;
+            }
+        }
+    }
+    .nav__right{
+        width: 20%;
+        .nav__login{
+            display: flex;
+            flex-direction: row;
+            gap: 10%;
+            list-style: none;
+            a{
+                color: $colorBlack;
+                text-decoration: none;
+            }
+        }
+    }
+    
+    
+}

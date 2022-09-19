@@ -9,16 +9,18 @@
     <script defer src="js/main.js"></script>
 </head>
 <body>
-    <!-- Menu -->
-    <?php require ('view/partials/menu.php');?>
-    <!-- End Menu -->
+    <main>
+        <!-- Menu -->
+        <?php require ('view/partials/menu.php');?>
+        <!-- End Menu -->
 
-    <!-- Content -->
-    
-    <!-- End Content -->
+        <!-- Content -->
+        
+        <!-- End Content -->
 
-    <!-- Footer -->
-    <?php require ('view/partials/footer.php');?>
-    <!-- End Footer -->
+        <!-- Footer -->
+        <?php require ('view/partials/footer.php');?>
+        <!-- End Footer -->
+    </main>
 </body>
 </html>
