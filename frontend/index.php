@@ -9,11 +9,10 @@
     <script defer src="js/main.js"></script>
 </head>
 <body>
+     <!-- Menu -->
+     <?php require ('view/partials/header.php');?>
+    <!-- End Menu -->
     <main>
-        <!-- Menu -->
-        <?php require ('view/partials/menu.php');?>
-        <!-- End Menu -->
-
         <!-- Content -->
         
         <!-- End Content -->
