@@ -2,8 +2,20 @@ header{
     height: 790px;
     width: 100%;
     background-color: $colorYellow;
+    position: relative;
     .header__content{
         width: 80%;
         margin: auto;
+        padding-top: 90px;
+    }
+    .header__cta{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        h2{
+            font-size: 65px;
+            font-weight: 800;
+        }
     }
 }

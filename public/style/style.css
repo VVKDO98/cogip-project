@@ -311,7 +311,7 @@ template {
   display: none;
 }
 
-h1, p, a {
+h1, h2, p, a {
   font-family: "Inter", sans-serif;
 }
 
@@ -319,10 +319,22 @@ header {
   height: 790px;
   width: 100%;
   background-color: #F9DE4E;
+  position: relative;
 }
 header .header__content {
   width: 80%;
   margin: auto;
+  padding-top: 90px;
+}
+header .header__cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header__cta h2 {
+  font-size: 65px;
+  font-weight: 800;
 }
 
 nav {
@@ -356,6 +368,7 @@ nav .nav__right {
 nav .nav__right .nav__login {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   gap: 10%;
   list-style: none;
 }

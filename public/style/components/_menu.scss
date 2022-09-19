@@ -29,6 +29,7 @@ nav{
         .nav__login{
             display: flex;
             flex-direction: row;
+            justify-content: flex-end;
             gap: 10%;
             list-style: none;
             a{
