@@ -14,7 +14,23 @@
     <!-- End Menu -->
     <main>
         <!-- Content -->
-        
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+            </tr>
+            </thead>
+        <?php
+            foreach ($data as $invoice):
+            echo "<tr>
+                    <td>$invoice[id]</td>
+                    <td>$invoice[ref]</td>
+                    <td>$invoice[created_at]</td>
+                    <td>$invoice[name]</td>
+                </tr>";
+            endforeach;
+        ?>
+        </table>
         <!-- End Content -->
 
         <!-- Footer -->
