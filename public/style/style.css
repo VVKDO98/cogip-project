@@ -357,6 +357,25 @@ header .header__content .wave {
   width: 100%;
 }
 
+.header__simple {
+  width: 100%;
+  background-color: #F9DE4E;
+  display: flex;
+  align-items: center;
+}
+.header__simple .header__content {
+  width: 90%;
+  height: 250px;
+  margin: auto;
+  padding-top: 90px;
+  position: relative;
+}
+.header__simple .header__content .wavesimple {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 nav {
   width: 100%;
   display: flex;
