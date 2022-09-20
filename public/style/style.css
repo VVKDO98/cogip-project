@@ -410,6 +410,18 @@ nav .nav__item:hover {
   color: #fff;
 }
 
+.calltoaction {
+  width: 100%;
+  margin: 85px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.calltoaction h2 {
+  font-size: 65px;
+  font-weight: 800;
+}
+
 footer {
   width: 100%;
   display: flex;
