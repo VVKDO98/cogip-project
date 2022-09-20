@@ -4,6 +4,7 @@ namespace App\connect;
 
 class bdd
 {
+
     function __construct(){
         $this->host ="localhost";
         $this->bddname = "cogip";
