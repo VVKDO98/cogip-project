@@ -11,6 +11,6 @@ class HomeController extends Controller
     */
     public function index()
     {
-        return $this->view('pages/home',["name" => "Cogip"]);
+        return $this->view('home',["name" => "Cogip"]);
     }
 }
