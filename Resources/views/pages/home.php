@@ -10,7 +10,7 @@
 </head>
 <body>
      <!-- Menu -->
-     <?php require ('../resources/views/partials/header.php');?>
+     <?php require ('../resources/views/partials/headerCTA.php');?>
     <!-- End Menu -->
     <main>
         <!-- Content -->
