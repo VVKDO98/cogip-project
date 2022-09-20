@@ -4,16 +4,16 @@
     </div>
     <div class="nav__middle">
         <ul class="nav__list">
-            <li class="nav__item"><a href="#">Home</a></li>
-            <li class="nav__item"><a href="#">Invoices</a></li>
-            <li class="nav__item"><a href="#">Compagnies</a></li>
-            <li class="nav__item"><a href="#">Contacts</a></li>
+            <li><a href="/" class="nav__item">Home</a></li>
+            <li><a href="/invoices" class="nav__item">Invoices</a></li>
+            <li><a href="/compagnies" class="nav__item">Compagnies</a></li>
+            <li><a href="/contacts" class="nav__item">Contacts</a></li>
         </ul>
     </div>
     <div class="nav__right">
         <ul class="nav__login">
-            <li class="nav__item"><a href="#">Sign up</a></li>
-            <li class="nav__item"><a href="#">Login</a></li>
+            <li><a href="#" class="nav__item nav__item--signup">Sign up</a></li>
+            <li><a href="#" class="nav__item">Login</a></li>
         </ul>
     </div>
 </nav>

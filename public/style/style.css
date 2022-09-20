@@ -316,29 +316,45 @@ html {
 }
 
 header {
-  height: 790px;
   width: 100%;
   background-color: #F9DE4E;
-  position: relative;
+  display: flex;
+  align-items: center;
 }
 header .header__content {
-  width: 80%;
+  width: 90%;
   margin: auto;
   padding-top: 90px;
+  position: relative;
 }
-header .header__cta {
+header .header__content .header__cta {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-bottom: 200px;
 }
-header .header__cta h2 {
+header .header__content .header__cta .cta__title {
+  width: 50%;
+}
+header .header__content .header__cta .cta__title h2 {
   font-size: 65px;
   font-weight: 800;
 }
-header .header__cta .cta__img {
-  width: 90%;
+header .header__content .header__cta .cta__img {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+header .header__content .header__cta .cta__img img {
+  width: 80%;
+}
+header .header__content .wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 nav {
@@ -359,12 +375,9 @@ nav .nav__middle {
 nav .nav__middle .nav__list {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 10%;
   list-style: none;
-}
-nav .nav__middle .nav__list a {
-  color: #000000;
-  text-decoration: none;
 }
 nav .nav__right {
   width: 20%;
@@ -373,12 +386,28 @@ nav .nav__right .nav__login {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
   gap: 10%;
   list-style: none;
 }
-nav .nav__right .nav__login a {
+nav .nav__right .nav__item--signup {
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: all 0.1s ease;
+}
+nav .nav__right .nav__item--signup:hover {
+  color: #fff;
+  background-color: #000000;
+}
+nav .nav__item {
+  font-weight: 600;
   color: #000000;
   text-decoration: none;
+  transition: all 0.1s ease;
+}
+nav .nav__item:hover {
+  color: #fff;
 }
 
 footer {
@@ -450,6 +479,7 @@ footer .footer__bottom .footer__end .footer__menu .footer__list .footer__item {
 }
 footer .footer__bottom .footer__end .footer__menu .footer__list .footer__item:hover {
   color: #F9DE4E;
+  cursor: pointer;
 }
 footer .footer__bottom .footer__end .footer__copyright {
   width: 20%;
@@ -461,6 +491,7 @@ footer p, footer li {
 
 body {
   width: 100vw;
+  overflow-x: hidden;
 }
 
 main {

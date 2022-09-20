@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-use qqch pour se co a la db
+//use qqch pour se co a la db
 
 class InvoicesModel
 {
@@ -10,6 +10,9 @@ class InvoicesModel
 
     }
     public function getLastInvoices(){
+
+    }
+    public function getInvoiceById($id){
 
     }
 }

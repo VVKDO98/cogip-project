@@ -10,7 +10,7 @@
 </head>
 <body>
      <!-- Menu -->
-     <?php require ('../Resources/views/partials/header.php');?>
+     <?php require ('../resources/views/partials/headerCTA.php');?>
     <!-- End Menu -->
     <main>
         <!-- Content -->
@@ -18,7 +18,7 @@
         <!-- End Content -->
 
         <!-- Footer -->
-        <?php require ('../Resources/views/partials/footer.php');?>
+        <?php require ('../resources/views/partials/footer.php');?>
         <!-- End Footer -->
     </main>
 </body>
