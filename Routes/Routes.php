@@ -16,15 +16,12 @@ $router->get('/invoices', function() {
     (new InvoicesController)->index();
 });
 
-$router->get('/invoices/{id}', function($id) {
+$router->get('/invoice/{id}', function($id) {
     (new InvoicesController)->invoice($id);
 });
 
-$router->get( '/invoice', function () {
-    echo 'get';
-});
-$router->post( '/invoice', function () {
-    echo 'hello';
+$router-> get('/invoices/{page}',function ($page){
+    (new InvoicesController)->index($page);
 });
 
 $router->run();
