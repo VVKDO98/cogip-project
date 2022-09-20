@@ -375,12 +375,9 @@ nav .nav__middle {
 nav .nav__middle .nav__list {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 10%;
   list-style: none;
-}
-nav .nav__middle .nav__list a {
-  color: #000000;
-  text-decoration: none;
 }
 nav .nav__right {
   width: 20%;
@@ -389,12 +386,28 @@ nav .nav__right .nav__login {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
   gap: 10%;
   list-style: none;
 }
-nav .nav__right .nav__login a {
+nav .nav__right .nav__item--signup {
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: all 0.1s ease;
+}
+nav .nav__right .nav__item--signup:hover {
+  color: #fff;
+  background-color: #000000;
+}
+nav .nav__item {
+  font-weight: 600;
   color: #000000;
   text-decoration: none;
+  transition: all 0.1s ease;
+}
+nav .nav__item:hover {
+  color: #fff;
 }
 
 footer {
@@ -466,6 +479,7 @@ footer .footer__bottom .footer__end .footer__menu .footer__list .footer__item {
 }
 footer .footer__bottom .footer__end .footer__menu .footer__list .footer__item:hover {
   color: #F9DE4E;
+  cursor: pointer;
 }
 footer .footer__bottom .footer__end .footer__copyright {
   width: 20%;
