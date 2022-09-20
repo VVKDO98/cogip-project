@@ -1,5 +1,4 @@
 header{
-    height: 790px;
     width: 100%;
     background-color: $colorYellow;
     position: relative;
@@ -7,19 +6,20 @@ header{
         width: 80%;
         margin: auto;
         padding-top: 90px;
-    }
-    .header__cta{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 100px;
-        h2{
-            font-size: 65px;
-            font-weight: 800;
+        .header__cta{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 100px;
+            h2{
+                font-size: 65px;
+                font-weight: 800;
+            }
+            .cta__img{
+                width: 90%;
+            }
         }
-        .cta__img{
-            width: 90%;
-        }
-    }
+    } 
 }
