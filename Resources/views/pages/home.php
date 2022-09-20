@@ -14,11 +14,10 @@
     <!-- End Menu -->
     <main>
         <!-- Content -->
-        <?php require ('../resources/views/partials/cta.php');?>
+        
         <!-- End Content -->
-        <!-- Footer -->
-        <?php require ('../resources/views/partials/footer.php');?>
-        <!-- End Footer -->
     </main>
+    <?php require ('../resources/views/partials/cta.php');?>
+    <?php require ('../resources/views/partials/footer.php');?>
 </body>
 </html>

@@ -417,13 +417,15 @@ nav .nav__item:hover {
   justify-content: space-between;
   align-items: center;
 }
-.calltoaction h2 {
+.calltoaction .calltoaction__title h2 {
+  margin-left: 20%;
   font-size: 65px;
   font-weight: 800;
 }
 
 footer {
-  width: 100%;
+  width: 80%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -4,8 +4,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    h2{
-        font-size: 65px;
-        font-weight: 800;
+    .calltoaction__title{
+        h2{
+            margin-left: 20%;
+            font-size: 65px;
+            font-weight: 800;
+        }
     }
+    
 }
