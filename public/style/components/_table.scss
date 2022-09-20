@@ -2,7 +2,13 @@
     display: block;
     width: 100%;
 }
+h2{
+    font-size: 60px;
+    font-weight: 900;
+}
 table{
+    font-size: 20px;
+    font-weight: 600;
     border-collapse: collapse;
     width: fit-content;
     
@@ -21,11 +27,17 @@ table{
         text-align: left;
     }
     .table__head{
-        padding: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
     .table__content{
         text-align: left;
-        padding: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
     .table__row:nth-child(odd){
         position: relative;
@@ -56,4 +68,6 @@ table{
     .table__last{
         width: 20%;
     }
+    
+    
 }

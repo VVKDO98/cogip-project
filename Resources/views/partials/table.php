@@ -1,7 +1,7 @@
 <div class="table__box">
     <h2 class="table__title">Last invoices</h2>
     <table class="table__main">
-        <thead class="table__header">
+            <thead class="table__header">
             <tr class="table__left">
                 <th class="table__head">Invoice number</th>
                 <th class="table__head">Dates due</th>
