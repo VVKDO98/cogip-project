@@ -1,0 +1,59 @@
+.table__box{
+    display: block;
+    width: 100%;
+}
+table{
+    border-collapse: collapse;
+    width: fit-content;
+    
+    .table__header::after{
+        position: absolute;
+        transform: translateY(-100%);
+        z-index: -1;
+        content: "";
+        height: 100%;
+        width: 80vw;
+        background-color: $colorYellow;
+    }
+    .table__header{
+        position: relative;
+        width: fit-content;
+        text-align: left;
+    }
+    .table__head{
+        padding: 10px;
+    }
+    .table__content{
+        text-align: left;
+        padding: 10px;
+    }
+    .table__row:nth-child(odd){
+        position: relative;
+        width: fit-content;
+    }
+    .table__row:nth-child(odd)::after{
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        content: "";
+        height: 100%;
+        width: 80vw;
+        background-color: white;
+    }
+    .table__row:nth-child(even){
+        position: relative;
+        width: fit-content;
+    }
+    .table__row:nth-child(even)::after{
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        content: "";
+        height: 100%;
+        width: 80vw;
+        background-color: $colorGrey;
+    }
+    .table__last{
+        width: 20%;
+    }
+}

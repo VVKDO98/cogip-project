@@ -14,7 +14,7 @@
     <!-- End Menu -->
     <main>
         <!-- Content -->
-        
+        <?php require ('../resources/views/partials/table.php');?>
         <!-- End Content -->
 
         <!-- Footer -->
