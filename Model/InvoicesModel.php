@@ -2,12 +2,12 @@
 
 namespace App\Model;
 
-//use qqch pour se co a la db
+use App\connect\bdd;
 
 class InvoicesModel
 {
     public function getAllInvoices(){
-
+        $pdo= (new bdd)->connect();
     }
     public function getLastInvoices(){
 
