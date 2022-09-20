@@ -12,7 +12,7 @@ $router->get('/', function() {
     (new HomeController)->index();
 });
 
-$router->get('/invoices/', function() {
+$router->get('/invoices', function() {
     (new InvoicesController)->index();
 });
 
