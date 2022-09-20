@@ -318,12 +318,14 @@ html {
 header {
   width: 100%;
   background-color: #F9DE4E;
-  position: relative;
+  display: flex;
+  align-items: center;
 }
 header .header__content {
-  width: 80%;
+  width: 90%;
   margin: auto;
   padding-top: 90px;
+  position: relative;
 }
 header .header__content .header__cta {
   width: 100%;
@@ -331,14 +333,28 @@ header .header__content .header__cta {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-bottom: 200px;
 }
-header .header__content .header__cta h2 {
+header .header__content .header__cta .cta__title {
+  width: 50%;
+}
+header .header__content .header__cta .cta__title h2 {
   font-size: 65px;
   font-weight: 800;
 }
 header .header__content .header__cta .cta__img {
-  width: 90%;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+header .header__content .header__cta .cta__img img {
+  width: 80%;
+}
+header .header__content .wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 nav {
@@ -461,6 +477,7 @@ footer p, footer li {
 
 body {
   width: 100vw;
+  overflow-x: hidden;
 }
 
 main {

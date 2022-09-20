@@ -1,6 +1,7 @@
 @import "variables","normalize","fonts","components/header","components/menu","components/footer";
 body{
     width: 100vw;
+    overflow-x: hidden;
 }
 
 main{

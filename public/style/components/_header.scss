@@ -1,25 +1,41 @@
 header{
     width: 100%;
     background-color: $colorYellow;
-    position: relative;
+    display: flex;
+    align-items: center;
     .header__content{
-        width: 80%;
+        width: 90%;
         margin: auto;
         padding-top: 90px;
+        position: relative;
         .header__cta{
             width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            margin-top: 100px;
-            h2{
-                font-size: 65px;
-                font-weight: 800;
+            margin-top: 50px;
+            margin-bottom: 200px;
+            .cta__title{
+                width: 50%;
+                h2{
+                    font-size: 65px;
+                    font-weight: 800;
+                }
             }
             .cta__img{
-                width: 90%;
+                width: 50%;
+                display: flex;
+                justify-content: flex-end;
+                img{
+                    width: 80%;
+                }
             }
         }
-    } 
+        .wave{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
 }

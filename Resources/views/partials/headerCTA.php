@@ -9,5 +9,6 @@
                 <img src="assets/img/men.png" alt="men with laptop">
             </div>
         </div>
+        <img src="assets/img/wave.png" alt="" class="wave">
     </div>
 </header>
