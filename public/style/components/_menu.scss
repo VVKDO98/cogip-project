@@ -19,9 +19,11 @@ nav{
             list-style: none;
         }
     }
+    
     .nav__right{
         width: 20%;
         .nav__login{
+            font-family: 'Roboto', sans-serif;
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
@@ -37,14 +39,16 @@ nav{
             &:hover{
                 color: #fff;
                 background-color: $colorBlack;
-            }
         }
     }
+}
+    
     .nav__item{
+        font-family: 'Roboto', sans-serif;
         font-weight: 600;
         color: $colorBlack;
         text-decoration: none;
-        transition: all 0.1s ease;
+        transition: all 0.3s ease;
         &:hover{
             color: #fff;
         }
