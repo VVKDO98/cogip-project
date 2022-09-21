@@ -20,26 +20,27 @@
             <table class="table__main">
                 <thead class="table__header">
                 <tr class="table__left">
-                <?php foreach ($data['invoices'][0] as $key => $value): ?>
+                    <?php foreach ($data['invoices'][0] as $key => $value): ?>
                         <th class="table__head"><?= $key ?></th>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </tr>
                 </thead>
                 <tbody>
                 <?php foreach ($data['invoices'] as $item) { ?>
                     <tr class="table__row table__left">
                         <?php foreach($item as $key => $value) {?>
-                        <td class="table__content"><?= $value ?></td>
+                            <td class="table__content"><?= $value ?></td>
                         <?php } ?>
                     </tr>
                 <?php } ?>
                 </tbody>
             </table>
         </div>
+
         <!-- End Content -->
+        <!-- Footer -->
+        <?php require ('../Resources/views/partials/footer.php');?>
+        <!-- End Footer -->
     </main>
-     <!-- Footer -->
-     <?php require ('../Resources/views/partials/footer.php');?>
-     <!-- End Footer -->
 </body>
 </html>
