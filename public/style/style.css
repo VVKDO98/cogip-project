@@ -329,7 +329,6 @@ header .header__content {
   width: 90%;
   margin: auto;
   padding-top: 90px;
-  position: relative;
 }
 header .header__content .header__cta {
   width: 100%;
@@ -386,7 +385,7 @@ header .header__content .wave {
 }
 @media screen and (max-width: 480px) {
   header .header__content {
-    padding-top: 10px;
+    padding-top: 20px;
   }
 }
 
@@ -466,6 +465,9 @@ nav .nav__desktop .nav__right .nav__item--signup:hover {
 }
 nav .nav__burger {
   display: none;
+}
+nav .nav__burger img {
+  width: 40px;
 }
 @media screen and (max-width: 480px) {
   nav .nav__burger {
@@ -704,6 +706,7 @@ footer p, footer li {
 body {
   width: 100vw;
   overflow-x: hidden;
+  position: relative;
 }
 
 main {

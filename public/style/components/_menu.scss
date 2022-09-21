@@ -50,9 +50,11 @@ nav{
             display: none;
         }
     }
-
     .nav__burger{
         display: none;
+        img{
+            width: 40px;
+        }
         @include mobile{
             display: flex;
         }
@@ -68,3 +70,4 @@ nav{
         }
     }
 }
+

@@ -2,7 +2,7 @@
     <div class="nav__left">
         <img src="assets/img/logoClean.png" alt="Logo Cogip" class="nav__logo">
     </div>
-    <div class="nav__desktop">
+    <div class="nav__desktop" id="desktopMenu">
         <div class="nav__middle">
             <ul class="nav__list">
                 <li><a href="/" class="nav__item">Home</a></li>

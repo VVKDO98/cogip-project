@@ -1,5 +1,6 @@
 const burgerMenu = document.getElementById('burgerMenu');
+const desktopMenu = document.getElementById('desktopMenu');
 
 burgerMenu.addEventListener("click", e =>{
-    console.log("Send nudes")
+    desktopMenu.style.display = "flex";
 })
