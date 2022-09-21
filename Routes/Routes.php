@@ -2,10 +2,11 @@
 
 namespace App\Routes;
 
-use Bramus\Router\Router;
+use App\Controllers\CompaniesController;
+use App\Controllers\ContactController;
 use App\Controllers\HomeController;
 use App\Controllers\InvoicesController;
-use App\Controllers\ContactController;
+use Bramus\Router\Router;
 
 $router = new Router();
 
@@ -26,12 +27,30 @@ $router->get('/invoice/(\d+)', function($id) {
 });
 
 $router->get('/contacts/(\d+)', function ($id){
-    (new ContactController)->contact($id);
+    (new ContactController)->index($id);
 });
 
 $router->get('/contacts', function (){
-    (new ContactController)->contact();
+    (new ContactController)->index();
 });
+
+$router->get('/contact/(\d+)', function ($id){
+    (new ContactController)->contact($id);
+});
+
+$router->get('/companies', function() {
+    (new CompaniesController)->index();
+});
+
+$router->get('/companies/(\d+)', function($page) {
+    (new CompaniesController)->index($page);
+});
+
+$router->get('/companie/(\d+)', function($id) {
+    (new CompaniesController)->companie($id);
+});
+
+
 
 $router->post( '/invoice', function () {
     echo 'hello';
