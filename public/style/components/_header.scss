@@ -21,6 +21,9 @@ header{
                 h2{
                     font-size: 65px;
                     font-weight: 800;
+                    @include mobile{
+                        font-size: 50px;
+                    }
                 }
                 @include mobile{
                     width: 100%;
