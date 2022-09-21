@@ -12,6 +12,9 @@
      <!-- Menu -->
      <?php require ('../Resources/views/partials/header.php');?>
     <!-- End Menu -->
+     <pre>
+    <?php print_r($data)?>
+</pre>
     <main>
         <!-- Content -->
 <!--        This is the data you will need to add pagination, it show the number of row in the database -->
@@ -33,7 +36,7 @@
                 </thead>
                 <tbody>
                 <?php foreach ($data['datas'] as $item) { ?>
-                    <tr class="table__row table__left" onclick="window.location.href='invoice/<?php echo($item->id) ?>'">
+                    <tr class="table__row table__left" onclick="window.location.href='/company/<?php echo($item->id) ?>'">
                         <?php foreach($item as $key => $value) {?>
                                 <?php if($key != "id"){ ?>
                             <td class="table__content"><?= $value ?></td>

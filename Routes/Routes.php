@@ -46,8 +46,8 @@ $router->get('/companies/(\d+)', function($page) {
     (new CompaniesController)->index($page);
 });
 
-$router->get('/companie/(\d+)', function($id) {
-    (new CompaniesController)->companie($id);
+$router->get('/company/(\d+)', function($id) {
+    (new CompaniesController)->company($id);
 });
 
 
