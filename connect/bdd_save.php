@@ -8,8 +8,8 @@ class bdd
     function __construct(){
         $this->host ="localhost";
         $this->bddname = "cogip";
-        $this->user = "melonde";
-        $this->password = "Dev-1234";
+        $this->user = "root";
+        $this->password = "";
     }
 
     public function connect(){
