@@ -5,9 +5,9 @@
     <div class="nav__middle">
         <ul class="nav__list">
             <li><a href="/" class="nav__item">Home</a></li>
-            <li><a href="/invoices" class="nav__item">Invoices</a></li>
-            <li><a href="/compagnies" class="nav__item">Compagnies</a></li>
-            <li><a href="/contacts" class="nav__item">Contacts</a></li>
+            <li><a href="invoices" class="nav__item">Invoices</a></li>
+            <li><a href="compagnies" class="nav__item">Compagnies</a></li>
+            <li><a href="contacts" class="nav__item">Contacts</a></li>
         </ul>
     </div>
     <div class="nav__right">
