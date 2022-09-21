@@ -14,14 +14,10 @@
     <!-- End Menu -->
     <main>
         <!-- Content -->
-<<<<<<< HEAD
-=======
 <!--        This is the data you will need to add pagination, it show the number of row in the database -->
 <!--        <pre>-->
 <!--            --><?php //print_r($data['rows'][0]) ?>
 <!--        </pre>-->
-
->>>>>>> develop
         <div class="table__box">
             <h2 class="table__title"><?= $data['name']; ?></h2>
             <table class="table__main">
