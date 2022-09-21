@@ -14,7 +14,6 @@
     <!-- End Menu -->
     <main>
         <!-- Content -->
-
         <div class="table__box">
             <h2 class="table__title"><?= $data['name']; ?></h2>
             <table class="table__main">
