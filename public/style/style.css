@@ -74,8 +74,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -411,26 +410,32 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-nav .nav__left {
+nav .nav__desktop {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .nav__desktop .nav__left {
   width: 20%;
 }
-nav .nav__left .nav__logo {
+nav .nav__desktop .nav__left .nav__logo {
   height: 100%;
 }
-nav .nav__middle {
+nav .nav__desktop .nav__middle {
   width: 60%;
 }
-nav .nav__middle .nav__list {
+nav .nav__desktop .nav__middle .nav__list {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10%;
   list-style: none;
 }
-nav .nav__right {
+nav .nav__desktop .nav__right {
   width: 20%;
 }
-nav .nav__right .nav__login {
+nav .nav__desktop .nav__right .nav__login {
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: row;
@@ -439,15 +444,20 @@ nav .nav__right .nav__login {
   gap: 10%;
   list-style: none;
 }
-nav .nav__right .nav__item--signup {
+nav .nav__desktop .nav__right .nav__item--signup {
   background-color: #fff;
   padding: 10px 15px;
   border-radius: 10px;
   transition: all 0.1s ease;
 }
-nav .nav__right .nav__item--signup:hover {
+nav .nav__desktop .nav__right .nav__item--signup:hover {
   color: #fff;
   background-color: #000000;
+}
+@media screen and (max-width: 480px) {
+  nav .nav__desktop {
+    display: none;
+  }
 }
 nav .nav__burger {
   display: none;
@@ -500,8 +510,6 @@ table {
   font-size: 20px;
   font-weight: 600;
   border-collapse: collapse;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
 table .table__header::after {
@@ -515,8 +523,6 @@ table .table__header::after {
 }
 table .table__header {
   position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   text-align: left;
 }
@@ -535,8 +541,6 @@ table .table__content {
 }
 table .table__row:nth-child(odd) {
   position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
 table .table__row:nth-child(odd)::after {
@@ -550,8 +554,6 @@ table .table__row:nth-child(odd)::after {
 }
 table .table__row:nth-child(even) {
   position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
 table .table__row:nth-child(even)::after {
@@ -702,4 +704,6 @@ body {
 main {
   width: 80%;
   margin: auto;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
