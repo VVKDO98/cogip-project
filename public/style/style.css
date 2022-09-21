@@ -384,6 +384,11 @@ header .header__content .wave {
   bottom: 0;
   width: 100%;
 }
+@media screen and (max-width: 480px) {
+  header .header__content {
+    padding-top: 10px;
+  }
+}
 
 .header__simple {
   width: 100%;
