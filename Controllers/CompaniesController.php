@@ -11,7 +11,7 @@ class CompaniesController extends Controller
         $contacts = (new CompaniesModel)->getAllCompanies($page);
         return $this->view('table',$contacts);
     }
-    public function contact($id){
+    public function companie($id){
         $contact = (new CompaniesModel)->getCompanieById($id);
         return $this->view('detail', $contact);
     }
