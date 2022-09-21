@@ -1,5 +1,6 @@
-function hello(){
-    console.log("Hello")
-}
+const burgerMenu = document.getElementById('burgerMenu');
+const desktopMenu = document.getElementById('desktopMenu');
 
-hello()
+burgerMenu.addEventListener("click", e =>{
+    desktopMenu.style.display = "flex";
+})

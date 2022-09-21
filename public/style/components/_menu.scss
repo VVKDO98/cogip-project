@@ -1,45 +1,73 @@
-@import '../variables';
-
 nav{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .nav__left{
-        width: 20%;
-        .nav__logo{
-            height: 100%;
-        }
-    }
-    .nav__middle{
-        width: 60%;
-        .nav__list{
-            display: flex;
-            flex-direction: row;
-            gap: 10%;
-            list-style: none;
-            a{
-                color: $colorBlack;
-                text-decoration: none;
-                font-family: 'Roboto', sans-serif;
+    .nav__desktop{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .nav__left{
+            width: 20%;
+            .nav__logo{
+                height: 100%;
             }
         }
-    }
-    .nav__right{
-        width: 20%;
-        .nav__login{
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            gap: 10%;
-            list-style: none;
-            a{
-                color: $colorBlack;
-                text-decoration: none;
-                font-family: 'Roboto', sans-serif;
+        .nav__middle{
+            width: 60%;
+            .nav__list{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10%;
+                list-style: none;
             }
         }
+        .nav__right{
+            width: 20%;
+            .nav__login{
+                font-family: 'Roboto', sans-serif;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 10%;
+                list-style: none;
+            }
+            .nav__item--signup{
+                background-color: #fff;
+                padding: 10px 15px;
+                border-radius: 10px;
+                transition: all 0.1s ease;
+                &:hover{
+                    color: #fff;
+                    background-color: $colorBlack;
+                }
+            }
+        }
+        @include mobile{
+            display: none;
+        }
     }
-    
-    
+    .nav__burger{
+        display: none;
+        img{
+            width: 40px;
+        }
+        @include mobile{
+            display: flex;
+        }
+    }
+    .nav__item{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+        color: $colorBlack;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        &:hover{
+            color: #fff;
+        }
+    }
 }
+

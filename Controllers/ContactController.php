@@ -7,8 +7,12 @@ use App\Model\ContactsModel;
 
 class ContactController extends Controller
 {
-    public function contact($id=1){
-        $contacts = (new ContactsModel)->getAllContacts($id);
+    public function index($page=1){
+        $contacts = (new ContactsModel)->getAllContacts($page);
         return $this->view('table',$contacts);
+    }
+    public function contact($id){
+        $contact = (new ContactsModel())->getContactById($id);
+        return $this->view('detail', $contact);
     }
 }

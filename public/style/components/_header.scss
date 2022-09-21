@@ -21,6 +21,12 @@ header{
                 h2{
                     font-size: 65px;
                     font-weight: 800;
+                    @include mobile{
+                        font-size: 50px;
+                    }
+                }
+                @include mobile{
+                    width: 100%;
                 }
             }
             .cta__img{
@@ -30,12 +36,25 @@ header{
                 img{
                     width: 80%;
                 }
+                @include mobile{
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+            @include mobile{
+                margin-top: 0;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 100px;
             }
         }
         .wave{
             position: absolute;
             bottom: 0;
             width: 100%;
+        }
+        @include mobile{
+            padding-top: 20px;
         }
     }
 }
@@ -55,6 +74,10 @@ header{
             position: absolute;
             bottom: 0;
             width: 100%;
+        }
+        @include mobile{
+            padding-top: 20px;
+            height: 115px;
         }
     }
 }
