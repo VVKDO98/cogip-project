@@ -10,14 +10,16 @@
 </head>
 <body>
      <!-- Menu -->
-     <?php require ('../resources/views/partials/headerCTA.php');?>
+     <?php require ('../Resources/views/partials/headerCTA.php');?>
     <!-- End Menu -->
     <main>
         <!-- Content -->
         <?php require ('../resources/views/partials/table.php');?>
         <!-- End Content -->
+
+        <!-- Footer -->
+        <?php require ('../Resources/views/partials/footer.php');?>
+        <!-- End Footer -->
     </main>
-    <?php require ('../resources/views/partials/cta.php');?>
-    <?php require ('../resources/views/partials/footer.php');?>
 </body>
 </html>
