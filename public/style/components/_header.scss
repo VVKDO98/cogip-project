@@ -22,6 +22,9 @@ header{
                     font-size: 65px;
                     font-weight: 800;
                 }
+                @include mobile{
+                    width: 100%;
+                }
             }
             .cta__img{
                 width: 50%;
@@ -30,6 +33,16 @@ header{
                 img{
                     width: 80%;
                 }
+                @include mobile{
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+            @include mobile{
+                margin-top: 0;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 100px;
             }
         }
         .wave{
