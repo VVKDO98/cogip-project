@@ -9,10 +9,17 @@
     <script defer src="js/main.js"></script>
 </head>
 <body>
+     <!-- Menu -->
      <?php require ('../Resources/views/partials/headerCTA.php');?>
+    <!-- End Menu -->
     <main>
+        <!-- Content -->
         <?php require ('../Resources/views/partials/table.php');?>
+        <!-- End Content -->
+
+        <!-- Footer -->
+        <?php require ('../Resources/views/partials/footer.php');?>
+        <!-- End Footer -->
     </main>
-    <?php require ('../Resources/views/partials/footer.php');?>
 </body>
 </html>

@@ -14,26 +14,33 @@
     <!-- End Menu -->
     <main>
         <!-- Content -->
+<!--        This is the data you will need to add pagination, it show the number of row in the database -->
+<!--        <pre>-->
+<!--            --><?php //print_r($data['rows'][0]) ?>
+<!--        </pre>-->
 
         <div class="table__box">
-            <h2 class="table__title">Last invoices</h2>
+            <h2 class="table__title"><?= $data['name']; ?></h2>
             <table class="table__main">
                 <thead class="table__header">
                 <tr class="table__left">
-                    <th class="table__head">Invoice number</th>
-                    <th class="table__head">Dates due</th>
-                    <th class="table__head">Company</th>
-                    <th class="table__head">Created at</th>
+                    <?php foreach ($data['datas'][0] as $key => $value){ ?>
+                        <?php if($key != "id"){ ?>
+                        <th class="table__head"><?= $key ?></th>
+                        <?php } ?>
+                    <?php } ?>
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($data as $item) { ?>
-                    <tr class="table__row table__left">
+                <?php foreach ($data['datas'] as $item) { ?>
+                    <tr class="table__row table__left" onclick="window.location.href='invoice/<?php echo($item->id) ?>'">
                         <?php foreach($item as $key => $value) {?>
-                        <td class="table__content"><?= $value ?></td>
+                                <?php if($key != "id"){ ?>
+                            <td class="table__content"><?= $value ?></td>
+                            <?php } ?>
                         <?php } ?>
                     </tr>
-                <?php } ?>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
