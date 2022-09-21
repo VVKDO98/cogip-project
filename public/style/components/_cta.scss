@@ -1,0 +1,15 @@
+.calltoaction{
+    width: 100%;
+    margin: 85px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .calltoaction__title{
+        h2{
+            margin-left: 20%;
+            font-size: 65px;
+            font-weight: 800;
+        }
+    }
+    
+}

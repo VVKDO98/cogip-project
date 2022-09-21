@@ -39,3 +39,22 @@ header{
         }
     }
 }
+
+.header__simple{
+    width: 100%;
+    background-color: $colorYellow;
+    display: flex;
+    align-items: center;
+    .header__content{
+        width: 90%;
+        height: 250px;
+        margin: auto;
+        padding-top: 90px;
+        position: relative;
+        .wavesimple{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+}
