@@ -407,6 +407,12 @@ header .header__content .wave {
   bottom: 0;
   width: 100%;
 }
+@media screen and (max-width: 480px) {
+  .header__simple .header__content {
+    padding-top: 20px;
+    height: 115px;
+  }
+}
 
 nav {
   width: 100%;
