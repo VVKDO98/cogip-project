@@ -10,7 +10,7 @@ class CompaniesModel
 
         $offset=($rowcount*$page)-$rowcount;
         $pdo= (new bdd)->connect();
-        $sql = $pdo->prepare("select companies.name AS Name, tva AS TVA, country AS Country, types.name AS Type ,companies.created_at AS `Created at` from companies LEFT JOIN types ON companies.type_id = types.id LIMIT :limit OFFSET :offset");
+        $sql = $pdo->prepare("select companies.id AS id ,companies.name AS Name, tva AS TVA, country AS Country, types.name AS Type ,companies.created_at AS `Created at` from companies LEFT JOIN types ON companies.type_id = types.id LIMIT :limit OFFSET :offset");
         $sql->bindParam(':limit', $rowcount, \PDO::PARAM_INT);
         $sql->bindParam(':offset', $offset, \PDO::PARAM_INT);
         $sql->execute();

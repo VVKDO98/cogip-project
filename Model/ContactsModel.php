@@ -10,7 +10,7 @@ class ContactsModel
 
         $offset=($rowcount*$page)-$rowcount;
         $pdo= (new bdd)->connect();
-        $sql = $pdo->prepare("select contacts.name AS Name,email AS Email,phone AS Phone, companies.name AS Company ,contacts.created_at AS `Created at` from contacts  LEFT JOIN companies ON contacts.company_id = companies.id  LIMIT :limit OFFSET :offset");
+        $sql = $pdo->prepare("select contacts.id AS id ,contacts.name AS Name,email AS Email,phone AS Phone, companies.name AS Company ,contacts.created_at AS `Created at` from contacts  LEFT JOIN companies ON contacts.company_id = companies.id  LIMIT :limit OFFSET :offset");
         $sql->bindParam(':limit', $rowcount, \PDO::PARAM_INT);
         $sql->bindParam(':offset', $offset, \PDO::PARAM_INT);
         $sql->execute();

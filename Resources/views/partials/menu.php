@@ -7,7 +7,7 @@
             <ul class="nav__list">
                 <li><a href="/" class="nav__item">Home</a></li>
                 <li><a href="invoices" class="nav__item">Invoices</a></li>
-                <li><a href="companies" class="nav__item">Compagnies</a></li>
+                <li><a href="companies" class="nav__item">Companies</a></li>
                 <li><a href="contacts" class="nav__item">Contacts</a></li>
             </ul>
         </div>
