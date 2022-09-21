@@ -1,5 +1,2 @@
-function hello(){
-    console.log("Hello")
-}
-
-hello()
+const burgerMenu = document.getElementById('burgerMenu');
+console.log(burgerMenu);

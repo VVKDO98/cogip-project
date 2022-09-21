@@ -16,4 +16,7 @@
             <li><a href="#" class="nav__item">Login</a></li>
         </ul>
     </div>
+    <div class="nav__burger">
+        <img src="assets/img/burgerMenu.png" alt="" id="burgerMenu">
+    </div>
 </nav>

@@ -449,6 +449,14 @@ nav .nav__right .nav__item--signup:hover {
   color: #fff;
   background-color: #000000;
 }
+nav .nav__burger {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  nav .nav__burger {
+    display: flex;
+  }
+}
 nav .nav__item {
   font-family: "Roboto", sans-serif;
   font-weight: 600;
