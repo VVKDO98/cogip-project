@@ -329,6 +329,7 @@ header .header__content {
   width: 90%;
   margin: auto;
   padding-top: 90px;
+  position: relative;
 }
 header .header__content .header__cta {
   width: 100%;
