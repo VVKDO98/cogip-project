@@ -16,21 +16,20 @@
         <!-- Content -->
 
         <div class="table__box">
-            <h2 class="table__title">Last invoices</h2>
+            <h2 class="table__title"><?= $data['name']; ?></h2>
             <table class="table__main">
                 <thead class="table__header">
                 <tr class="table__left">
-                    <th class="table__head">Invoice number</th>
-                    <th class="table__head">Dates due</th>
-                    <th class="table__head">Company</th>
-                    <th class="table__head">Created at</th>
+                    <?php foreach ($data['invoices'][0] as $key => $value): ?>
+                        <th class="table__head"><?= $key ?></th>
+                    <?php endforeach; ?>
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($data as $item) { ?>
+                <?php foreach ($data['invoices'] as $item) { ?>
                     <tr class="table__row table__left">
                         <?php foreach($item as $key => $value) {?>
-                        <td class="table__content"><?= $value ?></td>
+                            <td class="table__content"><?= $value ?></td>
                         <?php } ?>
                     </tr>
                 <?php } ?>
