@@ -10,17 +10,17 @@ class DashboardModel
     public function getAll(){
 
         $pdo= (new bdd)->connect();
-        $company = $pdo->prepare("select  name ,country,tvafrom companies from companies ");
+        $company = $pdo->prepare("select  name ,country,tva from companies ");
         $company->execute();
 
-        $contact = $pdo->prepare("select name, phone, email from contracts");
+        $contact = $pdo->prepare("select name, phone, email from contacts");
         $contact->execute();
 
-        $invoice = $pdo->prepare("select ref,create_at ,companies.name from invoices left join companies on companies.id = invoices.id_company");
+        $invoice = $pdo->prepare("select ref,i.created_at ,companies.name from invoices i left join companies on companies.id = i.id_company");
         $invoice->execute();
 
         $pdo = null;
-        return array("companies" => $company->fetchAll(\PDO::FETCH_CLASS),"constacts"=>$contact->fetchAll(\PDO::FETCH_CLASS),"invoives"=>$invoice->fetchAll(\PDO::FETCH_CLASS));
+        return array("companies" => $company->fetchAll(\PDO::FETCH_CLASS),"contacts"=>$contact->fetchAll(\PDO::FETCH_CLASS),"invoices"=>$invoice->fetchAll(\PDO::FETCH_CLASS));
     }
 
 }

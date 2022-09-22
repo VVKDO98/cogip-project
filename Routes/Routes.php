@@ -6,6 +6,7 @@ use App\Controllers\CompaniesController;
 use App\Controllers\ContactController;
 use App\Controllers\HomeController;
 use App\Controllers\InvoicesController;
+use App\Controllers\DashboardController;
 use Bramus\Router\Router;
 
 $router = new Router();
