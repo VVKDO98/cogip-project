@@ -1,0 +1,47 @@
+.dash__banner{
+  width: 78%;
+  .dash__banner__top{
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+    .dash__banner__title{
+      font-size: 30px;
+    }
+    .dash__banner_breadcrumb{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      list-style-type: none;
+      padding: 0;
+      .dash__banner__link{
+        text-decoration: none;
+        color: #000;
+        font-family: 'Inter', sans-serif;
+      }
+    }
+  }
+  .dash__banner__bottom{
+    max-width: 98%;
+    background-color: $colorPurple;
+    border-radius: 10px;
+    position: relative;
+    .dash__banner__content{
+      width: 50%;
+      padding: 60px 0px 60px 70px;
+      h2{
+        color: #fff;
+        font-size: 35px;
+        margin-bottom: 0;
+      }
+      p{
+        color: #fff;
+        font-size: 15px;
+      }
+    }
+    img{
+      position: absolute;
+      bottom: 60px;
+      right: 100px;
+    }
+  }
+}

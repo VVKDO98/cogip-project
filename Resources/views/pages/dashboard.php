@@ -12,30 +12,47 @@ session_start();
     <script defer src="/public/js/main.js"></script>
 </head>
 <body>
-    <header class="dash__menu">
-        <div class="dash__header">
-            <img src="assets/img/ben.jpg" alt="profile picture" class="dash__imgprofile">
-            <p class="dash__name">Benoit Blaevoet</p>
-        </div>
-        <hr>
-        <div class="dash__nav">
-            <ul class="dash__nav__item">
-                <li><img src="assets/img/Icon_dashboard.png" alt=""><a href="#" class="dash__nav__link">Dashboard</a></li>
-                <li><img src="assets/img/Icon_invoices.png" alt=""><a href="#" class="dash__nav__link">Invoices</a></li>
-                <li><img src="assets/img/Icon_companies.png" alt=""><a href="#" class="dash__nav__link">Companies</a></li>
-                <li><img src="assets/img/Icon_contact.png" alt=""><a href="#" class="dash__nav__link">Contacts</a></li>
-            </ul>
-        </div>
-        <div class="dash__logout">
-            <hr>
-            <div class="dash__logout__content">
-                <img src="assets/img/ben.jpg" alt="" class="dash__imglogout">
-                <a href="#" class="dash__nav__logout">Logout</a>
-            </div>
-        </div>
-    </header>
     <main>
-
+        <article class="dash__menu">
+            <div class="dash__header">
+                <img src="assets/img/ben.jpg" alt="profile picture" class="dash__imgprofile">
+                <p class="dash__name">Benoit Blaevoet</p>
+            </div>
+            <hr>
+            <div class="dash__nav">
+                <ul class="dash__nav__item">
+                    <li><img src="assets/img/Icon_dashboard.png" alt=""><a href="#" class="dash__nav__link">Dashboard</a></li>
+                    <li><img src="assets/img/Icon_invoices.png" alt=""><a href="#" class="dash__nav__link">Invoices</a></li>
+                    <li><img src="assets/img/Icon_companies.png" alt=""><a href="#" class="dash__nav__link">Companies</a></li>
+                    <li><img src="assets/img/Icon_contact.png" alt=""><a href="#" class="dash__nav__link">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="dash__logout">
+                <hr>
+                <div class="dash__logout__content">
+                    <img src="assets/img/ben.jpg" alt="" class="dash__imglogout">
+                    <a href="#" class="dash__nav__logout">Logout</a>
+                </div>
+            </div>
+        </article>
+        <article class="dash__banner">
+            <div class="dash__banner__top">
+                <h1 class="dash__banner__title">Dashboard</h1>
+                <ul class="dash__banner_breadcrumb">
+                    <li><a href="#" class="dash__banner__link">dashboard/</a></li>
+<!--                    <li><a href="#" class="dash__banner__link">invoices/</a></li>-->
+<!--                    <li><a href="#" class="dash__banner__link">companies/</a></li>-->
+<!--                    <li><a href="#" class="dash__banner__link">contacts</a></li>-->
+                </ul>
+            </div>
+            <div class="dash__banner__bottom">
+                <div class="dash__banner__content">
+                    <h2>Welcome back Benoit !</h2>
+                    <p>You can here add an invoice, a company, and some contacts</p>
+                </div>
+                <img src="assets/img/imgbanner.png" alt="">
+            </div>
+        </article>
     </main>
 </body>
 </html>
