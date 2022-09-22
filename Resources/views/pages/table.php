@@ -21,7 +21,6 @@
 <!--        <pre>-->
 <!--            --><?php //print_r($data['rows'][0]) ?>
 <!--        </pre>-->
-
         <div class="table__box">
             <h2 class="table__title"><?= $data['name']; ?></h2>
             <table class="table__main">
