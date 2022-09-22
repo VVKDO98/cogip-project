@@ -16,10 +16,7 @@
         <!-- Content -->
         <?php require ('../Resources/views/partials/table.php');?>
         <!-- End Content -->
-
-        <!-- Footer -->
-        <?php require ('../Resources/views/partials/footer.php');?>
-        <!-- End Footer -->
     </main>
+     <?php require ('../Resources/views/partials/footer.php');?>
 </body>
 </html>
