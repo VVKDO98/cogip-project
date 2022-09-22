@@ -1,6 +1,12 @@
-@import "../normalize","../variables","../fonts","header";
+@import "../normalize","../variables","../fonts","header","banner";
 
 body{
     width: 100vw;
     background-color: $colorDashBG;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
