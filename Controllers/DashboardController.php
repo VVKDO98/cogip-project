@@ -23,4 +23,5 @@ class DashboardController extends Controller
         $data = ["page" => "company"];
         return $this->view("formadd", $data);
     }
+
 }
