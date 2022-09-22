@@ -5,6 +5,8 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -309,8 +311,103 @@ template {
   display: none;
 }
 
+h1, h2, h3 {
+  font-family: "Inter", sans-serif;
+}
+
+p, table {
+  font-family: "Roboto", sans-serif;
+}
+
+.dash__menu {
+  width: 20%;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.dash__menu .dash__header {
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+}
+.dash__menu .dash__header .dash__imgprofile {
+  width: 100px;
+  border-radius: 50%;
+}
+.dash__menu .dash__header .dash__name {
+  font-weight: 900;
+  font-size: 25px;
+  text-align: center;
+}
+.dash__menu hr {
+  border: 1px solid #E0E0E0;
+  width: 90%;
+}
+.dash__menu .dash__nav {
+  margin: 50px auto 0 auto;
+}
+.dash__menu .dash__nav .dash__nav__item {
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+}
+.dash__menu .dash__nav .dash__nav__item li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.dash__menu .dash__nav .dash__nav__item li .dash__nav__link {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: #000;
+  transition: all 0.2s ease;
+}
+.dash__menu .dash__nav .dash__nav__item li .dash__nav__link:hover {
+  color: #9698D6;
+}
+.dash__menu .dash__logout {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dash__menu .dash__logout .dash__logout__content {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px auto;
+}
+.dash__menu .dash__logout .dash__logout__content .dash__imglogout {
+  width: 50px;
+  border-radius: 50%;
+}
+.dash__menu .dash__logout .dash__logout__content .dash__nav__logout {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: #9698D6;
+  transition: all 0.2s ease;
+}
+.dash__menu .dash__logout .dash__logout__content .dash__nav__logout:hover {
+  color: #000;
+}
+
 body {
-  background-color: #000;
+  width: 100vw;
+  background-color: #F5F5FB;
 }
 
 /*# sourceMappingURL=dashboard.css.map */

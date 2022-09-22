@@ -1,5 +1,6 @@
-@import "../normalize","header";
+@import "../normalize","../variables","../fonts","header";
 
 body{
-    background-color: #000;
+    width: 100vw;
+    background-color: $colorDashBG;
 }
