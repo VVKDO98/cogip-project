@@ -36,19 +36,18 @@
             <div class="dash__banner__top">
                 <h1 class="dash__banner__title">Dashboard</h1>
                 <ul class="dash__banner_breadcrumb">
-                    <li><a href="#" class="dash__banner__link">Invoices</a></li>
-                    <li><a href="#" class="dash__banner__link">Companies</a></li>
-                    <li><a href="#" class="dash__banner__link">Contacts</a></li>
+                    <li><a href="#" class="dash__banner__link">dashboard/</a></li>
+<!--                    <li><a href="#" class="dash__banner__link">invoices/</a></li>-->
+<!--                    <li><a href="#" class="dash__banner__link">companies/</a></li>-->
+<!--                    <li><a href="#" class="dash__banner__link">contacts</a></li>-->
                 </ul>
             </div>
-            <div class="dash__banner_bottom">
+            <div class="dash__banner__bottom">
                 <div class="dash__banner__content">
                     <h2>Welcome back Benoit !</h2>
                     <p>You can here add an invoice, a company, and some contacts</p>
                 </div>
-                <div class="dash__banner__content">
-                    <img src="assets/img/imgbanner.png" alt="">
-                </div>
+                <img src="assets/img/imgbanner.png" alt="">
             </div>
         </article>
     </main>
