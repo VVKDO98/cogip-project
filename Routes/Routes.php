@@ -50,7 +50,9 @@ $router->get('/companie/(\d+)', function($id) {
     (new CompaniesController)->companie($id);
 });
 
-
+$router->get('/dashboard', function(){
+    (new DashboardController)->index();
+});
 
 $router->post( '/invoice', function () {
     echo 'hello';
