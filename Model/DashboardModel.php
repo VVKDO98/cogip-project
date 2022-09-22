@@ -7,7 +7,8 @@ use App\connect\bdd;
 
 class DashboardModel
 {
-    public function getAll(){
+    public function getAll()
+    {
 
         $pdo= (new bdd)->connect();
         $company = $pdo->prepare("select  name ,country,tva from companies ");

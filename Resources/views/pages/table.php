@@ -12,10 +12,7 @@
      <!-- Menu -->
      <?php require ('../Resources/views/partials/header.php');?>
     <!-- End Menu -->
-     <pre>
-    <?php print_r($data)?>
-</pre>
-    <main>
+     <main>
         <!-- Content -->
 <!--        This is the data you will need to add pagination, it show the number of row in the database -->
 <!--        <pre>-->

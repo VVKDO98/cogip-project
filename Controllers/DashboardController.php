@@ -11,4 +11,16 @@ class DashboardController extends Controller
         $dashboard = (new DashboardModel)->getAll();
         return $this->view('dashboard', $dashboard);
     }
+    public function addInvoice(){
+        $data = ["page"=>"invoice"];
+        return $this->view("formadd", $data);
+    }
+    public function addContact(){
+        $data = ["page"=>"contact"];
+        return $this->view("formadd", $data);
+    }
+    public function addCompany(){
+        $data = ["page" => "company"];
+        return $this->view("formadd", $data);
+    }
 }

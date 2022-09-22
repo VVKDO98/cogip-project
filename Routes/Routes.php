@@ -55,6 +55,20 @@ $router->get('/dashboard', function(){
     (new DashboardController)->index();
 });
 
+$router->get("/dashboard/addinvoice", function (){
+    (new DashboardController)->addInvoice();
+});
+
+$router->get("/dashboard/addcontact", function (){
+    (new DashboardController)->addContact();
+});
+
+$router->get("/dashboard/addcompany", function (){
+    (new DashboardController)->addCompany();
+});
+
+
+
 $router->post( '/invoice', function () {
     echo 'hello';
 });
