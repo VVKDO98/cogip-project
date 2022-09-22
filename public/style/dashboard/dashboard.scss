@@ -4,3 +4,8 @@ body{
     width: 100vw;
     background-color: $colorDashBG;
 }
+
+main{
+    display: flex;
+    flex-direction: row;
+}

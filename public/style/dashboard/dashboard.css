@@ -410,4 +410,9 @@ body {
   background-color: #F5F5FB;
 }
 
+main {
+  display: flex;
+  flex-direction: row;
+}
+
 /*# sourceMappingURL=dashboard.css.map */
