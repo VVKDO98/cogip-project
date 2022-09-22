@@ -438,12 +438,18 @@ p, table {
   width: 50%;
   padding: 60px 0px 60px 70px;
 }
-.dash__banner .dash__banner__bottom .dash__banner__content h2, .dash__banner .dash__banner__bottom .dash__banner__content p {
+.dash__banner .dash__banner__bottom .dash__banner__content h2 {
   color: #fff;
+  font-size: 35px;
+  margin-bottom: 0;
+}
+.dash__banner .dash__banner__bottom .dash__banner__content p {
+  color: #fff;
+  font-size: 15px;
 }
 .dash__banner .dash__banner__bottom img {
   position: absolute;
-  bottom: 40px;
+  bottom: 60px;
   right: 100px;
 }
 
