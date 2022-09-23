@@ -17,6 +17,6 @@ class InvoicesController extends Controller
     }
     public function invoice($id){
         $invoice = (new InvoicesModel)->getInvoiceById($id);
-        return $this->view('detail', $invoice);
+        return $this->view('details', $invoice);
     }
 }

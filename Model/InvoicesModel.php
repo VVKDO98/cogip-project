@@ -22,14 +22,15 @@ class InvoicesModel
         $pdo= (new bdd)->connect();
         $sql = $pdo->prepare(
             'SELECT 
+            i.id AS id,
             i.ref AS Ref,
             i.due_dates AS `Due dates`,
             i.created_at AS `Created at`,
             c.name AS Company
             FROM invoices i 
             LEFT JOIN companies c
-            ON invoices.id_company 
-            WHERE invoices.id = :id');
+            ON i.id_company = c.id
+            WHERE i.id = :id');
         $sql->bindParam(':id', $id, \PDO::PARAM_INT);
         $sql->execute();
         $pdo=null; //close the connection before return

@@ -1,4 +1,3 @@
-<?php dd($data) ?>
 <!--<pre>-->
 <!--    --><?php //print_r($data)?>
 <!--</pre>-->
@@ -18,10 +17,12 @@
 <!-- End Menu -->
 <main>
 <!--     Content -->
-    <h2><?= $data[0]->Contact ?></h2>
+    <h2><?= isset($data[0]->Contact)?$data[0]->Contact:$data[0]->Company; ?></h2>
 
     <?php foreach ($data[0] as $key => $value): ?>
-    <p><?= $key." : ".$value?></p>
+        <?php if($key!='id'){ ?>
+        <p><?= $key." : ".$value?></p>
+        <?php } ?>
     <?php endforeach; ?>
 
     <!-- End Content -->

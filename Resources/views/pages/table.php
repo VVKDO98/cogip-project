@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style/style.css">
     <script defer src="js/main.js"></script>
 </head>
-
 <body>
 <?php
 
