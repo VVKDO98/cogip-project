@@ -12,6 +12,7 @@ class LoginController extends Controller
     }
 
 
+
     public function login($email,$password){
         $datauser = (new LoginModel)->getCredential($email);
 //        echo $datauser[0]["password"] === $password?"true":"false";
