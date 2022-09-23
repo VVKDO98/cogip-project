@@ -7,6 +7,7 @@ use App\Controllers\ContactController;
 use App\Controllers\HomeController;
 use App\Controllers\InvoicesController;
 use App\Controllers\DashboardController;
+use App\Controllers\LoginController;
 use Bramus\Router\Router;
 
 $router = new Router();
@@ -55,6 +56,13 @@ $router->get('/dashboard', function(){
     (new DashboardController)->index();
 });
 
+$router->before("POST|GET","/dashboard/.*",function (){
+    if(!isset($_SESSION["user"])){
+        header("location:/login");
+        exit();
+    }
+});
+
 $router->get("/dashboard/addinvoice", function (){
     (new DashboardController)->addInvoice();
 });
@@ -65,6 +73,16 @@ $router->get("/dashboard/addcontact", function (){
 
 $router->get("/dashboard/addcompany", function (){
     (new DashboardController)->addCompany();
+});
+
+$router->get("/login",function (){
+    (new LoginController)->index();
+});
+
+$router->post("/login",function(){
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    (new LoginController)->login($email,$password);
 });
 
 

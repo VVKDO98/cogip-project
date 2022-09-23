@@ -14,7 +14,7 @@
         <div class="nav__right">
             <ul class="nav__login">
                 <li><a href="#" class="nav__item nav__item--signup">Sign up</a></li>
-                <li><a href="#" class="nav__item">Login</a></li>
+                <li><a href="/login" class="nav__item">Login</a></li>
             </ul>
         </div>
     </div>
