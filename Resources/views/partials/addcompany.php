@@ -23,8 +23,6 @@
                     }
                 ?>
             </select>
-        </div>
-
-        <button type="submit">Save</button>
+        </div> <button type="submit">Save</button>
     </form>
 </div>
