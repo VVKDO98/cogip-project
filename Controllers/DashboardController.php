@@ -12,15 +12,15 @@ class DashboardController extends Controller
         return $this->view('dashboard', $dashboard);
     }
     public function addInvoice(){
-        $data = ["page"=>"invoice"];
+        $data = ["page"=>"addinvoice"];
         return $this->view("formadd", $data);
     }
     public function addContact(){
-        $data = ["page"=>"contact"];
+        $data = ["page"=>"addcontact"];
         return $this->view("formadd", $data);
     }
     public function addCompany(){
-        $data = ["page" => "company"];
+        $data = ["page" => "addcompany"];
         return $this->view("formadd", $data);
     }
 

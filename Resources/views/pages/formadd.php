@@ -9,13 +9,11 @@
 </head>
 <body>
     <header>
-
+    <h1>egal</h1>
     </header>
     <main>
         <?php
-        include "../Ressources/views/partials/addinvoice.php";
-        include "../Ressources/views/partials/addcompagny.php";
-        include "../Ressources/views/partials/addcontact.php";
+        include "../Resources/views/partials/".$data['page'].".php";
         ?>
     </main>
 

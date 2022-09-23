@@ -13,6 +13,6 @@ class ContactController extends Controller
     }
     public function contact($id){
         $contact = (new ContactsModel())->getContactById($id);
-        return $this->view('detail', $contact);
+        return $this->view('details', $contact);
     }
 }
