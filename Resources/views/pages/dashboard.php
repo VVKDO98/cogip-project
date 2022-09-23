@@ -21,10 +21,10 @@ session_start();
             <hr>
             <div class="dash__nav">
                 <ul class="dash__nav__item">
-                    <li><img src="assets/img/Icon_dashboard.png" alt=""><a href="#" class="dash__nav__link">Dashboard</a></li>
-                    <li><img src="assets/img/Icon_invoices.png" alt=""><a href="#" class="dash__nav__link">Invoices</a></li>
-                    <li><img src="assets/img/Icon_companies.png" alt=""><a href="#" class="dash__nav__link">Companies</a></li>
-                    <li><img src="assets/img/Icon_contact.png" alt=""><a href="#" class="dash__nav__link">Contacts</a></li>
+                    <li><img src="assets/img/Icon_dashboard.png" alt=""><a href="formadd" class="dash__nav__link">Dashboard</a></li>
+                    <li><img src="assets/img/Icon_Invoices.png" alt=""><a href="formadd" class="dash__nav__link">Invoices</a></li>
+                    <li><img src="assets/img/Icon_Companies.png" alt=""><a href="formadd" class="dash__nav__link">Companies</a></li>
+                    <li><img src="assets/img/Icon_contact.png" alt=""><a href="formadd" class="dash__nav__link">Contacts</a></li>
                 </ul>
             </div>
             <div class="dash__logout">
