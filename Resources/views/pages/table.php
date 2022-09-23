@@ -8,7 +8,17 @@
     <link rel="stylesheet" href="style/style.css">
     <script defer src="js/main.js"></script>
 </head>
+
 <body>
+<?php
+
+switch ($data['name']){
+    case "All contacts": $page = "contact"; break;
+    case "All invoices": $page = "invoice"; break;
+    case "All companies": $page = "company"; break;
+}
+
+?>
      <!-- Menu -->
      <?php require ('../Resources/views/partials/header.php');?>
     <!-- End Menu -->
@@ -32,7 +42,7 @@
                 </thead>
                 <tbody>
                 <?php foreach ($data['datas'] as $item) { ?>
-                    <tr class="table__row table__left" onclick="window.location.href='/company/<?php echo($item->id) ?>'">
+                    <tr class="table__row table__left" onclick="window.location.href='/<?php echo($page."/".$item->id) ?>'">
                         <?php foreach($item as $key => $value) {?>
                                 <?php if($key != "id"){ ?>
                             <td class="table__content"><?= $value ?></td>

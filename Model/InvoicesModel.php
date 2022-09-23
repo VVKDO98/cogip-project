@@ -20,10 +20,19 @@ class InvoicesModel
     }
     public function getInvoiceById($id){
         $pdo= (new bdd)->connect();
-        $sql = $pdo->prepare('SELECT * FROM invoices LEFT JOIN companies ON invoices.id_company WHERE invoices.id = :id');
+        $sql = $pdo->prepare(
+            'SELECT 
+            i.ref AS Ref,
+            i.due_dates AS `Due dates`,
+            i.created_at AS `Created at`,
+            c.name AS Company
+            FROM invoices i 
+            LEFT JOIN companies c
+            ON invoices.id_company 
+            WHERE invoices.id = :id');
         $sql->bindParam(':id', $id, \PDO::PARAM_INT);
         $sql->execute();
         $pdo=null; //close the connection before return
-        return $sql->fetch();
+        return $sql->fetchAll(\PDO::FETCH_CLASS);
     }
 }

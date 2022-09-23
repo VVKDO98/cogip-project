@@ -20,12 +20,12 @@ class ContactsModel
         return array("name" => "All contacts", "datas" => $sql->fetchAll(\PDO::FETCH_CLASS), "rows" => $sqlrow->fetch());
     }
 
-    public function getInvoiceById($id){
+    public function getContactById($id){
         $pdo= (new bdd)->connect();
-        $sql = $pdo->prepare('SELECT * FROM invoices LEFT JOIN companies ON invoices.id_company WHERE invoices.id = :id');
+        $sql = $pdo->prepare('SELECT c.name as Contact, co.name as Company, c.phone as Phone, c.email as Email FROM contacts c LEFT JOIN companies co ON c.company_id = co.id WHERE c.id = :id');
         $sql->bindParam(':id', $id, \PDO::PARAM_INT);
         $sql->execute();
         $pdo=null; //close the connection before return
-        return $sql->fetch();
+        return $sql->fetchAll(\PDO::FETCH_CLASS);
     }
 }

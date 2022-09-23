@@ -27,8 +27,8 @@ $router->get('/invoice/(\d+)', function($id) {
     (new InvoicesController)->invoice($id);
 });
 
-$router->get('/contacts/(\d+)', function ($id){
-    (new ContactController)->index($id);
+$router->get('/contacts/(\d+)', function ($page){
+    (new ContactController)->index($page);
 });
 
 $router->get('/contacts', function (){
