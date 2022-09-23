@@ -453,6 +453,44 @@ p, table {
   right: 100px;
 }
 
+.addcontact__main {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.addcontact__main h2 {
+  font-size: 20px;
+  font-weight: 900;
+  margin-top: 50px;
+  margin-bottom: 45px;
+  align-self: flex-start;
+}
+.addcontact__main hr {
+  width: 90%;
+}
+.addcontact__main .addcontact__form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.addcontact__main .addcontact__form .addcontact__input {
+  height: 60px;
+  margin-bottom: 45px;
+  padding-left: 30px;
+  border: none;
+  background-color: #F5F5F5;
+  font-family: "Inter", sans-serif;
+  color: #000000;
+}
+.addcontact__main .addcontact__form .addcontact__input:focus {
+  outline: 2px solid #9698D6;
+  border-radius: 3px;
+}
+
 body {
   width: 100vw;
   background-color: #F5F5FB;
