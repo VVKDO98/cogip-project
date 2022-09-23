@@ -1,12 +1,17 @@
 @import "../normalize","../variables","../fonts","header","banner","addcontact";
 
 body{
-    width: 100vw;
+    width: 100%;
     background-color: $colorDashBG;
 }
 
 main{
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.test{
+    width: 78%;
 }

@@ -34,29 +34,32 @@
                 </div>
             </div>
         </article>
-        <article class="dash__banner">
-            <div class="dash__banner__top">
-                <h1 class="dash__banner__title">Dashboard</h1>
-                <ul class="dash__banner_breadcrumb">
-                    <li><a href="#" class="dash__banner__link">dashboard/</a></li>
-<!--                    <li><a href="#" class="dash__banner__link">invoices/</a></li>-->
-<!--                    <li><a href="#" class="dash__banner__link">companies/</a></li>-->
-<!--                    <li><a href="#" class="dash__banner__link">contacts</a></li>-->
-                </ul>
-            </div>
-            <div class="dash__banner__bottom">
-                <div class="dash__banner__content">
-                    <h2>Welcome back Benoit !</h2>
-                    <p>You can here add an invoice, a company, and some contacts</p>
+        <div class="test">
+            <article class="dash__banner">
+                <div class="dash__banner__top">
+                    <h1 class="dash__banner__title">Dashboard</h1>
+                    <ul class="dash__banner_breadcrumb">
+                        <li><a href="#" class="dash__banner__link">dashboard/</a></li>
+                        <!--                    <li><a href="#" class="dash__banner__link">invoices/</a></li>-->
+                        <!--                    <li><a href="#" class="dash__banner__link">companies/</a></li>-->
+                        <!--                    <li><a href="#" class="dash__banner__link">contacts</a></li>-->
+                    </ul>
                 </div>
-                <img src="/assets/img/imgbanner.png" alt="">
-            </div>
-        </article>
-        <?php
-        if(isset( $data['page'])) {
-            include "../Resources/views/partials/" . $data['page'] . ".php";
-        }
-        ?>
+                <div class="dash__banner__bottom">
+                    <div class="dash__banner__content">
+                        <h2>Welcome back Benoit !</h2>
+                        <p>You can here add an invoice, a company, and some contacts</p>
+                    </div>
+                    <img src="/assets/img/imgbanner.png" alt="">
+                </div>
+            </article>
+            <?php
+            if(isset( $data['page'])) {
+                include "../Resources/views/partials/" . $data['page'] . ".php";
+            }
+            ?>
+        </div>
+
     </main>
 </body>
 </html>

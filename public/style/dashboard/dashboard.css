@@ -406,7 +406,8 @@ p, table {
 }
 
 .dash__banner {
-  width: 78%;
+  width: 100%;
+  margin-bottom: 70px;
 }
 .dash__banner .dash__banner__top {
   width: 100%;
@@ -454,7 +455,7 @@ p, table {
 }
 
 .addcontact__main {
-  width: 1000px;
+  width: 98%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -492,14 +493,19 @@ p, table {
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   background-color: #F5F5FB;
 }
 
 main {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.test {
+  width: 78%;
 }
 
 /*# sourceMappingURL=dashboard.css.map */
