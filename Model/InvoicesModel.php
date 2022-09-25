@@ -16,7 +16,7 @@ class InvoicesModel
         $sqlrow = $pdo->prepare("SELECT COUNT(id) as Count FROM invoices");
         $sqlrow->execute();
         $pdo=null; //close the connection before return
-        return array("name" => "All invoices", "datas" => $sql->fetchAll(\PDO::FETCH_CLASS), "rows" => $sqlrow->fetch());
+        return array("name" => "All invoices", "datas" => $sql->fetchAll(\PDO::FETCH_CLASS), "rows" => $sqlrow->fetch(), "page"=>$page);
     }
     public function getInvoiceById($id){
         $pdo= (new bdd)->connect();
