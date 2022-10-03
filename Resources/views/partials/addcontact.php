@@ -15,7 +15,7 @@
             }
             ?>
         </select>
-        <input type="file" name="photo">
-        <button type="submit" class="addcontact__submit">Submit</button>
+        <input type="file" name="photo" class="addcontact__file">
+        <input type="submit" class="addcontact__submit" value="Submit">
     </form>
 </article>

@@ -462,16 +462,21 @@ p, table {
   align-items: center;
   background-color: #fff;
   border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 45px;
 }
 .addcontact__main h2 {
   font-size: 20px;
   font-weight: 900;
   margin-top: 50px;
-  margin-bottom: 45px;
+  margin-bottom: 20px;
   align-self: flex-start;
+  margin-left: 5%;
 }
 .addcontact__main hr {
   width: 90%;
+  border: 1px solid #E0E0E0;
+  margin-bottom: 40px;
 }
 .addcontact__main .addcontact__form {
   width: 90%;
@@ -484,12 +489,49 @@ p, table {
   padding-left: 30px;
   border: none;
   background-color: #F5F5F5;
-  font-family: "Inter", sans-serif;
   color: #000000;
 }
 .addcontact__main .addcontact__form .addcontact__input:focus {
   outline: 2px solid #9698D6;
   border-radius: 3px;
+}
+.addcontact__main .addcontact__form .addcontact__select {
+  height: 60px;
+  margin-bottom: 45px;
+  padding-left: 30px;
+  border: none;
+  background-color: #F5F5F5;
+  color: #000000;
+}
+.addcontact__main .addcontact__form .addcontact__file {
+  margin-bottom: 45px;
+}
+.addcontact__main .addcontact__form .addcontact__file::file-selector-button {
+  height: 60px;
+  width: 25%;
+  margin-right: 15px;
+  background-color: #F5F5F5;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+.addcontact__main .addcontact__form .addcontact__file::file-selector-button:hover {
+  background-color: #9698D6;
+  color: #fff;
+}
+.addcontact__main .addcontact__form .addcontact__submit {
+  height: 60px;
+  width: 100%;
+  margin-bottom: 45px;
+  padding-left: 30px;
+  background-color: #9698D6;
+  color: #fff;
+  border: none;
+  text-align: left;
+  transition: all 0.2s ease-in-out;
+}
+.addcontact__main .addcontact__form .addcontact__submit:hover {
+  background-color: #F5F5F5;
+  color: #000;
 }
 
 body {
