@@ -14,8 +14,8 @@
             <label for="company">company</label>
             <select name="company" id="">
                 <?php
-                    foreach ($data as $item){
-                       echo "<option value='$item'>$item</option>";
+                    foreach ($data['datas'] as $item){
+                       echo "<option value='$item[id]'>$item</option>";
                     }
                 ?>
             </select>
