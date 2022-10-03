@@ -1,3 +1,6 @@
+<?php
+//dd($data[0]);
+//?>
 <article class="dashform__main">
     <h2>Add Company</h2>
     <hr>
@@ -8,8 +11,8 @@
         <select name="type" id="" class="dashform__select">
             <?php
             //data = type_id
-            foreach($data[0]['datas'] as $item){?>
-                <option value="<?= $item->id ?>"><?= $item->Name ?></option>;
+            foreach($data[0]as $item){?>
+                <option value="<?= $item->id ?>"><?= $item->name ?></option>;
             <?php } ?>
         </select>
         <input type="submit" value="Submit" class="dashform__submit">

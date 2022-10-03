@@ -26,13 +26,13 @@ class DashboardController extends Controller
         return $this->view("dashboard", $data);
     }
     public function addCompany(){
-        $data = ["page" => "addcompany"];
+        $type =(new CompaniesModel)->getType();
+        $data = ["page" => "addcompany",$type];
         return $this->view("dashboard", $data);
     }
-    public function addCompanyPost($name,$country,$tva){
-        $data = ["page" => "addcompany"];
-        $post = (new CompaniesModel)->postCompany($name,$country,$tva);
-        return $this->view("dashboard", $data);
+    public function addCompanyPost($name,$country,$tva,$type){
+        $post = (new CompaniesModel)->postCompany($name,$country,$tva,$type);
+
     }
 
     public function deleteInvoice($id){

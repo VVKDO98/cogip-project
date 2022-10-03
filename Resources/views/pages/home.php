@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Cogip</title>
+    <title>Home | Cogip Enterprise</title>
     <link rel="stylesheet" href="style/style.css">
     <script defer src="js/main.js"></script>
 </head>
@@ -17,6 +17,7 @@
         <?php require ('../Resources/views/partials/table.php');?>
         <!-- End Content -->
     </main>
+     <?php require ('../Resources/views/partials/cta.php');?>
      <?php require ('../Resources/views/partials/footer.php');?>
 </body>
 </html>
