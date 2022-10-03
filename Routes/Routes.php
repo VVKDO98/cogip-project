@@ -97,7 +97,9 @@ $router->post("/companies",function (){
     $name=$_POST["company"];
     $country=$_POST["country"];
     $tva=$_POST["tva"];
-    (new DashboardController)->addCompanyPost($name,$country,$tva);
+    $type=$_POST["type"];
+    (new DashboardController)->addCompanyPost($name,$country,$tva,$type);
+    header("Location:/dashboard/addcompany");
 });
 
 $router->set404(function (){
