@@ -3,70 +3,39 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .nav__desktop{
-        width: 100%;
+    font-family: 'Inter', sans-serif;
+    .nav__menu{
+        width: 80%;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        .nav__left{
-            width: 20%;
-            .nav__logo{
-                height: 100%;
-            }
-        }
-        .nav__middle{
+        .nav__list{
             width: 60%;
-            .nav__list{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 10%;
-                list-style: none;
-            }
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            list-style-type: none;
+            gap: 10%;
         }
-        .nav__right{
-            width: 20%;
-            .nav__login{
-                font-family: 'Roboto', sans-serif;
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-end;
-                align-items: center;
-                gap: 10%;
-                list-style: none;
-            }
-            .nav__item--signup{
-                background-color: #fff;
-                padding: 10px 15px;
-                border-radius: 10px;
-                transition: all 0.1s ease;
-                &:hover{
-                    color: #fff;
-                    background-color: $colorBlack;
-                }
-            }
+        .nav__login{
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            list-style-type: none;
+            gap: 10%;
+        }
+        .nav__item{
+            text-decoration: none;
+            color: #000;
         }
         @include mobile{
             display: none;
         }
     }
-    .nav__burger{
+    #nav__burger{
         display: none;
-        img{
-            width: 40px;
-        }
         @include mobile{
-            display: flex;
-        }
-    }
-    .nav__item{
-        font-family: 'Roboto', sans-serif;
-        font-weight: 600;
-        color: $colorBlack;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        &:hover{
-            color: #fff;
+            display: block;
         }
     }
 }
