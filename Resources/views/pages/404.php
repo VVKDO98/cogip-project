@@ -10,12 +10,9 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- Menu -->
-    <?php require ('../Resources/views/partials/headerCTA.php');?>
-    <!-- End Menu -->
     <main>
         <p>Page Not Found</p>
+        <a href="/">Return Home</a>
     </main>
 </body>
 </html>
-
