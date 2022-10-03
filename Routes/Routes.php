@@ -100,6 +100,12 @@ $router->post("/companies",function (){
     (new DashboardController)->addCompanyPost($name,$country,$tva);
 });
 
+$router->delete("/invoice", function (){
+    $id=$_GET['id'];
+    (new DashboardController)->deleteInvoice($id);
+    header('location:/dashboard/addinvoice');
+});
+
 $router->set404(function (){
     (new errorController)->index();
 });
