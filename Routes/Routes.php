@@ -85,24 +85,27 @@ $router->post("/login",function(){
     $password = $_POST["password"];
     (new LoginController)->login($email,$password);
 });
-
-$router->set404(function (){
-    (new errorController)->index();
-});
-
 $router->post( '/invoice', function () {
     $ref=$_POST["ref"];
     $price=$_POST["price"];
     $company=$_POST["company"];
     (new DashboardController)->addInvoicePost($ref,$price,$company);
+    header('location:/dashboard/addinvoice');
 });
 
 $router->post("/companies",function (){
     $name=$_POST["company"];
     $country=$_POST["country"];
     $tva=$_POST["tva"];
-    (new DashboardController)->addCompanyPost($name,$country,$tva);
+    $type=$_POST["type"];
+    (new DashboardController)->addCompanyPost($name,$country,$tva,$type);
+    header("Location:/dashboard/addcompany");
 });
+
+$router->set404(function (){
+    (new errorController)->index();
+});
+
 
 
 $router->run();
