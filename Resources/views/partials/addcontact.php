@@ -1,38 +1,21 @@
-<div>
+<article class="addcontact__main">
     <h2>Add Contact</h2>
-    <form action="" method="post">
-        <div>
-            <label for="fname">First Name</label>
-            <input type="text" name="fname">
-        </div>
-
-        <div>
-            <label for="lname">Last Name</label>
-            <input type="text" name="lname">
-        </div>
-        <div>
-            <label for="email">Email</label>
-            <input type="email" name="email">
-        </div>
-        <div>
-            <label for="phone">Phone</label>
-            <input type="text" name="phone">
-        </div>
-        <div>
-            <label for="company">Ref</label>
-            <select name="company" id="">
-                <?php
-                // data = name company in companies
-                foreach ($data as $item){
-                    echo "<option value='$item'>$item</option>";
-                }
-                ?>
-            </select>
-        </div>
-        <div>
-            <label for="photo">Add Photo</label>
-            <input type="file" name="photo">
-        </div>
-        <button type="submit">Save</button>
+    <hr>
+    <form action="" method="post" class="addcontact__form">
+        <input type="text" name="fname" class="addcontact__input" placeholder="Firstname">
+        <input type="text" name="lname" class="addcontact__input" placeholder="Lastname">
+        <input type="email" name="email" class="addcontact__input" placeholder="E-mail">
+        <input type="text" name="phone" class="addcontact__input" placeholder="Phone">
+        <select name="company" id="" class="addcontact__select">
+            <option value="">-- Select a company --</option>
+            <?php
+            // data = name company in companies
+            foreach ($data as $item){
+                echo "<option value='$item'>$item</option>";
+            }
+            ?>
+        </select>
+        <input type="file" name="photo">
+        <button type="submit" class="addcontact__submit">Submit</button>
     </form>
-</div>
+</article>
