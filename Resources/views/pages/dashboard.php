@@ -34,7 +34,7 @@
                 </div>
             </div>
         </article>
-        <div class="test">
+        <div class="dash__main">
             <article class="dash__banner">
                 <div class="dash__banner__top">
                     <h1 class="dash__banner__title">Dashboard</h1>
