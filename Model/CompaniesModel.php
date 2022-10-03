@@ -65,4 +65,15 @@ class CompaniesModel
         $pdo=null; //close the connection before return
         return array( "companies" => $companies->fetchAll(\PDO::FETCH_CLASS), "contacts" => $contacts->fetchAll(\PDO::FETCH_CLASS), "invoices" => $invoices->fetchAll(\PDO::FETCH_CLASS) );
     }
+    public function postCompany($name,$country,$tva){
+        $pdo = (new bdd)->connect();
+        $sql = $pdo->prepare("insert into companies(name, country,tva,created_at,updated_at)
+                values(:name, :country, :tva, now(),now())");
+        $sql->bindParam(":name", $name, \PDO::PARAM_STR_CHAR);
+        $sql->bindParam(":country",$country, \PDO::PARAM_STR_CHAR);
+        $sql->bindParam(":tva", $tva, \PDO::PARAM_INT);
+        $sql->execute();
+        $pdo = null;
+        return $sql;
+    }
 }

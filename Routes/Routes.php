@@ -97,5 +97,12 @@ $router->post( '/invoice', function () {
     (new DashboardController)->addInvoicePost($ref,$price,$company);
 });
 
+$router->post("/companies",function (){
+    $name=$_POST["company"];
+    $country=$_POST["country"];
+    $tva=$_POST["tva"];
+    (new DashboardController)->addCompanyPost($name,$country,$tva);
+});
+
 
 $router->run();

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
+use App\Model\CompaniesModel;
 use App\Model\DashboardModel;
 use App\Model\InvoicesModel;
 
@@ -21,12 +22,18 @@ class DashboardController extends Controller
         $post = (new InvoicesModel)->postInvoice($ref,$price,$company);
         return $this->view("dashboard", $data);
     }
+
     public function addContact(){
         $data = ["page"=>"addcontact"];
         return $this->view("dashboard", $data);
     }
     public function addCompany(){
         $data = ["page" => "addcompany"];
+        return $this->view("dashboard", $data);
+    }
+    public function addCompanyPost($name,$country,$tva){
+        $data = ["page" => "addcompany"];
+        $post = (new CompaniesModel)->postCompany($name,$country,$tva);
         return $this->view("dashboard", $data);
     }
 
