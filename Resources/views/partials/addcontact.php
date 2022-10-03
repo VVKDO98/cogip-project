@@ -5,7 +5,7 @@
         <input type="text" name="fname" class="dashform__input" placeholder="Firstname">
         <input type="text" name="lname" class="dashform__input" placeholder="Lastname">
         <input type="email" name="email" class="dashform__input" placeholder="E-mail">
-        <input type="text" name="phone" class=dashformt__input" placeholder="Phone">
+        <input type="text" name="phone" class="dashform__input" placeholder="Phone">
         <select name="company" id="" class="dashform__select">
             <option value="">-- Select a company --</option>
             <?php
