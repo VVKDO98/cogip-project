@@ -457,7 +457,7 @@ p, table {
   right: 100px;
 }
 
-.addcontact__main {
+.dashform__main {
   width: 98%;
   display: flex;
   flex-direction: column;
@@ -468,7 +468,7 @@ p, table {
   font-family: "Inter", sans-serif;
   margin-bottom: 45px;
 }
-.addcontact__main h2 {
+.dashform__main h2 {
   font-size: 20px;
   font-weight: 900;
   margin-top: 50px;
@@ -476,17 +476,17 @@ p, table {
   align-self: flex-start;
   margin-left: 5%;
 }
-.addcontact__main hr {
+.dashform__main hr {
   width: 90%;
   border: 1px solid #E0E0E0;
   margin-bottom: 40px;
 }
-.addcontact__main .addcontact__form {
+.dashform__main .dashform__form {
   width: 90%;
   display: flex;
   flex-direction: column;
 }
-.addcontact__main .addcontact__form .addcontact__input {
+.dashform__main .dashform__form .dashform__input {
   height: 60px;
   margin-bottom: 45px;
   padding-left: 30px;
@@ -494,11 +494,11 @@ p, table {
   background-color: #F5F5F5;
   color: #000000;
 }
-.addcontact__main .addcontact__form .addcontact__input:focus {
+.dashform__main .dashform__form .dashform__input:focus {
   outline: 2px solid #9698D6;
   border-radius: 3px;
 }
-.addcontact__main .addcontact__form .addcontact__select {
+.dashform__main .dashform__form .dashform__select {
   height: 60px;
   margin-bottom: 45px;
   padding-left: 30px;
@@ -506,10 +506,10 @@ p, table {
   background-color: #F5F5F5;
   color: #000000;
 }
-.addcontact__main .addcontact__form .addcontact__file {
+.dashform__main .dashform__form .dashform__file {
   margin-bottom: 45px;
 }
-.addcontact__main .addcontact__form .addcontact__file::file-selector-button {
+.dashform__main .dashform__form .dashform__file::file-selector-button {
   height: 60px;
   width: 25%;
   margin-right: 15px;
@@ -517,11 +517,11 @@ p, table {
   border: none;
   transition: all 0.2s ease-in-out;
 }
-.addcontact__main .addcontact__form .addcontact__file::file-selector-button:hover {
+.dashform__main .dashform__form .dashform__file::file-selector-button:hover {
   background-color: #9698D6;
   color: #fff;
 }
-.addcontact__main .addcontact__form .addcontact__submit {
+.dashform__main .dashform__form .dashform__submit {
   height: 60px;
   width: 100%;
   margin-bottom: 45px;
@@ -532,7 +532,7 @@ p, table {
   text-align: left;
   transition: all 0.2s ease-in-out;
 }
-.addcontact__main .addcontact__form .addcontact__submit:hover {
+.dashform__main .dashform__form .dashform__submit:hover {
   background-color: #F5F5F5;
   color: #000;
 }

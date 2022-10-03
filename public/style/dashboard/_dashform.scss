@@ -1,4 +1,4 @@
-.addcontact__main{
+.dashform__main{
   width: 98%;
   display: flex;
   flex-direction: column;
@@ -21,11 +21,11 @@
     border: 1px solid #E0E0E0;
     margin-bottom: 40px;
   }
-  .addcontact__form{
+  .dashform__form{
     width: 90%;
     display: flex;
     flex-direction: column;
-    .addcontact__input{
+    .dashform__input{
       height: 60px;
       margin-bottom: 45px;
       padding-left: 30px;
@@ -37,7 +37,7 @@
         border-radius: 3px;
       }
     }
-    .addcontact__select{
+    .dashform__select{
       height: 60px;
       margin-bottom: 45px;
       padding-left: 30px;
@@ -45,7 +45,7 @@
       background-color: $colorGrey;
       color: #000000;
     }
-    .addcontact__file{
+    .dashform__file{
       margin-bottom: 45px;
       &::file-selector-button{
         height: 60px;
@@ -60,7 +60,7 @@
         }
       }
     }
-    .addcontact__submit{
+    .dashform__submit{
       height: 60px;
       width: 100%;
       margin-bottom: 45px;

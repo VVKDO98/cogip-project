@@ -15,7 +15,7 @@
         <article class="dash__menu">
             <div class="dash__header">
                 <img src="/assets/img/ben.jpg" alt="profile picture" class="dash__imgprofile">
-                <p class="dash__name">Benoit Blaevoet</p>
+                <p class="dash__name"><?= $_SESSION['user']['name'].' '.$_SESSION['user']['last'] ?></p>
             </div>
             <hr>
             <div class="dash__nav">
