@@ -4,6 +4,7 @@ namespace App\Routes;
 
 use App\Controllers\CompaniesController;
 use App\Controllers\ContactController;
+use App\Controllers\errorController;
 use App\Controllers\HomeController;
 use App\Controllers\InvoicesController;
 use App\Controllers\DashboardController;
@@ -85,7 +86,9 @@ $router->post("/login",function(){
     (new LoginController)->login($email,$password);
 });
 
-
+$router->set404(function (){
+    (new errorController)->index();
+});
 
 $router->post( '/invoice', function () {
     echo 'hello';
