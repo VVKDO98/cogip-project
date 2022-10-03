@@ -17,6 +17,7 @@
         <?php require ('../Resources/views/partials/table.php');?>
         <!-- End Content -->
     </main>
+     <?php require ('../Resources/views/partials/cta.php');?>
      <?php require ('../Resources/views/partials/footer.php');?>
 </body>
 </html>
