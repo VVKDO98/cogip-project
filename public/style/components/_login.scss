@@ -31,22 +31,22 @@
         background-color: $colorGrey;
         font-family: 'Inter', sans-serif;
         color: #000000;
+        border-radius: 3px;
         &:focus{
           outline: 2px solid $colorPurple;
-          border-radius: 3px;
         }
       }
       #login__submit{
         height: 60px;
-        border: none;
+        border: 2px solid $colorPurple;
         background-color: $colorPurple;
         font-family: 'Inter', sans-serif;
         color: #fff;
         font-weight: 600;
+        border-radius: 3px;
         transition: all 0.2s ease;
         &:hover{
           background-color: #fff;
-          border: 2px solid $colorPurple;
           color: #000;
         }
       }
