@@ -1,0 +1,79 @@
+.dashform__main{
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 45px;
+  h2{
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    align-self: flex-start;
+    margin-left: 5%;
+  }
+  hr{
+    width: 90%;
+    border: 1px solid #E0E0E0;
+    margin-bottom: 40px;
+  }
+  .dashform__form{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    .dashform__input{
+      height: 60px;
+      margin-bottom: 45px;
+      padding-left: 30px;
+      border: none;
+      background-color: $colorGrey;
+      color: #000000;
+      &:focus{
+        outline: 2px solid $colorPurple;
+        border-radius: 3px;
+      }
+    }
+    .dashform__select{
+      height: 60px;
+      margin-bottom: 45px;
+      padding-left: 30px;
+      border: none;
+      background-color: $colorGrey;
+      color: #000000;
+    }
+    .dashform__file{
+      margin-bottom: 45px;
+      &::file-selector-button{
+        height: 60px;
+        width: 25%;
+        margin-right: 15px;
+        background-color: $colorGrey;
+      border: none;
+        transition: all 0.2s ease-in-out;
+        &:hover{
+          background-color: $colorPurple;
+          color: #fff;
+        }
+      }
+    }
+    .dashform__submit{
+      height: 60px;
+      width: 100%;
+      margin-bottom: 45px;
+      padding-left: 30px;
+      background-color: $colorPurple;
+      color: #fff;
+      border: none;
+      text-align: left;
+      transition: all 0.2s ease-in-out;
+      &:hover{
+        background-color: $colorGrey;
+        color: #000;
+      }
+    }
+  }
+}

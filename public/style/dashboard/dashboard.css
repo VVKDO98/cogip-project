@@ -326,7 +326,10 @@ p, table {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
 }
 .dash__menu .dash__header {
   height: 25%;
@@ -406,7 +409,8 @@ p, table {
 }
 
 .dash__banner {
-  width: 78%;
+  width: 100%;
+  margin-bottom: 70px;
 }
 .dash__banner .dash__banner__top {
   width: 100%;
@@ -453,53 +457,102 @@ p, table {
   right: 100px;
 }
 
-.addcontact__main {
-  width: 1000px;
+.dashform__main {
+  width: 98%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #fff;
   border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 45px;
 }
-.addcontact__main h2 {
+.dashform__main h2 {
   font-size: 20px;
   font-weight: 900;
   margin-top: 50px;
-  margin-bottom: 45px;
+  margin-bottom: 20px;
   align-self: flex-start;
+  margin-left: 5%;
 }
-.addcontact__main hr {
+.dashform__main hr {
   width: 90%;
+  border: 1px solid #E0E0E0;
+  margin-bottom: 40px;
 }
-.addcontact__main .addcontact__form {
+.dashform__main .dashform__form {
   width: 90%;
   display: flex;
   flex-direction: column;
 }
-.addcontact__main .addcontact__form .addcontact__input {
+.dashform__main .dashform__form .dashform__input {
   height: 60px;
   margin-bottom: 45px;
   padding-left: 30px;
   border: none;
   background-color: #F5F5F5;
-  font-family: "Inter", sans-serif;
   color: #000000;
 }
-.addcontact__main .addcontact__form .addcontact__input:focus {
+.dashform__main .dashform__form .dashform__input:focus {
   outline: 2px solid #9698D6;
   border-radius: 3px;
 }
+.dashform__main .dashform__form .dashform__select {
+  height: 60px;
+  margin-bottom: 45px;
+  padding-left: 30px;
+  border: none;
+  background-color: #F5F5F5;
+  color: #000000;
+}
+.dashform__main .dashform__form .dashform__file {
+  margin-bottom: 45px;
+}
+.dashform__main .dashform__form .dashform__file::file-selector-button {
+  height: 60px;
+  width: 25%;
+  margin-right: 15px;
+  background-color: #F5F5F5;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+.dashform__main .dashform__form .dashform__file::file-selector-button:hover {
+  background-color: #9698D6;
+  color: #fff;
+}
+.dashform__main .dashform__form .dashform__submit {
+  height: 60px;
+  width: 100%;
+  margin-bottom: 45px;
+  padding-left: 30px;
+  background-color: #9698D6;
+  color: #fff;
+  border: none;
+  text-align: left;
+  transition: all 0.2s ease-in-out;
+}
+.dashform__main .dashform__form .dashform__submit:hover {
+  background-color: #F5F5F5;
+  color: #000;
+}
 
 body {
-  width: 100vw;
+  width: 100%;
   background-color: #F5F5FB;
 }
 
 main {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.dash__main {
+  width: 78%;
+  position: absolute;
+  right: 0;
 }
 
 /*# sourceMappingURL=dashboard.css.map */
