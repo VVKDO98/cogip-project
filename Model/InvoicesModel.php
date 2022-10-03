@@ -36,4 +36,17 @@ class InvoicesModel
         $pdo=null; //close the connection before return
         return $sql->fetchAll(\PDO::FETCH_CLASS);
     }
+    public function postInvoice($ref, $price, $company){
+        $pdo= (new bdd)->connect();
+        $sql = $pdo->prepare(
+            'INSERT INTO invoices (ref, price, id_company, created_at, updated_at, due_dates)
+            VALUES (:ref, :price, :id_company, NOW(), NOW(), NOW())
+        ');
+        $sql->bindParam(':ref', $ref, \PDO::PARAM_STR_CHAR);
+        $sql->bindParam(':price', $price, \PDO::PARAM_INT);
+        $sql->bindParam(':id_company', $company, \PDO::PARAM_INT);
+        $sql->execute();
+        $pdo=null;
+        return $sql;
+    }
 }

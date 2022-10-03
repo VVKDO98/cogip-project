@@ -85,13 +85,12 @@ $router->post("/login",function(){
     (new LoginController)->login($email,$password);
 });
 
-
-
 $router->post( '/invoice', function () {
-    echo 'hello';
+    $ref=$_POST["ref"];
+    $price=$_POST["price"];
+    $company=$_POST["company"];
+    (new DashboardController)->addInvoicePost($ref,$price,$company);
 });
-
-
 
 
 $router->run();
