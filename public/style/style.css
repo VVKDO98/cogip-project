@@ -559,11 +559,9 @@ nav #nav__burger {
     display: block;
   }
 }
-@media screen and (max-width: 480px) {
-  nav #nav__cross {
-    display: none;
-    width: 30px;
-  }
+nav #nav__cross {
+  display: none;
+  width: 30px;
 }
 
 .calltoaction {

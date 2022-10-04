@@ -70,10 +70,8 @@ nav{
         }
     }
     #nav__cross {
-        @include mobile {
-            display: none;
-            width: 30px;
-        }
+        display: none;
+        width: 30px;
     }
 }
 
