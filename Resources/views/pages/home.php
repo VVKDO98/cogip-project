@@ -14,7 +14,12 @@
     <!-- End Menu -->
     <main>
         <!-- Content -->
-        <?php require ('../Resources/views/partials/table.php');?>
+        <?php require ('../Resources/views/partials/tableFunction.php');?>
+        <?php
+            echo insertTable($data['invoices'], "invoice");
+            echo insertTable($data['companies'], "companies");
+            echo insertTable($data['contacts'], "contacts");
+        ?>
         <!-- End Content -->
     </main>
      <?php require ('../Resources/views/partials/cta.php');?>

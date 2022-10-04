@@ -16,7 +16,7 @@ class HomeController extends Controller
         $invoices = $homemodel->getLastInvoices();
         $companies = $homemodel->getLastCompanies();
         $contacts = $homemodel->getLastContacts();
-        $data = [$invoices, $companies, $contacts];
+        $data = ["invoices" => $invoices, "companies" => $companies, "contacts" =>$contacts];
         return $this->view('home',$data);
     }
 }

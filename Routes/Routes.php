@@ -68,6 +68,10 @@ $router->get("/dashboard/addinvoice", function (){
     (new DashboardController)->addInvoice();
 });
 
+$router->get("/dashboard/addinvoice/(\d+)", function ($page){
+    (new DashboardController)->addInvoice($page);
+});
+
 $router->get("/dashboard/addcontact", function (){
     (new DashboardController)->addContact();
 });
@@ -115,7 +119,7 @@ $router->post("/contact",function (){
 });
 
 $router->delete("/invoice", function (){
-    $id=$_GET['id'];
+    $id=$_POST['id'];
     (new DashboardController)->deleteInvoice($id);
     header('location:/dashboard/addinvoice');
 });

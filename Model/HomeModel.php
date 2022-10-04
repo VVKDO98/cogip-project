@@ -12,7 +12,7 @@ class HomeModel
         $sql->bindParam(':limit', $row, \PDO::PARAM_INT);
         $sql->execute();
         $pdo=null; //close the connection before return
-        return $sql->fetchAll();
+        return array("datas" =>$sql->fetchAll(\PDO::FETCH_CLASS));
     }
     public function getLastCompanies($row=5){
         $pdo= (new bdd)->connect();
@@ -20,7 +20,7 @@ class HomeModel
         $sql->bindParam(':limit', $row, \PDO::PARAM_INT);
         $sql->execute();
         $pdo=null; //close the connection before return
-        return $sql->fetchAll();
+        return array("datas" =>$sql->fetchAll(\PDO::FETCH_CLASS));
     }
     public function getLastContacts($row=5){
         $pdo= (new bdd)->connect();
@@ -28,6 +28,6 @@ class HomeModel
         $sql->bindParam(':limit', $row, \PDO::PARAM_INT);
         $sql->execute();
         $pdo=null; //close the connection before return
-        return $sql->fetchAll();
+        return array("datas" =>$sql->fetchAll(\PDO::FETCH_CLASS));
     }
 }
