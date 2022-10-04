@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Cogip Enterprise</title>
     <link rel="stylesheet" href="/style/dashboard/dashboard.css">
-    <script defer src="/public/js/main.js"></script>
+    <script defer src="/public/js/formValidation.js"></script>
 </head>
 <body>
     <main>
         <article class="dash__menu">
             <div class="dash__header">
-                <img src="/assets/img/ben.jpg" alt="profile picture" class="dash__imgprofile">
+                <img src="/assets/img/defaultpp.png" alt="profile picture" class="dash__imgprofile">
                 <p class="dash__name"><?= $_SESSION['user']['name'].' '.$_SESSION['user']['last'] ?></p>
             </div>
             <hr>
@@ -29,7 +29,7 @@
             <div class="dash__logout">
                 <hr>
                 <div class="dash__logout__content">
-                    <img src="/assets/img/ben.jpg" alt="" class="dash__imglogout">
+                    <img src="/assets/img/defaultpp.png" alt="" class="dash__imglogout">
                     <a href="#" class="dash__nav__logout">Logout</a>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="dash__banner__bottom">
                     <div class="dash__banner__content">
-                        <h2>Welcome back Benoit !</h2>
+                        <h2>Welcome back <?=$_SESSION['user']['name']?> !</h2>
                         <p>You can here add an invoice, a company, and some contacts</p>
                     </div>
                     <img src="/assets/img/imgbanner.png" alt="">
@@ -59,7 +59,6 @@
             }
             ?>
         </div>
-
     </main>
 </body>
 </html>
