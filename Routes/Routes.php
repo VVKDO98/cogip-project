@@ -114,7 +114,7 @@ $router->post("/contact",function (){
 });
 
 $router->delete("/invoice", function (){
-    $id=$_GET['id'];
+    $id=$_POST['id'];
     (new DashboardController)->deleteInvoice($id);
     header('location:/dashboard/addinvoice');
 });

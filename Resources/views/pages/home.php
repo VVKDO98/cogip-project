@@ -14,7 +14,7 @@
     <!-- End Menu -->
     <main>
         <!-- Content -->
-        <?php require ('../Resources/views/partials/table.php');?>
+        <?php require ('../Resources/views/partials/tableFunction.php');?>
         <!-- End Content -->
     </main>
      <?php require ('../Resources/views/partials/cta.php');?>
