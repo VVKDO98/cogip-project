@@ -1,12 +1,21 @@
 <?php
-    function insertTable($data, $type)
+    function insertTable($data, $type, $pagination=true)
     {
+        $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';
+
+        if(str_contains($type, 'add')){
+            $link = "dashboard/$type";
+        }else{
+            $link = $type;
+        }
+
+        $data_content = $data['datas'];
         $html = "<div class='table__box'>";
-        $html .= "<h2 class='table__title'>" . $data['name'] . "</h2>";
+        $html .= "<h2 class='table__title' id='table-".$type."'>" . $type . "</h2>";
         $html .= "<table class='table__main'>";
         $html .= "<thead class='table__header'>";
         $html .= "<tr class='table__left'>";
-        foreach ($data['datas'][0] as $key => $value) {
+        foreach ($data_content[0] as $key => $value) {
             if ($key != "id") {
                 $html .= "<th class='table__head'>$key </th>";
             }
@@ -14,8 +23,8 @@
         $html .= "</tr>
         </thead>
         <tbody>";
-        foreach ($data['datas'] as $item) {
-            $html .= "<tr class='table__row table__left' onclick=\"window.location.href='/$type/$item->id'\">";
+        foreach ($data_content as $item) {
+            $html .= "<tr class='table__row table__left' onclick=\"window.location.href='/$link/$item->id'\">";
             foreach ($item as $key => $value) {
                 if ($key != "id") {
                     $html.="<td class='table__content' > $value </td >";
@@ -27,52 +36,37 @@
             </table>
         </div>";
 
+
+
+
+
+
+         //pagination
+        if($pagination && isset($data['rows'])){
+                if($data['rows'][0]>10){
+                $nbrPage = ceil($data['rows'][0]/10);
+
+            $html .= '<nav id="pagination" >';
+                 if ($data['page']>1){
+            $html .=    '<span id="pagination--prev"><a href="'.$root.$link.'/'.($data['page']-1).'#table-'.$type.'"> Prev </a></span>';
+                 }
+                for ($i = 1; $i <= $nbrPage; $i++) {
+                    if($i == $data['page']){$active = "page-active";}else($active = "");
+            $html .= '<span id="page-'.$i.'" class="'.$active.'"><a href="'.$root.$link.'/'.$i.'#table-'.$type.'">'.$i.' </a></span>';
+                 }
+                if ($data['page']<$nbrPage){
+                    $html .= '<span id="pagination--next"><a href="'.$root.$link.'/'.($data['page']+1).'#table-'.$type.'"> Next </a></span>';
+                 }
+                $html .= '</nav>';
+             }
+        }
+
+
+
+
+
+
+
         return $html;
     }
 ?>
-<!---->
-<!--<div class="table__box">-->
-<!--    <h2 class="table__title">Last invoices</h2>-->
-<!--    <table class="table__main">-->
-<!--            <thead class='table__header'>-->
-<!--            <tr class="table__left">-->
-<!--                <th class="table__head">Invoice number</th>-->
-<!--                <th class="table__head">Dates due</th>-->
-<!--                <th class="table__head">Company</th>-->
-<!--                <th class="table__head">Created at</th>-->
-<!--            </tr>-->
-<!--        </thead>-->
-<!--        <tbody>-->
-<!--            <tr class='table__row table__left'>-->
-<!--                <td class='table__content'>F20220915-001</td>-->
-<!--                <td class="table__content">15/09/2022</td>-->
-<!--                <td class="table__content">Jouet Jean-Michel</td>-->
-<!--                <td class="table__content">25/09/2020</td>-->
-<!--            </tr>-->
-<!--            <tr class="table__row table__left">-->
-<!--                <td class="table__content">F20220915-002</td>-->
-<!--                <td class="table__content">15/09/2022</td>-->
-<!--                <td class="table__content">Dunder Mifflin</td>-->
-<!--                <td class="table__content">25/09/2020</td>-->
-<!--            </tr>-->
-<!--            <tr class="table__row table__left">-->
-<!--                <td class="table__content">F20220915-003</td>-->
-<!--                <td class="table__content">15/09/2022</td>-->
-<!--                <td class="table__content">Pierre Cailloux</td>-->
-<!--                <td class="table__content">25/09/2020</td>-->
-<!--            </tr>-->
-<!--            <tr class="table__row table__left">-->
-<!--                <td class="table__content">F20220915-004</td>-->
-<!--                <td class="table__content">15/09/2022</td>-->
-<!--                <td class="table__content">Pier Pipper</td>-->
-<!--                <td class="table__content">25/09/2020</td>-->
-<!--            </tr>-->
-<!--            <tr class="table__row table__left">-->
-<!--                <td class="table__content">F20220915-005</td>-->
-<!--                <td class="table__content">15/09/2022</td>-->
-<!--                <td class="table__content">Raviga</td>-->
-<!--                <td class="table__content">25/09/2020</td>-->
-<!--            </tr>-->
-<!--        </tbody>-->
-<!--    </table>-->
-<!--</div>-->

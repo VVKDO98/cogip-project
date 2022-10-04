@@ -15,16 +15,17 @@ class DashboardController extends Controller
         $dashboard = (new DashboardModel)->getAll();
         return $this->view('dashboard', $dashboard);
     }
-    public function addInvoice(){
-        $companies= (new CompaniesModel)->getAllCompanies();
-        $data = ["page"=>"addinvoice", $companies];
+    public function addInvoice($page=1){
+        $companies= (new CompaniesModel)->getAllCompanies(0);
+        $invoices= (new InvoicesModel)->getAllInvoices($page);
+        $data = ["page"=>"addinvoice", "companies" => $companies, "invoices" => $invoices];
         return $this->view("dashboard", $data);
     }
     public function addInvoicePost($ref, $price, $company){
         $post = (new InvoicesModel)->postInvoice($ref,$price,$company);
     }
     public function addContact(){
-        $companies= (new CompaniesModel)->getAllCompanies();
+        $companies= (new CompaniesModel)->getAllCompanies(0);
         $data = ["page"=>"addcontact",$companies];
         return $this->view("dashboard", $data);
     }

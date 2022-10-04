@@ -55,6 +55,7 @@
             </article>
             <?php
             if(isset( $data['page'])) {
+                include "../Resources/views/partials/tableFunction.php";
                 include "../Resources/views/partials/" . $data['page'] . ".php";
             }
             ?>
