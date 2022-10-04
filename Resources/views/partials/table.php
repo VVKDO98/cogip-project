@@ -1,5 +1,5 @@
 <?php
-    function insertTable($data)
+    function insertTable($data, $type)
     {
         $html = "<div class='table__box'>";
         $html .= "<h2 class='table__title'>" . $data['name'] . "</h2>";
@@ -15,7 +15,7 @@
         </thead>
         <tbody>";
         foreach ($data['datas'] as $item) {
-            $html .= "<tr class='table__row table__left' onclick=\"window.location.href='/company/$item->id'\">";
+            $html .= "<tr class='table__row table__left' onclick=\"window.location.href='/$type/$item->id'\">";
             foreach ($item as $key => $value) {
                 if ($key != "id") {
                     $html.="<td class='table__content' > $value </td >";
@@ -26,6 +26,8 @@
         $html .= "</tbody>
             </table>
         </div>";
+
+        return $html;
     }
 ?>
 
