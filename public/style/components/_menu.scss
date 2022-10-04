@@ -3,71 +3,76 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .nav__desktop{
-        width: 100%;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    .nav__menu{
+        width: 80%;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        .nav__left{
-            width: 20%;
-            .nav__logo{
-                height: 100%;
-            }
-        }
-        .nav__middle{
+        .nav__list{
             width: 60%;
-            .nav__list{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            list-style-type: none;
+            gap: 10%;
+            @include mobile{
                 display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 10%;
-                list-style: none;
+                flex-direction: column;
+                padding: 0;
+                gap: 20px;
+                margin-bottom: 100px;
             }
         }
-        .nav__right{
-            width: 20%;
-            .nav__login{
-                font-family: 'Roboto', sans-serif;
+        .nav__login{
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            list-style-type: none;
+            gap: 10%;
+            @include mobile{
                 display: flex;
-                flex-direction: row;
-                justify-content: flex-end;
-                align-items: center;
-                gap: 10%;
-                list-style: none;
+                flex-direction: column;
+                padding: 0;
+                gap: 20px;
             }
-            .nav__item--signup{
-                background-color: #fff;
-                padding: 10px 15px;
-                border-radius: 10px;
-                transition: all 0.1s ease;
-                &:hover{
-                    color: #fff;
-                    background-color: $colorBlack;
-                }
+        }
+        .nav__item{
+            text-decoration: none;
+            color: #000;
+            @include mobile{
+                font-size: 25px;
+                color: #000;
+                margin-bottom: 45px;
+                font-weight: 700;
             }
         }
         @include mobile{
             display: none;
+            width: 100vw;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            background-color: $colorYellow;
+            z-index: 100;
+            overscroll-behavior: contain;
         }
     }
-    .nav__burger{
+    #nav__burger{
         display: none;
-        img{
-            width: 40px;
-        }
         @include mobile{
-            display: flex;
+            display: block;
         }
     }
-    .nav__item{
-        font-family: 'Roboto', sans-serif;
-        font-weight: 600;
-        color: $colorBlack;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        &:hover{
-            color: #fff;
-        }
+    #nav__cross {
+        display: none;
+        width: 30px;
     }
 }
+
 
