@@ -22,7 +22,8 @@ class DashboardController extends Controller
         $post = (new InvoicesModel)->postInvoice($ref,$price,$company);
     }
     public function addContact(){
-        $data = ["page"=>"addcontact"];
+        $companies= (new CompaniesModel)->getAllCompanies();
+        $data = ["page"=>"addcontact",$companies];
         return $this->view("dashboard", $data);
     }
     public function addCompany(){

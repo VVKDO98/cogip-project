@@ -111,6 +111,7 @@ $router->post("/contact",function (){
 
     (new DashboardController)->addcontactPost($name,$surname,$email,$phone,$company);
     header("Location:/dashboard/addcontact");
+
 });
 
 $router->delete("/invoice", function (){
@@ -122,5 +123,7 @@ $router->delete("/invoice", function (){
 $router->set404(function (){
     (new errorController)->index();
 });
+
+
 
 $router->run();
