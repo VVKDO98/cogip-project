@@ -39,13 +39,31 @@ nav{
             }
         }
         .nav__item{
-            text-decoration: none;
             color: #000;
+            font-size: 20px;
+            font-weight: 600;
+            font-family: "Roboto", sans-serif;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: all 0.2s ease-in-out;
+            &:hover{
+                outline: 1px solid #000;
+            }
             @include mobile{
                 font-size: 25px;
                 color: #000;
                 margin-bottom: 45px;
                 font-weight: 700;
+            }
+            &--signup{
+                background-color: #fff;
+                padding: 10px 15px;
+                border-radius: 10px;
+                &:hover{
+                    outline: none;
+                    background-color: $colorBlack;
+                    color: #fff;
+                }
             }
         }
         @include mobile{
