@@ -28,4 +28,18 @@ class ContactsModel
         $pdo=null; //close the connection before return
         return $sql->fetchAll(\PDO::FETCH_CLASS);
     }
+
+    public function postContact($name,$surname,$email,$phone,$company){
+        $fullName = $name+' '+$surname;
+        $pdo = (new bdd)->connect();
+        $sql = $pdo->prepare("insert into contacts (name,email,phone,company_id,created_at,updated_at)
+                values(:name,:email,:phone,:company,now(),now())");
+        $sql->bindParam("name", $fullName,\PDO::PARAM_STR_CHAR);
+        $sql->bindParam("email", $email,\PDO::PARAM_STR_CHAR);
+        $sql->bindParam("phone", $phone,\PDO::PARAM_STR_CHAR);
+        $sql->bindParam("company", $company,\PDO::PARAM_INT);
+        $sql->execute();
+        $pdo = null;
+        return $sql;
+    }
 }
