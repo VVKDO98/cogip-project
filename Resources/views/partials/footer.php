@@ -44,7 +44,7 @@
             <div class="footer__menu">
                 <ul class="footer__list">
                     <li class="footer__item">Home</li>
-                    <li class="footer__item">Invoices</li>
+                    <li class="footer__item"><a href="invoices">Invoices</a></li>
                     <li class="footer__item">Compagnies</li>
                     <li class="footer__item">Contacts</li>
                 </ul>

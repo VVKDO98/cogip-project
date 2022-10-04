@@ -16,14 +16,48 @@ class InvoicesModel
         $sqlrow = $pdo->prepare("SELECT COUNT(id) as Count FROM invoices");
         $sqlrow->execute();
         $pdo=null; //close the connection before return
-        return array("name" => "All invoices", "datas" => $sql->fetchAll(\PDO::FETCH_CLASS), "rows" => $sqlrow->fetch());
+        return array("name" => "All invoices", "datas" => $sql->fetchAll(\PDO::FETCH_CLASS), "rows" => $sqlrow->fetch(), "page"=>$page);
     }
     public function getInvoiceById($id){
         $pdo= (new bdd)->connect();
-        $sql = $pdo->prepare('SELECT * FROM invoices LEFT JOIN companies ON invoices.id_company WHERE invoices.id = :id');
+        $sql = $pdo->prepare(
+            'SELECT 
+            i.id AS id,
+            i.ref AS Ref,
+            i.due_dates AS `Due dates`,
+            i.created_at AS `Created at`,
+            c.name AS Company
+            FROM invoices i 
+            LEFT JOIN companies c
+            ON i.id_company = c.id
+            WHERE i.id = :id');
         $sql->bindParam(':id', $id, \PDO::PARAM_INT);
         $sql->execute();
         $pdo=null; //close the connection before return
-        return $sql->fetch();
+        return $sql->fetchAll(\PDO::FETCH_CLASS);
+    }
+    public function postInvoice($ref, $price, $company){
+        $pdo= (new bdd)->connect();
+        $sql = $pdo->prepare(
+            'INSERT INTO invoices (ref, price, id_company, created_at, updated_at, due_dates)
+            VALUES (:ref, :price, :id_company, NOW(), NOW(), NOW())
+        ');
+        $sql->bindParam(':ref', $ref, \PDO::PARAM_STR_CHAR);
+        $sql->bindParam(':price', $price, \PDO::PARAM_INT);
+        $sql->bindParam(':id_company', $company, \PDO::PARAM_INT);
+        $sql->execute();
+        $pdo=null;
+        return $sql;
+    }
+
+    public function deleteInvoice($id){
+        $pdo= (new bdd)->connect();
+        $sql= $pdo->prepare('
+            DELETE FROM invoices WHERE id=?
+        ');
+        $sql->bindParam(':id', $id, \PDO::PARAM_INT);
+        $sql->execute();
+        $pdo=null;
+        return $sql;
     }
 }

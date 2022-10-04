@@ -1,0 +1,38 @@
+.four0four__body{
+  width: 100vw;
+  height: 100vh;
+  background-color: $colorYellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  .four0four__main{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .four0four__image{
+      width: 30%;
+    }
+    .four0four__title{
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .four0four__link{
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 900;
+      padding: 15px 50px;
+      background-color: $colorGrey;
+      color: #000;
+      transition: all 0.2s ease-in-out;
+      &:hover{
+        background-color: #000;
+        color: $colorGrey;
+      }
+    }
+  }
+}

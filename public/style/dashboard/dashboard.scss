@@ -1,0 +1,19 @@
+@import "../normalize","../variables","../fonts","header","banner", "dashform";
+
+body{
+    width: 100%;
+    background-color: $colorDashBG;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.dash__main{
+    width: 78%;
+    position: absolute;
+    right: 0;
+}

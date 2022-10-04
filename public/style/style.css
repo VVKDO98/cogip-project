@@ -319,6 +319,68 @@ p, table {
   font-family: "Roboto", sans-serif;
 }
 
+.login__body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F5F5FB;
+}
+.login__body .login__main {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.login__body .login__main h1 {
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 45px;
+}
+.login__body .login__main .login__form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.login__body .login__main .login__form .login__input {
+  height: 60px;
+  margin-bottom: 45px;
+  padding-left: 30px;
+  border: none;
+  background-color: #F5F5F5;
+  font-family: "Inter", sans-serif;
+  color: #000000;
+  border-radius: 3px;
+}
+.login__body .login__main .login__form .login__input:focus {
+  outline: 2px solid #9698D6;
+}
+.login__body .login__main .login__form #login__submit {
+  height: 60px;
+  border: 2px solid #9698D6;
+  background-color: #9698D6;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+.login__body .login__main .login__form #login__submit:hover {
+  background-color: #fff;
+  color: #000;
+}
+@media screen and (max-width: 480px) {
+  .login__body .login__main {
+    width: 80%;
+    height: 80%;
+  }
+}
+
 header {
   width: 100%;
   background-color: #F9DE4E;
@@ -708,6 +770,45 @@ footer p, footer li {
   footer {
     width: 100%;
   }
+}
+
+.four0four__body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F9DE4E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+.four0four__body .four0four__main {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.four0four__body .four0four__main .four0four__image {
+  width: 30%;
+}
+.four0four__body .four0four__main .four0four__title {
+  text-transform: uppercase;
+  text-align: center;
+}
+.four0four__body .four0four__main .four0four__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 15px 50px;
+  background-color: #F5F5F5;
+  color: #000;
+  transition: all 0.2s ease-in-out;
+}
+.four0four__body .four0four__main .four0four__link:hover {
+  background-color: #000;
+  color: #F5F5F5;
 }
 
 body {
