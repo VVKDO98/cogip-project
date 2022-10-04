@@ -102,6 +102,7 @@ $router->post("/companies",function (){
     header("Location:/dashboard/addcompany");
 });
 
+
 $router->post("/contact",function (){
     $name = $_POST["fname"];
     $surname = $_POST["lname"];
