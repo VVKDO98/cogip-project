@@ -71,13 +71,14 @@ footer{
                     gap: 15%;
                     list-style: none;
                     text-transform: uppercase;
+                    text-decoration: none;
                     .footer__item{
                         font-family: 'Inter', sans-serif;
-                        transition: all 0.3s ease;
+                        transition: all 0.2s ease;
+                        text-decoration: none;
+                        color: #737373;
                         &:hover{
                             color: $colorYellow;
-                            cursor: pointer;
-                            scale: 1.5;
                         }
                     }
                     @include mobile{

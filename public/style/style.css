@@ -754,15 +754,16 @@ footer .footer__bottom .footer__end .footer__menu .footer__list {
   gap: 15%;
   list-style: none;
   text-transform: uppercase;
+  text-decoration: none;
 }
 footer .footer__bottom .footer__end .footer__menu .footer__list .footer__item {
   font-family: "Inter", sans-serif;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: #737373;
 }
 footer .footer__bottom .footer__end .footer__menu .footer__list .footer__item:hover {
   color: #F9DE4E;
-  cursor: pointer;
-  scale: 1.5;
 }
 @media screen and (max-width: 480px) {
   footer .footer__bottom .footer__end .footer__menu .footer__list {
