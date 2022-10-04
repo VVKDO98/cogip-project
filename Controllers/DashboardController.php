@@ -4,8 +4,10 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Model\CompaniesModel;
+use App\Model\ContactsModel;
 use App\Model\DashboardModel;
 use App\Model\InvoicesModel;
+
 
 class DashboardController extends Controller
 {
@@ -34,7 +36,9 @@ class DashboardController extends Controller
     public function addCompanyPost($name,$country,$tva,$type){
         $post = (new CompaniesModel)->postCompany($name,$country,$tva,$type);
     }
-
+    public function addcontactPost($name,$surname,$email,$phone,$company){
+        $post = (new ContactsModel())->postContact($name,$surname,$email,$phone,$company);
+    }
     public function deleteInvoice($id){
         return (new InvoicesModel)->deleteInvoice($id);
     }
