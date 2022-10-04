@@ -30,7 +30,7 @@
                 <hr>
                 <div class="dash__logout__content">
                     <img src="/assets/img/ben.jpg" alt="" class="dash__imglogout">
-                    <a href="#" class="dash__nav__logout">Logout</a>
+                    <a href="/" class="dash__nav__logout">Logout</a>
                 </div>
             </div>
         </article>

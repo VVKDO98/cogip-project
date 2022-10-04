@@ -10,7 +10,7 @@
 </head>
 <body class="four0four__body">
     <main class="four0four__main">
-        <img src="assets/img/404.png" alt="Astro 404" class="four0four__image">
+        <img src="/assets/img/404.png" alt="Astro 404" class="four0four__image">
         <h2 class="four0four__title">Page Not Found</h2>
         <a href="/" class="four0four__link">Back Home</a>
     </main>
