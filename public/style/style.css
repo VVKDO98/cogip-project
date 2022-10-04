@@ -524,8 +524,16 @@ nav .nav__menu .nav__login {
   }
 }
 nav .nav__menu .nav__item {
-  text-decoration: none;
   color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: all 0.2s ease-in-out;
+}
+nav .nav__menu .nav__item:hover {
+  outline: 1px solid #000;
 }
 @media screen and (max-width: 480px) {
   nav .nav__menu .nav__item {
@@ -534,6 +542,16 @@ nav .nav__menu .nav__item {
     margin-bottom: 45px;
     font-weight: 700;
   }
+}
+nav .nav__menu .nav__item--signup {
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+nav .nav__menu .nav__item--signup:hover {
+  outline: none;
+  background-color: #000000;
+  color: #fff;
 }
 @media screen and (max-width: 480px) {
   nav .nav__menu {
@@ -736,15 +754,16 @@ footer .footer__bottom .footer__end .footer__menu .footer__list {
   gap: 15%;
   list-style: none;
   text-transform: uppercase;
+  text-decoration: none;
 }
 footer .footer__bottom .footer__end .footer__menu .footer__list .footer__item {
   font-family: "Inter", sans-serif;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: #737373;
 }
 footer .footer__bottom .footer__end .footer__menu .footer__list .footer__item:hover {
   color: #F9DE4E;
-  cursor: pointer;
-  scale: 1.5;
 }
 @media screen and (max-width: 480px) {
   footer .footer__bottom .footer__end .footer__menu .footer__list {

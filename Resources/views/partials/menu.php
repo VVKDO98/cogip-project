@@ -1,5 +1,5 @@
 <nav>
-    <img class="nav__logo" src="/assets/img/logoClean.png" alt="Logo COGIP"/>
+    <a href="/"><img class="nav__logo" src="/assets/img/logoClean.png" alt="Logo COGIP"/></a>
     <div class="nav__menu">
         <ul class="nav__list">
             <li><a href="/" class="nav__item">Home</a></li>

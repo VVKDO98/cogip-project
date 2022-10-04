@@ -43,10 +43,10 @@
         <div class="footer__end">
             <div class="footer__menu">
                 <ul class="footer__list">
-                    <li class="footer__item">Home</li>
-                    <li class="footer__item"><a href="invoices">Invoices</a></li>
-                    <li class="footer__item">Compagnies</li>
-                    <li class="footer__item">Contacts</li>
+                    <li><a href="/" class="footer__item">Home</a></li>
+                    <li><a href="/invoices" class="footer__item">Invoices</a></li>
+                    <li><a href="/companies" class="footer__item">Companies</a></li>
+                    <li><a href="/contacts" class="footer__item">Contacts</a></li>
                 </ul>
             </div>
             <div class="footer__copyright">
