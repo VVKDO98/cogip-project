@@ -16,9 +16,9 @@
         <!-- Content -->
         <?php require ('../Resources/views/partials/tableFunction.php');?>
         <?php
-            echo insertTable($data['invoices'], "invoice");
-            echo insertTable($data['companies'], "companies");
-            echo insertTable($data['contacts'], "contacts");
+            echo insertTable($data['invoices'], "Last invoice");
+            echo insertTable($data['companies'], "Last companies");
+            echo insertTable($data['contacts'], "Last contacts");
         ?>
         <!-- End Content -->
     </main>
