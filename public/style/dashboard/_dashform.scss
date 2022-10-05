@@ -21,59 +21,67 @@
     border: 1px solid #E0E0E0;
     margin-bottom: 40px;
   }
-  .dashform__form{
-    width: 90%;
+  #tabs{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    .dashform__input{
-      height: 60px;
-      margin-bottom: 45px;
-      padding-left: 30px;
-      border: none;
-      background-color: $colorGrey;
-      color: #000000;
-      &:focus{
-        outline: 2px solid $colorPurple;
-        border-radius: 3px;
-      }
-    }
-    .dashform__select{
-      height: 60px;
-      margin-bottom: 45px;
-      padding-left: 30px;
-      border: none;
-      background-color: $colorGrey;
-      color: #000000;
-    }
-    .dashform__file{
-      margin-bottom: 45px;
-      &::file-selector-button{
+    align-items: center;
+
+    .dashform__form{
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      .dashform__input{
         height: 60px;
-        width: 25%;
-        margin-right: 15px;
+        margin-bottom: 45px;
+        padding-left: 30px;
+        border: none;
         background-color: $colorGrey;
-      border: none;
+        color: #000000;
+        &:focus{
+          outline: 2px solid $colorPurple;
+          border-radius: 3px;
+        }
+      }
+      .dashform__select{
+        height: 60px;
+        margin-bottom: 45px;
+        padding-left: 30px;
+        border: none;
+        background-color: $colorGrey;
+        color: #000000;
+      }
+      .dashform__file{
+        margin-bottom: 45px;
+        &::file-selector-button{
+          height: 60px;
+          width: 25%;
+          margin-right: 15px;
+          background-color: $colorGrey;
+          border: none;
+          transition: all 0.2s ease-in-out;
+          &:hover{
+            background-color: $colorPurple;
+            color: #fff;
+          }
+        }
+      }
+      .dashform__submit{
+        height: 60px;
+        width: 100%;
+        margin-bottom: 45px;
+        padding-left: 30px;
+        background-color: $colorPurple;
+        color: #fff;
+        border: none;
+        text-align: left;
         transition: all 0.2s ease-in-out;
         &:hover{
-          background-color: $colorPurple;
-          color: #fff;
+          background-color: $colorGrey;
+          color: #000;
         }
       }
     }
-    .dashform__submit{
-      height: 60px;
-      width: 100%;
-      margin-bottom: 45px;
-      padding-left: 30px;
-      background-color: $colorPurple;
-      color: #fff;
-      border: none;
-      text-align: left;
-      transition: all 0.2s ease-in-out;
-      &:hover{
-        background-color: $colorGrey;
-        color: #000;
-      }
-    }
   }
+
 }

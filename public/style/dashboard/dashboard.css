@@ -481,12 +481,18 @@ p, table {
   border: 1px solid #E0E0E0;
   margin-bottom: 40px;
 }
-.dashform__main .dashform__form {
+.dashform__main #tabs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dashform__main #tabs .dashform__form {
   width: 90%;
   display: flex;
   flex-direction: column;
 }
-.dashform__main .dashform__form .dashform__input {
+.dashform__main #tabs .dashform__form .dashform__input {
   height: 60px;
   margin-bottom: 45px;
   padding-left: 30px;
@@ -494,11 +500,11 @@ p, table {
   background-color: #F5F5F5;
   color: #000000;
 }
-.dashform__main .dashform__form .dashform__input:focus {
+.dashform__main #tabs .dashform__form .dashform__input:focus {
   outline: 2px solid #9698D6;
   border-radius: 3px;
 }
-.dashform__main .dashform__form .dashform__select {
+.dashform__main #tabs .dashform__form .dashform__select {
   height: 60px;
   margin-bottom: 45px;
   padding-left: 30px;
@@ -506,10 +512,10 @@ p, table {
   background-color: #F5F5F5;
   color: #000000;
 }
-.dashform__main .dashform__form .dashform__file {
+.dashform__main #tabs .dashform__form .dashform__file {
   margin-bottom: 45px;
 }
-.dashform__main .dashform__form .dashform__file::file-selector-button {
+.dashform__main #tabs .dashform__form .dashform__file::file-selector-button {
   height: 60px;
   width: 25%;
   margin-right: 15px;
@@ -517,11 +523,11 @@ p, table {
   border: none;
   transition: all 0.2s ease-in-out;
 }
-.dashform__main .dashform__form .dashform__file::file-selector-button:hover {
+.dashform__main #tabs .dashform__form .dashform__file::file-selector-button:hover {
   background-color: #9698D6;
   color: #fff;
 }
-.dashform__main .dashform__form .dashform__submit {
+.dashform__main #tabs .dashform__form .dashform__submit {
   height: 60px;
   width: 100%;
   margin-bottom: 45px;
@@ -532,7 +538,7 @@ p, table {
   text-align: left;
   transition: all 0.2s ease-in-out;
 }
-.dashform__main .dashform__form .dashform__submit:hover {
+.dashform__main #tabs .dashform__form .dashform__submit:hover {
   background-color: #F5F5F5;
   color: #000;
 }
