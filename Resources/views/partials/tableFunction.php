@@ -64,22 +64,24 @@
                     break;
             }
 
-                if($data['rows'][0]>10){
+            if($data['rows'][0]>10){
                 $nbrPage = ceil($data['rows'][0]/10);
 
-            $html .= '<nav id="pagination" >';
+                $html .= '<nav id="pagination" >';
 
-             $classprev = $data['page']>1?"":"inactive";
-            $html .=    '<a id="pagination--prev" class="'.$classprev.'" href="'.$root.$link.'/'.($data['page']-1).'#table-'.str_replace(' ', '', $type).'"> < </a>';
+                $classprev = $data['page']>1?"":"inactive";
+                $prevlink = $data['page']>1? 'href='.$root.$link.'/'.($data['page']-1).'#table-'.str_replace(' ', '', $type):"";
+                $html .=    '<a id="pagination--prev" class="'.$classprev.'" '.$prevlink.'> < </a>';
 
                 for ($i = 1; $i <= $nbrPage; $i++) {
                     if($i == $data['page']){$active = "page-active";}else($active = "");
-            $html .= '<a id="page-'.$i.'" class="'.$active.'" href="'.$root.$link.'/'.$i.'#table-'.str_replace(' ', '', $type).'">'.$i.' </a>';
+                    $html .= '<a id="page-'.$i.'" class="'.$active.'" href="'.$root.$link.'/'.$i.'#table-'.str_replace(' ', '', $type).'">'.$i.' </a>';
                  }
 
                 $classnext = $data['page']<$nbrPage? "": "inactive";
+                $nextlink = $data['page']<$nbrPage? 'href='.$root.$link.'/'.($data['page']+1).'#table-'.str_replace(' ', '', $type):"";
 
-                $html .= '<a id="pagination--next" class="'.$classnext.'" href="'.$root.$link.'/'.($data['page']+1).'#table-'.str_replace(' ', '', $type).'"> > </a>';
+                $html .= '<a id="pagination--next" class="'.$classnext.'" '.$nextlink.'> > </a>';
                 $html .= '</nav>';
              }
         }

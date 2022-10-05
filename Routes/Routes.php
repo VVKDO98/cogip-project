@@ -57,7 +57,7 @@ $router->get('/dashboard', function(){
     (new DashboardController)->index();
 });
 
-$router->before("POST|GET","/dashboard/.*",function (){
+$router->before("POST|GET","/dashboard/*.*",function (){
     if(!isset($_SESSION["user"])){
         header("location:/login");
         exit();
@@ -84,7 +84,7 @@ $router->get("/login",function (){
     (new LoginController)->index();
 });
 $router->get("/logout", function(){
-    $_SESSION = "";
+    unset($_SESSION['user']);
     header('Location:/');
     exit();
 });
