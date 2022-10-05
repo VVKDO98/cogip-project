@@ -11,24 +11,16 @@ class LoginController extends Controller
         return $this->view('login');
     }
     public function login($email,$password){
-        $check = (new LoginModel)->checkEmail();
-        if( $check[0]["email"] === $email ) {
+        try{
             $datauser = (new LoginModel)->getCredential($email);
-    //        echo $datauser[0]["password"] === $password?"true":"false";
-
-            if ($datauser[0]["password"] === $password) {
-                $_SESSION['user'] = ["name" => $datauser[0]["first_name"], "last" => $datauser[0]["last_name"], "email" => $datauser[0]["email"], "role_id" => $datauser[0]["role_id"]];
+            if ($datauser["password"] === $password) {
+                $_SESSION['user'] = ["name" => $datauser["first_name"], "last" => $datauser["last_name"], "email" => $datauser["email"], "role_id" => $datauser["role_id"]];
                 header("location:/dashboard");
-
-            } else {
+            }else {
                 header("location:/login?error=1");
             }
-        }
-        else {
-
+        }catch (\Exception $error){
             header("location:/login?error=1");
-
         }
-
     }
 }

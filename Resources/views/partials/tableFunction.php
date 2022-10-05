@@ -9,9 +9,17 @@
             $link = $type;
         }
 
+        switch ($type){
+            case "All contacts": $link = "contact";$title = $type;break;
+            case "All invoices": $link = "invoice";$title = $type; break;
+            case "All companies": $link = "company";$title = $type; break;
+            case str_contains($type, 'add'): $link = "dashboard/$type"; break;
+            default : $link = $type; $title = $type; break;
+        }
+
         $data_content = $data['datas'];
         $html = "<div class='table__box'>";
-        $html .= "<h2 class='table__title' id='table-".$type."'>" . $type . "</h2>";
+        $html .= "<h2 class='table__title' id='table-".str_replace(' ', '', $type)."'>" . $title . "</h2>";
         $html .= "<table class='table__main'>";
         $html .= "<thead class='table__header'>";
         $html .= "<tr class='table__left'>";
@@ -43,20 +51,35 @@
 
          //pagination
         if($pagination && isset($data['rows'])){
+
+            switch ($type) {
+                case "All contacts":
+                    $link = "contacts";
+                    break;
+                case "All invoices":
+                    $link = "invoices";
+                    break;
+                case "All companies":
+                    $link = "companies";
+                    break;
+            }
+
                 if($data['rows'][0]>10){
                 $nbrPage = ceil($data['rows'][0]/10);
 
             $html .= '<nav id="pagination" >';
-                 if ($data['page']>1){
-            $html .=    '<span id="pagination--prev"><a href="'.$root.$link.'/'.($data['page']-1).'#table-'.$type.'"> Prev </a></span>';
-                 }
+
+             $classprev = $data['page']>1?"":"inactive";
+            $html .=    '<a id="pagination--prev" class="'.$classprev.'" href="'.$root.$link.'/'.($data['page']-1).'#table-'.str_replace(' ', '', $type).'"> < </a>';
+
                 for ($i = 1; $i <= $nbrPage; $i++) {
                     if($i == $data['page']){$active = "page-active";}else($active = "");
-            $html .= '<span id="page-'.$i.'" class="'.$active.'"><a href="'.$root.$link.'/'.$i.'#table-'.$type.'">'.$i.' </a></span>';
+            $html .= '<a id="page-'.$i.'" class="'.$active.'" href="'.$root.$link.'/'.$i.'#table-'.str_replace(' ', '', $type).'">'.$i.' </a>';
                  }
-                if ($data['page']<$nbrPage){
-                    $html .= '<span id="pagination--next"><a href="'.$root.$link.'/'.($data['page']+1).'#table-'.$type.'"> Next </a></span>';
-                 }
+
+                $classnext = $data['page']<$nbrPage? "": "inactive";
+
+                $html .= '<a id="pagination--next" class="'.$classnext.'" href="'.$root.$link.'/'.($data['page']+1).'#table-'.str_replace(' ', '', $type).'"> > </a>';
                 $html .= '</nav>';
              }
         }
