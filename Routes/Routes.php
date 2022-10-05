@@ -10,6 +10,7 @@ use App\Controllers\InvoicesController;
 use App\Controllers\DashboardController;
 use App\Controllers\LoginController;
 use Bramus\Router\Router;
+use GUMP;
 
 $router = new Router();
 
@@ -90,9 +91,29 @@ $router->get("/logout", function(){
 });
 
 $router->post("/login",function(){
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    (new LoginController)->login($email,$password);
+    $gump = new GUMP();
+    $gump->validation_rules([
+        'email' => 'required|valid_email',
+        'password' => 'required|max_len,50|min_len,4'
+    ]);
+
+    $gump->set_fields_error_messages([
+        'email'      => ['required' => 'Fill the Email field please, its required.'],
+        'password'   => ['required' => 'Please enter a valid password card.']
+    ]);
+
+    $valid_data = $gump->run($_POST);
+
+    if($gump->errors()){
+        $errors=$gump->get_readable_errors();
+        header('Location:/login?error='.$errors[0]);
+//        var_dump($errors);
+        exit();
+    }else{
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        (new LoginController)->login($email,$password);
+    }
 });
 $router->post( '/invoice', function () {
     $ref=$_POST["ref"];
@@ -100,6 +121,7 @@ $router->post( '/invoice', function () {
     $company=$_POST["company"];
     (new DashboardController)->addInvoicePost($ref,$price,$company);
     header('location:/dashboard/addinvoice');
+    exit();
 });
 
 $router->post("/companies",function (){
@@ -109,6 +131,7 @@ $router->post("/companies",function (){
     $type=$_POST["type"];
     (new DashboardController)->addCompanyPost($name,$country,$tva,$type);
     header("Location:/dashboard/addcompany");
+    exit();
 });
 
 $router->post("/contact",function (){
@@ -120,6 +143,7 @@ $router->post("/contact",function (){
 
     (new DashboardController)->addcontactPost($name,$surname,$email,$phone,$company);
     header("Location:/dashboard/addcontact");
+    exit();
 
 });
 
@@ -127,6 +151,7 @@ $router->delete("/invoice", function (){
     $id=$_POST['id'];
     (new DashboardController)->deleteInvoice($id);
     header('location:/dashboard/addinvoice');
+    exit();
 });
 
 $router->set404(function (){

@@ -3,12 +3,11 @@
     {
         $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';
 
-        if(str_contains($type, 'add')){
-            $link = "dashboard/$type";
-        }else{
-            $link = $type;
-        }
-
+//        if(str_contains($type, 'add')){
+//            $link = "dashboard/$type";
+//        }else{
+//            $link = $type;
+//        }
         switch ($type){
             case "All contacts": $link = "contact";$title = $type;break;
             case "All invoices": $link = "invoice";$title = $type; break;
@@ -16,7 +15,6 @@
             case str_contains($type, 'add'): $link = "dashboard/$type";$title = str_replace('add', '', $type); break;
             default : $link = $type; $title = $type; break;
         }
-
         $data_content = $data['datas'];
         $html = "<div class='table__box'>";
         $html .= "<h2 class='table__title' id='table-".str_replace(' ', '', $type)."'>" . $title . "</h2>";
