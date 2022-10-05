@@ -83,6 +83,11 @@ $router->get("/dashboard/addcompany", function (){
 $router->get("/login",function (){
     (new LoginController)->index();
 });
+$router->get("/logout", function(){
+    $_SESSION = "";
+    header('Location:/');
+    exit();
+});
 
 $router->post("/login",function(){
     $email = $_POST["email"];

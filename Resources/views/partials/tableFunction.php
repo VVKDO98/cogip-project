@@ -47,16 +47,18 @@
                 $nbrPage = ceil($data['rows'][0]/10);
 
             $html .= '<nav id="pagination" >';
-                 if ($data['page']>1){
-            $html .=    '<span id="pagination--prev"><a href="'.$root.$link.'/'.($data['page']-1).'#table-'.$type.'"> Prev </a></span>';
-                 }
+
+             $classprev = $data['page']>1?"":"inactive";
+            $html .=    '<a id="pagination--prev" class="'.$classprev.'" href="'.$root.$link.'/'.($data['page']-1).'#table-'.$type.'"> < </a>';
+
                 for ($i = 1; $i <= $nbrPage; $i++) {
                     if($i == $data['page']){$active = "page-active";}else($active = "");
-            $html .= '<span id="page-'.$i.'" class="'.$active.'"><a href="'.$root.$link.'/'.$i.'#table-'.$type.'">'.$i.' </a></span>';
+            $html .= '<a id="page-'.$i.'" class="'.$active.'" href="'.$root.$link.'/'.$i.'#table-'.$type.'">'.$i.' </a>';
                  }
-                if ($data['page']<$nbrPage){
-                    $html .= '<span id="pagination--next"><a href="'.$root.$link.'/'.($data['page']+1).'#table-'.$type.'"> Next </a></span>';
-                 }
+
+                $classnext = $data['page']<$nbrPage? "": "inactive";
+
+                $html .= '<a id="pagination--next" class="'.$classnext.'" href="'.$root.$link.'/'.($data['page']+1).'#table-'.$type.'"> > </a>';
                 $html .= '</nav>';
              }
         }
