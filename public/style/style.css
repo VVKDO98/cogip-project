@@ -698,6 +698,14 @@ table .table__last {
   outline: 2px solid #F9DE4E;
   color: #F9DE4E;
 }
+#pagination .inactive {
+  background-color: #919EAB;
+  color: #F9DE4E;
+  outline: none;
+}
+#pagination #pagination--prev, #pagination #pagination--next {
+  color: #F9DE4E;
+}
 
 footer {
   width: 80%;

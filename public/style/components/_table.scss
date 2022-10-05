@@ -96,4 +96,12 @@ table{
         outline: 2px solid $colorYellow;
         color: $colorYellow;
     }
+    .inactive{
+        background-color: #919EAB;
+        color: $colorYellow;
+        outline: none;
+    }
+    #pagination--prev,#pagination--next{
+        color: $colorYellow;
+    }
 }
