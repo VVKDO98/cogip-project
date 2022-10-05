@@ -14,7 +14,6 @@ table{
     font-weight: 600;
     border-collapse: collapse;
     width: fit-content;
-    
     .table__header::after{
         position: absolute;
         transform: translateY(-100%);
@@ -71,6 +70,38 @@ table{
     .table__last{
         width: 20%;
     }
-    
-    
+}
+
+#pagination{
+    width: 35%;
+    margin: 50px auto 0 auto;
+    a{
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        padding: 9px 15px;
+        outline: 2px solid #DFE3E8;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #000;
+        &:hover{
+            outline: 2px solid $colorYellow;
+            color: $colorYellow;
+        }
+    }
+    .page-active{
+        padding-top: 9px;
+        padding-bottom: 9px;
+        border-radius: 10px;
+        outline: 2px solid $colorYellow;
+        color: $colorYellow;
+    }
+    .inactive{
+        background-color: #919EAB;
+        color: $colorYellow;
+        outline: none;
+    }
+    #pagination--prev,#pagination--next{
+        color: $colorYellow;
+    }
 }

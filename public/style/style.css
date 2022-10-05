@@ -673,6 +673,40 @@ table .table__last {
   width: 20%;
 }
 
+#pagination {
+  width: 35%;
+  margin: 50px auto 0 auto;
+}
+#pagination a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 9px 15px;
+  outline: 2px solid #DFE3E8;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #000;
+}
+#pagination a:hover {
+  outline: 2px solid #F9DE4E;
+  color: #F9DE4E;
+}
+#pagination .page-active {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-radius: 10px;
+  outline: 2px solid #F9DE4E;
+  color: #F9DE4E;
+}
+#pagination .inactive {
+  background-color: #919EAB;
+  color: #F9DE4E;
+  outline: none;
+}
+#pagination #pagination--prev, #pagination #pagination--next {
+  color: #F9DE4E;
+}
+
 footer {
   width: 80%;
   margin: auto;
