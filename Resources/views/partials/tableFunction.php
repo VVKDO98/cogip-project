@@ -13,7 +13,7 @@
             case "All contacts": $link = "contact";$title = $type;break;
             case "All invoices": $link = "invoice";$title = $type; break;
             case "All companies": $link = "company";$title = $type; break;
-            case str_contains($type, 'add'): $link = "dashboard/$type"; break;
+            case str_contains($type, 'add'): $link = "dashboard/$type";$title = str_replace('add', '', $type); break;
             default : $link = $type; $title = $type; break;
         }
 
