@@ -8,7 +8,7 @@ class HomeModel
 {
     public function getLastInvoices($row=5){
         $pdo= (new bdd)->connect();
-        $sql = $pdo->prepare('SELECT * FROM invoices LEFT JOIN companies ON invoices.id_company = companies.id ORDER BY invoices.created_at DESC LIMIT :limit');
+        $sql = $pdo->prepare('SELECT *  FROM invoices LEFT JOIN companies ON invoices.id_company = companies.id ORDER BY invoices.created_at DESC LIMIT :limit');
         $sql->bindParam(':limit', $row, \PDO::PARAM_INT);
         $sql->execute();
         $pdo=null; //close the connection before return
