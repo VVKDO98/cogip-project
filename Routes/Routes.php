@@ -9,6 +9,7 @@ use App\Controllers\HomeController;
 use App\Controllers\InvoicesController;
 use App\Controllers\DashboardController;
 use App\Controllers\LoginController;
+use App\Model\ContactsModel;
 use Bramus\Router\Router;
 
 $router = new Router();
@@ -112,15 +113,15 @@ $router->post("/companies",function (){
 });
 
 $router->post("/contact",function (){
-    $name = $_POST["fname"];
-    $surname = $_POST["lname"];
-    $email = $_POST["email"];
-    $phone = $_POST["phone"];
-    $company = $_POST["company"];
 
-    (new DashboardController)->addcontactPost($name,$surname,$email,$phone,$company);
-    header("Location:/dashboard/addcontact");
-
+        $name = $_POST["fname"];
+        $surname = $_POST["lname"];
+        $email = $_POST["email"];
+        $phone = $_POST["phone"];
+        $company = $_POST["company"];
+        $img = $_FILES["image"];
+        (new DashboardController)->addcontactPost($name,$surname,$email,$phone,$company,$img);
+        header("Location:/dashboard/addcontact");
 });
 
 $router->delete("/invoice", function (){
