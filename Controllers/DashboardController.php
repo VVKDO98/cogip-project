@@ -37,8 +37,8 @@ class DashboardController extends Controller
     public function addCompanyPost($name,$country,$tva,$type){
         $post = (new CompaniesModel)->postCompany($name,$country,$tva,$type);
     }
-    public function addcontactPost($name,$surname,$email,$phone,$company){
-        $post = (new ContactsModel())->postContact($name,$surname,$email,$phone,$company);
+    public function addcontactPost($name, $surname, $email, $phone, $company, $img){
+        $post = (new ContactsModel())->postContact($name,$surname,$email,$phone,$company,$img);
     }
     public function deleteInvoice($id){
         return (new InvoicesModel)->deleteInvoice($id);
