@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\connect\bdd;
+use Exception;
 
 class ContactsModel
 {
@@ -31,17 +32,50 @@ class ContactsModel
         $pdo=null; //close the connection before return
         return $sql->fetchAll(\PDO::FETCH_CLASS);
     }
-    public function postContact($name,$surname,$email,$phone,$company){
-        $fullName = $name+' '+$surname;
+    public function postContact($name, $surname, $email, $phone, $company, $img){
+        $fullName = $name." ".$surname;
+        $this->newFile($img);
+        $nameImg = $img["name"];
         $pdo = (new bdd)->connect();
-        $sql = $pdo->prepare("insert into contacts (name,email,phone,company_id,created_at,updated_at)
-                values(:name,:email,:phone,:company,now(),now())");
+        $sql = $pdo->prepare("insert into contacts (name,email,phone,company_id,avatar,created_at,updated_at)
+                values(:name,:email,:phone,:company,:avatar,now(),now())");
         $sql->bindParam("name", $fullName,\PDO::PARAM_STR_CHAR);
         $sql->bindParam("email", $email,\PDO::PARAM_STR_CHAR);
         $sql->bindParam("phone", $phone,\PDO::PARAM_STR_CHAR);
         $sql->bindParam("company", $company,\PDO::PARAM_INT);
+        $sql->bindParam("avatar",$nameImg,\PDO::PARAM_STR_CHAR);
         $sql->execute();
         $pdo = null;
         return $sql;
+    }
+
+
+    function newFile($file){
+        $this->upload($file);
+    }
+    /**
+     * @throws Exception
+     */
+    function upload($image){
+        if(!$this->isImage($image["tmp_name"])){
+           throw new Exception("error tmp name");
+        }
+        if(!in_array(mime_content_type($image["tmp_name"]), ["image/jpeg", "image/gif", "image/png"])){
+            throw new Exception("image please");
+        }
+        $pathImg = $this->path($image["name"]);
+        if(!move_uploaded_file($image["tmp_name"],$pathImg)){
+            throw new Exception("path error");
+        }
+
+    }
+
+    function isImage(string $image) :bool {
+        return @is_array(getimagesize($image));
+    }
+
+    function path($imageName){
+        $path = "./assets/img/" . $imageName ;
+        return $path;
     }
 }
