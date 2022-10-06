@@ -1,0 +1,86 @@
+.tableWrapper{
+  width: 90%;
+  .table__box{
+    width: 100%;
+    .table__title{
+      margin: 0 0 15px 0;
+    }
+  }
+  .table__main{
+    width: 100%;
+    margin-bottom: 45px;
+    .table__head{
+      padding: 15px 0;
+      text-align: left;
+    }
+    .table__content{
+      padding: 10px 0;
+    }
+  }
+}
+
+.deletebutton{
+  background-color: #fff;
+  border: none;
+  img{
+    width: 25px;
+  }
+}
+
+.tableMainWrapper{
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .table__box{
+    width: 49%;
+    height: 100%;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+}
+
+#pagination{
+  width: 100%;
+  margin: 0 auto 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  a{
+    margin: 0 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 9px 15px;
+    outline: 2px solid #DFE3E8;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #000;
+    &:hover{
+      outline: 2px solid $colorPurple;
+      color: $colorPurple;
+    }
+  }
+  .page-active{
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-radius: 10px;
+    outline: 2px solid $colorPurple;
+    color: $colorPurple;
+  }
+  .inactive{
+    background-color: #919EAB;
+    color: #fff;
+    outline: none;
+    &:hover{
+      background-color: $colorPurple;
+      color: #fff;
+      outline: none;
+    }
+  }
+  #pagination--prev,#pagination--next{
+    color: #000;
+  }
+}

@@ -14,7 +14,7 @@
             <input type="submit" value="Submit" class="dashform__submit">
         </form>
 
-        <div id="listinvoice">
+        <div id="listinvoice" class="tableWrapper">
             <?php echo insertTable( $data['invoices'],'addinvoice')?>
         </div>
     </div>

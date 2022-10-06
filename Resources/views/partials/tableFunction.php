@@ -27,7 +27,7 @@
             }
         }
         if (isset($dashboard)) {
-            $html .= "<th>*</th>";
+            $html .= "<th></th>";
         }
         $html .= "</tr>
         </thead>
@@ -40,7 +40,7 @@
                 }
             }
             if(isset($dashboard)){
-                $html .= "<td class='table__content' > <form method='post' action='/del/$title' ><input type='hidden' name='id' value='$item->id' ><button type='submit'>Del</button> </form></td>";
+                $html .= "<td class='table__content' > <form method='post' action='/del/$title' ><input type='hidden' name='id' value='$item->id'><button type='submit' class='deletebutton'><img src='../../assets/img/remove.png'></button></form></td>";
             }
             $html .= "</tr>";
         }
