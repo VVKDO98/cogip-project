@@ -117,37 +117,76 @@ $router->post("/login",function(){
     }
 });
 $router->post( '/invoice', function () {
-    $ref=$_POST["ref"];
-    $price=$_POST["price"];
-    $company=$_POST["company"];
-    (new DashboardController)->addInvoicePost($ref,$price,$company);
-    header('location:/dashboard/addinvoice');
-    exit();
+    $gump =new GUMP();
+    $gump->validation_rules([
+        "ref" => "required|max_len,50|min_len,4",
+        "price" => "required|float",
+        "company" => "required|integer"
+    ]);
+    if ($gump->errors()){
+        $error = "invalid entry";
+        header("location:/dashboard/addinvoice?error=".$error);
+    }
+    else{
+        $ref = $_POST["ref"];
+        $price = $_POST["price"];
+        $company = $_POST["company"];
+        (new DashboardController)->addInvoicePost($ref, $price, $company);
+        header('location:/dashboard/addinvoice');
+        exit();
+    }
 });
 
 $router->post("/companies",function (){
-    $name=$_POST["company"];
-    $country=$_POST["country"];
-    $tva=$_POST["tva"];
-    $type=$_POST["type"];
-    (new DashboardController)->addCompanyPost($name,$country,$tva,$type);
-    header("Location:/dashboard/addcompany");
-    exit();
+    $gump = new GUMP();
+    $gump->validation_rules([
+        "name"=>"required|max_len,50|min_len,4",
+        "country"=>"required|max_len,50|min_len,4",
+        "tva" => "required|max_len,50|min_len,4",
+        "type"=> "required|integer"
+    ]);
+    if ($gump->errors()){
+        $error = "invalid entry";
+        header("location:/dashboard/addcompany?error=".$error);
+    }
+    else{
+        $name = $_POST["company"];
+        $country = $_POST["country"];
+        $tva = $_POST["tva"];
+        $type = $_POST["type"];
+        (new DashboardController)->addCompanyPost($name, $country, $tva, $type);
+        header("Location:/dashboard/addcompany");
+        exit();
+    }
 });
 
 $router->post("/contact",function (){
-
-    $name = $_POST["fname"];
-    $surname = $_POST["lname"];
-    $email = $_POST["email"];
-    $phone = $_POST["phone"];
-    $company = $_POST["company"];
-    $img = $_FILES["image"];
-    if (!filter_var($email,FILTER_VALIDATE_EMAIL)){
-       throw new Exception("Invalide data");
+    $gump = new GUMP();
+    $gump->validation_rules([
+        "fname"=>"required|max_len,50|min_len,4",
+        "lname"=>"required|max_len,50|min_len,4",
+        "email"=>"required|valid_email",
+        "phone"=>"required|max_len,50|min_len,4",
+        "company"=>"required|integer",
+        "image" => "required|required_file|extension,png;jpg;gif"
+    ]);
+    if ($gump->errors()){
+        $error = "invalid entry";
+        header("location:/dashboard/addcontact?error=".$error);
     }
-    (new DashboardController)->addcontactPost($name,$surname,$email,$phone,$company,$img);
-    header("Location:/dashboard/addcontact");
+    else{
+        $name = $_POST["fname"];
+        $surname = $_POST["lname"];
+        $email = $_POST["email"];
+        $phone = $_POST["phone"];
+        $company = $_POST["company"];
+        $img = $_FILES["image"];
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            throw new Exception("Invalide data");
+        }
+        (new DashboardController)->addcontactPost($name, $surname, $email, $phone, $company, $img);
+        header("Location:/dashboard/addcontact");
+    }
 });
 
 $router->delete("/invoice", function (){
