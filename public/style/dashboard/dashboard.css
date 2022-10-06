@@ -650,24 +650,24 @@ p, table {
   color: #000;
 }
 
-#listinvoice {
+.tableWrapper {
   width: 90%;
 }
-#listinvoice .table__box {
+.tableWrapper .table__box {
   width: 100%;
 }
-#listinvoice .table__box .table__title {
+.tableWrapper .table__box .table__title {
   margin: 0 0 15px 0;
 }
-#listinvoice .table__main {
+.tableWrapper .table__main {
   width: 100%;
   margin-bottom: 45px;
 }
-#listinvoice .table__main .table__head {
+.tableWrapper .table__main .table__head {
   padding: 15px 0;
   text-align: left;
 }
-#listinvoice .table__main .table__content {
+.tableWrapper .table__main .table__content {
   padding: 10px 0;
 }
 
@@ -677,6 +677,21 @@ p, table {
 }
 .deletebutton img {
   width: 25px;
+}
+
+.tableMainWrapper {
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.tableMainWrapper .table__box {
+  width: 49%;
+  height: 100%;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
 #pagination {

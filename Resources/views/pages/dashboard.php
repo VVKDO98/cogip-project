@@ -60,7 +60,7 @@
             }
             else{
 
-                echo "<div>";
+                echo "<div class='tableMainWrapper'><div class='table__box'>";
                 foreach ($data["count"] as $key=> $item) {
                     echo "<p> $key $item[row] </p>";
                 }
@@ -68,6 +68,7 @@
                 echo insertTable($data["invoices"], "invoice");
                 echo insertTable($data["companies"], "Company");
                 echo insertTable($data["contacts"], "contact");
+                echo "</div>";
             }
             ?>
         </div>
