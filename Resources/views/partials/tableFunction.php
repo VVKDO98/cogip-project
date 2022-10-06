@@ -12,7 +12,7 @@
             case "All contacts": $link = "contact";$title = $type;break;
             case "All invoices": $link = "invoice";$title = $type; break;
             case "All companies": $link = "company";$title = $type; break;
-            case str_contains($type, 'add'): $link = "dashboard/$type";$title = str_replace('add', '', $type); break;
+            case str_contains($type, 'add'): $dashboard=true;$link = "dashboard/$type";$title = str_replace('add', '', $type); break;
             default : $link = $type; $title = $type; break;
         }
         $data_content = $data['datas'];
@@ -26,6 +26,9 @@
                 $html .= "<th class='table__head'>$key </th>";
             }
         }
+        if (isset($dashboard)) {
+            $html .= "<th>*</th>";
+        }
         $html .= "</tr>
         </thead>
         <tbody>";
@@ -35,6 +38,9 @@
                 if ($key != "id") {
                     $html.="<td class='table__content' > $value </td >";
                 }
+            }
+            if(isset($dashboard)){
+                $html .= "<td class='table__content' > <form method='post' action='/del/$title' ><input type='hidden' name='id' value='$item->id' ><button type='submit'>Del</button> </form></td>";
             }
             $html .= "</tr>";
         }
