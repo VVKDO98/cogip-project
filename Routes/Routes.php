@@ -9,6 +9,7 @@ use App\Controllers\HomeController;
 use App\Controllers\InvoicesController;
 use App\Controllers\DashboardController;
 use App\Controllers\LoginController;
+use App\Controllers\SignController;
 use Bramus\Router\Router;
 use GUMP;
 use Exception;
@@ -89,6 +90,50 @@ $router->get("/logout", function(){
     unset($_SESSION['user']);
     header('Location:/');
     exit();
+});
+$router->get("/sign", function (){
+    (new SignController)->index();
+});
+
+$router->post("sign",function (){
+    $gump = new GUMP();
+    $gump->validation_rules([
+        "fname"=>"required|max_len,50|min_len,4",
+        "lname"=>"required|max_len,50|min_len,4",
+        "email"=>"required|valid_email",
+        "password"=>"required|max_len,50|min_len,4",
+        "postPassword"=>"required|max_len,50|min_len,4"
+    ]);
+
+    $gump->filter_rules([
+        "fname"=>"trim|sanitize_string",
+        "lname"=>"trim|sanitize_string",
+        "email"=>"trim|sanitize_email",
+        "password"=>"trim|sanitize_string",
+        "postPassword"=>"trim|sanitize_string"
+    ]);
+    $valid_data = $gump->run($_POST);
+    if ($gump->errors()){
+        $error = "invalid entry";
+        header("/sign?error=".$error);
+    }
+    else {
+
+        $fname = $valid_data["fname"];
+        $lname = $valid_data["lname"];
+        $email = $valid_data["email"];
+        $password = $valid_data["password"];
+        $verifPassword = $valid_data["postPassword"];
+        if($password === $verifPassword) {
+            (new SignController)->sign($fname, $lname, $email, $password);
+            header("location:/login");
+            exit();
+        }
+        else{
+            $errorPassword = "not same password";
+            header("Location:/sign?error=".$errorPassword);
+        }
+    }
 });
 
 $router->post("/login",function(){
