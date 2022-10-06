@@ -21,15 +21,15 @@
             <div class="dash__nav">
                 <ul class="dash__nav__item">
                     <li><img src="/assets/img/Icon_dashboard.png" alt=""><a href="/dashboard" class="dash__nav__link">Dashboard</a></li>
-                    <li><img src="/assets/img/Icon_Invoices.png" alt=""><a href="/dashboard/addinvoice" class="dash__nav__link">Invoices</a></li>
-                    <li><img src="/assets/img/Icon_Companies.png" alt=""><a href="/dashboard/addcompany" class="dash__nav__link">Companies</a></li>
-                    <li><img src="/assets/img/Icon_contact.png" alt=""><a href="/dashboard/addcontact" class="dash__nav__link">Contacts</a></li>
+                    <li><img src="/assets/img/Icon_Invoices.png" alt=""><a href="/dashboard/invoices" class="dash__nav__link">Invoices</a></li>
+                    <li><img src="/assets/img/Icon_Companies.png" alt=""><a href="/dashboard/companies" class="dash__nav__link">Companies</a></li>
+                    <li><img src="/assets/img/Icon_contact.png" alt=""><a href="/dashboard/contacts" class="dash__nav__link">Contacts</a></li>
                 </ul>
             </div>
             <div class="dash__logout">
                 <hr>
                 <div class="dash__logout__content">
-                    <img src="/assets/img/ben.jpg" alt="" class="dash__imglogout">
+                    <img src="/assets/img/defaultpp.png" alt="" class="dash__imglogout">
                     <a href="/logout" class="dash__nav__logout">Logout</a>
                 </div>
             </div>
@@ -56,19 +56,10 @@
             <?php
             include "../Resources/views/partials/tableFunction.php";
             if(isset( $data['page'])) {
-                include "../Resources/views/partials/" . $data['page'] . ".php";
+                include "../Resources/views/partials/dashboard/" . $data['page'] . ".php";
             }
             else{
-
-                echo "<div class='tableMainWrapper'><div class='table__box'>";
-                foreach ($data["count"] as $key=> $item) {
-                    echo "<p> $key $item[row] </p>";
-                }
-                echo "</div>";
-                echo insertTable($data["invoices"], "invoice");
-                echo insertTable($data["companies"], "Company");
-                echo insertTable($data["contacts"], "contact");
-                echo "</div>";
+                include "../Resources/views/partials/dashboard/dhome.php";
             }
             ?>
         </div>

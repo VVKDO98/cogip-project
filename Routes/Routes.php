@@ -67,25 +67,41 @@ $router->before("POST|GET","/dashboard/*.*",function (){
     }
 });
 
-$router->get("/dashboard/addinvoice", function (){
+$router->get("/dashboard/invoices", function (){
     (new DashboardController)->addInvoice();
 });
 
-$router->get("/dashboard/addinvoice/(\d+)", function ($page){
+$router->get("/dashboard/invoices/(\d+)", function ($page){
     (new DashboardController)->addInvoice($page);
 });
 
 //TODO
-$router->get("/dashboard/details/addinvoice/(\d+)", function ($id){
+$router->get("/dashboard/invoice/(\d+)", function ($id){
     (new DashboardController)->invoiceDetail($id);
 });
 
-$router->get("/dashboard/addcontact", function (){
+$router->get("/dashboard/contacts", function (){
     (new DashboardController)->addContact();
 });
 
-$router->get("/dashboard/addcompany", function (){
+$router->get("/dashboard/contacts/(\d+)", function ($page){
+    (new DashboardController)->addContact($page);
+});
+
+$router->get("/dashboard/contact/(\d+)", function ($id){
+    (new DashboardController)->contactDetail($id);
+});
+
+$router->get("/dashboard/companies", function (){
     (new DashboardController)->addCompany();
+});
+
+$router->get("/dashboard/companies/(\d+)", function ($page){
+    (new DashboardController)->addCompany($page);
+});
+
+$router->get("/dashboard/company/(\d+)", function ($id){
+    (new DashboardController)->companyDetail($id);
 });
 
 $router->get("/login",function (){

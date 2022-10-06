@@ -12,7 +12,7 @@
             case "All contacts": $link = "contact";$title = $type;break;
             case "All invoices": $link = "invoice";$title = $type; break;
             case "All companies": $link = "company";$title = $type; break;
-            case str_contains($type, 'add'): $dashboard=true;$link = "dashboard/$type";$title = str_replace('add', '', $type); break;
+            case str_contains($type, 'add'): $dashboard=true;$title = str_replace('add', '', $type);$link = "dashboard/$title"; break;
             default : $link = $type; $title = $type; break;
         }
         $data_content = $data['datas'];
@@ -33,11 +33,8 @@
         </thead>
         <tbody>";
         foreach ($data_content as $item) {
-            if (isset($dashboard)){
-                $onclick="/dashboard/details/$type/$item->id";
-            }else{
                 $onclick="/$link/$item->id";
-            }
+
             $html .= "<tr class='table__row table__left' onclick=\"window.location.href='$onclick'\">";
             foreach ($item as $key => $value) {
                 if ($key != "id") {

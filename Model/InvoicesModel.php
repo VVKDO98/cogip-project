@@ -10,7 +10,7 @@ class InvoicesModel
         $offset=($rowcount*$page)-$rowcount;
         $pdo= (new bdd)->connect();
         $pageSelector = $page!=0? "LIMIT :limit OFFSET :offset":"";
-        $sql = $pdo->prepare('SELECT invoices.id AS id ,ref AS `Invoice Number`, due_dates AS `Due dates`, companies.name AS Company, invoices.created_at as `Created at` FROM invoices LEFT JOIN companies ON invoices.id_company = companies.id '.$pageSelector);
+        $sql = $pdo->prepare('SELECT invoices.id AS id ,ref AS `Invoice Number`  , due_dates AS `Due dates`, companies.name AS Company, invoices.created_at as `Created at` FROM invoices LEFT JOIN companies ON invoices.id_company = companies.id '.$pageSelector);
         if($page!=0){
             $sql->bindParam(':limit', $rowcount, \PDO::PARAM_INT);
             $sql->bindParam(':offset', $offset, \PDO::PARAM_INT);
@@ -26,9 +26,11 @@ class InvoicesModel
         $sql = $pdo->prepare(
             'SELECT 
             i.id AS id,
+            i.id_company AS id_company, 
             i.ref AS Ref,
             i.due_dates AS `Due dates`,
             i.created_at AS `Created at`,
+            i.price AS price,
             c.name AS Company
             FROM invoices i 
             LEFT JOIN companies c

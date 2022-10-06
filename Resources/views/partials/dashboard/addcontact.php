@@ -11,7 +11,7 @@
                 <option value="">-- Select a company --</option>
                 // data = name company in companies
                 <?php
-                    foreach($data[0]['datas'] as $item){?>
+                    foreach($data["companies"]['datas'] as $item){?>
                 <option value="<?= $item->id ?>"><?= $item->Name ?></option>;
                 <?php } ?>
             </select>

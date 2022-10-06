@@ -32,14 +32,16 @@ class DashboardController extends Controller
     public function addInvoicePost($ref, $price, $company){
         $post = (new InvoicesModel)->postInvoice($ref,$price,$company);
     }
-    public function addContact(){
+    public function addContact($page=1){
         $companies= (new CompaniesModel)->getAllCompanies(0);
-        $data = ["page"=>"addcontact",$companies];
+        $contacts = (new ContactsModel)->getAllContacts($page);
+        $data = ["page"=>"addcontact","companies" => $companies, "contacts" => $contacts];
         return $this->view("dashboard", $data);
     }
-    public function addCompany(){
+    public function addCompany($page=1){
         $type =(new CompaniesModel)->getType();
-        $data = ["page" => "addcompany",$type];
+        $companies= (new CompaniesModel)->getAllCompanies($page);
+        $data = ["page" => "addcompany","types" => $type , "companies" => $companies,];
         return $this->view("dashboard", $data);
     }
     public function addCompanyPost($name,$country,$tva,$type){
@@ -55,7 +57,8 @@ class DashboardController extends Controller
     public function invoiceDetail($id)
     {
         $invoice = (new InvoicesModel)->getInvoiceById($id);
-        $data = ["page" => "addcompany",$invoice];
+        $company = (new CompaniesModel)->getAllCompanies(0);
+        $data = ["page" => "pageinvoice","invoice" => $invoice, "companies"=>$company];
         return $this->view("dashboard", $data);
     }
 }
