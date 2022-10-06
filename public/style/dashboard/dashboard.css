@@ -379,6 +379,7 @@ p, table {
 @media screen and (max-width: 480px) {
   .dash__menu .dash__nav {
     margin: auto;
+    width: 90%;
   }
 }
 .dash__menu .dash__nav .dash__nav__item {
@@ -418,6 +419,7 @@ p, table {
 @media screen and (max-width: 480px) {
   .dash__menu .dash__nav .dash__nav__item li .dash__nav__link {
     font-size: 16px;
+    margin: auto;
     color: #fff;
   }
 }
@@ -459,6 +461,7 @@ p, table {
 @media screen and (max-width: 480px) {
   .dash__menu .dash__logout .dash__logout__content .dash__nav__logout {
     color: #fff;
+    font-size: 16px;
   }
 }
 
