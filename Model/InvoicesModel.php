@@ -56,7 +56,7 @@ class InvoicesModel
     public function deleteInvoice($id){
         $pdo= (new bdd)->connect();
         $sql= $pdo->prepare('
-            DELETE FROM invoices WHERE id=?
+            DELETE FROM invoices WHERE id=:id
         ');
         $sql->bindParam(':id', $id, \PDO::PARAM_INT);
         $sql->execute();

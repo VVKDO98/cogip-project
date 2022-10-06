@@ -98,16 +98,16 @@ $router->post("/login",function(){
         'password' => 'required|max_len,50|min_len,4'
     ]);
 
-    $gump->set_fields_error_messages([
-        'email'      => ['required' => 'Fill the Email field please, its required.'],
-        'password'   => ['required' => 'Please enter a valid password card.']
-    ]);
+//    $gump->set_fields_error_messages([
+//        'login'      => ['required' => 'password or Email invalid.']
+//    ]);
 
     $valid_data = $gump->run($_POST);
 
     if($gump->errors()){
-        $errors=$gump->get_readable_errors();
-        header('Location:/login?error='.$errors[0]);
+
+        $errors= 'password or Email invalid.';
+        header('Location:/login?error='.$errors);
 //        var_dump($errors);
         exit();
     }else{
@@ -151,6 +151,13 @@ $router->post("/contact",function (){
 });
 
 $router->delete("/invoice", function (){
+    $id=$_POST['id'];
+    (new DashboardController)->deleteInvoice($id);
+    header('location:/dashboard/addinvoice');
+    exit();
+});
+
+$router->post("/del/invoice", function (){
     $id=$_POST['id'];
     (new DashboardController)->deleteInvoice($id);
     header('location:/dashboard/addinvoice');
