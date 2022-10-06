@@ -1,0 +1,28 @@
+#listinvoice{
+  width: 90%;
+  .table__box{
+    width: 100%;
+    .table__title{
+      margin: 0 0 45px 0;
+    }
+  }
+  .table__main{
+    width: 100%;
+    margin-bottom: 45px;
+    .table__head{
+      padding: 15px 0;
+      text-align: left;
+    }
+    .table__content{
+      padding: 10px 0;
+    }
+  }
+}
+
+.deletebutton{
+  background-color: #fff;
+  border: none;
+  img{
+    width: 25px;
+  }
+}
