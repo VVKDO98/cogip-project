@@ -594,10 +594,39 @@ nav #nav__cross {
   font-size: 65px;
   font-weight: 800;
 }
+@media screen and (max-width: 480px) {
+  .calltoaction .calltoaction__title h2 {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .calltoaction .calltoaction__title {
+    margin: 0px auto 100px auto;
+  }
+}
+.calltoaction .calltoaction__image img {
+  width: 100%;
+}
+@media screen and (max-width: 480px) {
+  .calltoaction .calltoaction__image {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .calltoaction {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+}
 
 .table__box {
-  display: block;
   width: 100%;
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 480px) {
+  .table__box {
+    overflow-x: auto;
+  }
 }
 
 h2 {
@@ -616,6 +645,11 @@ table {
   border-collapse: collapse;
   width: fit-content;
 }
+table .table__header {
+  position: relative;
+  width: 100%;
+  text-align: left;
+}
 table .table__header::after {
   position: absolute;
   transform: translateY(-100%);
@@ -625,27 +659,21 @@ table .table__header::after {
   width: 80vw;
   background-color: #F9DE4E;
 }
-table .table__header {
-  position: relative;
-  width: fit-content;
-  text-align: left;
+@media screen and (max-width: 480px) {
+  table .table__header::after {
+    width: 100%;
+  }
 }
 table .table__head {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px 30px;
 }
 table .table__content {
   text-align: left;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px 30px;
 }
 table .table__row:nth-child(odd) {
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
 table .table__row:nth-child(odd)::after {
   position: absolute;
@@ -656,9 +684,14 @@ table .table__row:nth-child(odd)::after {
   width: 80vw;
   background-color: white;
 }
+@media screen and (max-width: 480px) {
+  table .table__row:nth-child(odd)::after {
+    width: 100%;
+  }
+}
 table .table__row:nth-child(even) {
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
 table .table__row:nth-child(even)::after {
   position: absolute;
@@ -669,8 +702,10 @@ table .table__row:nth-child(even)::after {
   width: 80vw;
   background-color: #F5F5F5;
 }
-table .table__last {
-  width: 20%;
+@media screen and (max-width: 480px) {
+  table .table__row:nth-child(even)::after {
+    width: 100%;
+  }
 }
 
 #pagination {

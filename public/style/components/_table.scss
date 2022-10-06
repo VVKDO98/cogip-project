@@ -1,6 +1,10 @@
 .table__box{
-    display: block;
     width: 100%;
+    margin-bottom: 100px;
+    @include mobile {
+        overflow-x: auto;
+
+    }
 }
 h2{
     font-size: 60px;
@@ -14,6 +18,11 @@ table{
     font-weight: 600;
     border-collapse: collapse;
     width: fit-content;
+    .table__header{
+        position: relative;
+        width: 100%;
+        text-align: left;
+    }
     .table__header::after{
         position: absolute;
         transform: translateY(-100%);
@@ -22,28 +31,20 @@ table{
         height: 100%;
         width: 80vw;
         background-color: $colorYellow;
-    }
-    .table__header{
-        position: relative;
-        width: fit-content;
-        text-align: left;
+        @include mobile {
+            width: 100%;
+        }
     }
     .table__head{
-        padding-left: 30px;
-        padding-right: 30px;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding: 15px 30px;
     }
     .table__content{
         text-align: left;
-        padding-left: 30px;
-        padding-right: 30px;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding: 15px 30px;
     }
     .table__row:nth-child(odd){
         position: relative;
-        width: fit-content;
+        width: 100%;
     }
     .table__row:nth-child(odd)::after{
         position: absolute;
@@ -53,10 +54,13 @@ table{
         height: 100%;
         width: 80vw;
         background-color: white;
+        @include mobile {
+            width: 100%;
+        }
     }
     .table__row:nth-child(even){
         position: relative;
-        width: fit-content;
+        width: 100%;
     }
     .table__row:nth-child(even)::after{
         position: absolute;
@@ -66,9 +70,9 @@ table{
         height: 100%;
         width: 80vw;
         background-color: $colorGrey;
-    }
-    .table__last{
-        width: 20%;
+        @include mobile {
+            width: 100%;
+        }
     }
 }
 

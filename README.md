@@ -14,4 +14,6 @@ php -S localhost:8000 -t public
 
 
 [//]: # (Sanitizer) 
-[//]: # (https://github.com/Wixel/GUMP) 
+[//]: # (
+ https://github.com/Wixel/GUMP
+  ) 

@@ -4,7 +4,7 @@
     <div id="tabs"> <!-- cette div casse votre style -->
         <form action="/invoice" method="post" id="addinvoice" class="dashform__form">
             <input type="text" name="ref" class="dashform__input"  id="reference" placeholder="Reference">
-            <input type="number" name="price" class="dashform__input"  id="price" placeholder="Price">
+            <input type="number" step="0.01" name="price" class="dashform__input"  id="price" placeholder="Price">
             <select name="company" class="dashform__select">
                 <?php
                 foreach($data['companies']['datas'] as $item){?>
@@ -14,7 +14,7 @@
             <input type="submit" value="Submit" class="dashform__submit">
         </form>
 
-        <div id="listinvoice">
+        <div id="listinvoice" class="tableWrapper">
             <?php echo insertTable( $data['invoices'],'addinvoice')?>
         </div>
     </div>

@@ -331,6 +331,17 @@ p, table {
   bottom: 0;
   left: 0;
 }
+@media screen and (max-width: 480px) {
+  .dash__menu {
+    width: 90%;
+    height: 100%;
+    margin: 70px auto 40px auto;
+    order: 2;
+    border-radius: 10px;
+    background-color: #9698D6;
+    position: relative;
+  }
+}
 .dash__menu .dash__header {
   height: 25%;
   display: flex;
@@ -338,6 +349,11 @@ p, table {
   align-items: center;
   justify-content: center;
   margin: 50px auto;
+}
+@media screen and (max-width: 480px) {
+  .dash__menu .dash__header {
+    display: none;
+  }
 }
 .dash__menu .dash__header .dash__imgprofile {
   width: 100px;
@@ -352,13 +368,36 @@ p, table {
   border: 1px solid #E0E0E0;
   width: 90%;
 }
+@media screen and (max-width: 480px) {
+  .dash__menu hr {
+    display: none;
+  }
+}
 .dash__menu .dash__nav {
   margin: 50px auto 0 auto;
+}
+@media screen and (max-width: 480px) {
+  .dash__menu .dash__nav {
+    margin: auto;
+    width: 90%;
+  }
 }
 .dash__menu .dash__nav .dash__nav__item {
   width: 100%;
   list-style-type: none;
   padding: 0;
+}
+@media screen and (max-width: 480px) {
+  .dash__menu .dash__nav .dash__nav__item {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .dash__menu .dash__nav .dash__nav__item img {
+    display: none;
+  }
 }
 .dash__menu .dash__nav .dash__nav__item li {
   width: 100%;
@@ -377,6 +416,13 @@ p, table {
 .dash__menu .dash__nav .dash__nav__item li .dash__nav__link:hover {
   color: #9698D6;
 }
+@media screen and (max-width: 480px) {
+  .dash__menu .dash__nav .dash__nav__item li .dash__nav__link {
+    font-size: 16px;
+    margin: auto;
+    color: #fff;
+  }
+}
 .dash__menu .dash__logout {
   width: 100%;
   position: absolute;
@@ -385,6 +431,11 @@ p, table {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .dash__menu .dash__logout {
+    position: relative;
+  }
 }
 .dash__menu .dash__logout .dash__logout__content {
   width: 90%;
@@ -407,6 +458,12 @@ p, table {
 .dash__menu .dash__logout .dash__logout__content .dash__nav__logout:hover {
   color: #000;
 }
+@media screen and (max-width: 480px) {
+  .dash__menu .dash__logout .dash__logout__content .dash__nav__logout {
+    color: #fff;
+    font-size: 16px;
+  }
+}
 
 .dash__banner {
   width: 100%;
@@ -417,8 +474,18 @@ p, table {
   height: 100px;
   margin-bottom: 20px;
 }
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__top {
+    height: 100%;
+  }
+}
 .dash__banner .dash__banner__top .dash__banner__title {
   font-size: 30px;
+}
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__top .dash__banner__title {
+    display: none;
+  }
 }
 .dash__banner .dash__banner__top .dash__banner_breadcrumb {
   display: flex;
@@ -432,29 +499,63 @@ p, table {
   color: #000;
   font-family: "Inter", sans-serif;
 }
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__top .dash__banner_breadcrumb {
+    display: none;
+  }
+}
 .dash__banner .dash__banner__bottom {
   max-width: 98%;
   background-color: #9698D6;
   border-radius: 10px;
   position: relative;
 }
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__bottom {
+    max-width: 90%;
+    margin: auto;
+  }
+}
 .dash__banner .dash__banner__bottom .dash__banner__content {
   width: 50%;
   padding: 60px 0px 60px 70px;
+}
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__bottom .dash__banner__content {
+    width: 90%;
+    padding: 5px 10px;
+    margin: auto;
+  }
 }
 .dash__banner .dash__banner__bottom .dash__banner__content h2 {
   color: #fff;
   font-size: 35px;
   margin-bottom: 0;
 }
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__bottom .dash__banner__content h2 {
+    margin: 10px 0 10px 0;
+  }
+}
 .dash__banner .dash__banner__bottom .dash__banner__content p {
   color: #fff;
   font-size: 15px;
+}
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__bottom .dash__banner__content p {
+    margin: 0 0 10px 0;
+  }
 }
 .dash__banner .dash__banner__bottom img {
   position: absolute;
   bottom: 60px;
   right: 100px;
+}
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__bottom img {
+    display: none;
+    position: relative;
+  }
 }
 
 .dashform__main {
@@ -467,6 +568,12 @@ p, table {
   border-radius: 10px;
   font-family: "Inter", sans-serif;
   margin-bottom: 45px;
+}
+@media screen and (max-width: 480px) {
+  .dashform__main {
+    width: 90%;
+    margin: auto;
+  }
 }
 .dashform__main h2 {
   font-size: 20px;
@@ -481,12 +588,18 @@ p, table {
   border: 1px solid #E0E0E0;
   margin-bottom: 40px;
 }
-.dashform__main .dashform__form {
+.dashform__main #tabs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dashform__main #tabs .dashform__form {
   width: 90%;
   display: flex;
   flex-direction: column;
 }
-.dashform__main .dashform__form .dashform__input {
+.dashform__main #tabs .dashform__form .dashform__input {
   height: 60px;
   margin-bottom: 45px;
   padding-left: 30px;
@@ -494,11 +607,11 @@ p, table {
   background-color: #F5F5F5;
   color: #000000;
 }
-.dashform__main .dashform__form .dashform__input:focus {
+.dashform__main #tabs .dashform__form .dashform__input:focus {
   outline: 2px solid #9698D6;
   border-radius: 3px;
 }
-.dashform__main .dashform__form .dashform__select {
+.dashform__main #tabs .dashform__form .dashform__select {
   height: 60px;
   margin-bottom: 45px;
   padding-left: 30px;
@@ -506,10 +619,10 @@ p, table {
   background-color: #F5F5F5;
   color: #000000;
 }
-.dashform__main .dashform__form .dashform__file {
+.dashform__main #tabs .dashform__form .dashform__file {
   margin-bottom: 45px;
 }
-.dashform__main .dashform__form .dashform__file::file-selector-button {
+.dashform__main #tabs .dashform__form .dashform__file::file-selector-button {
   height: 60px;
   width: 25%;
   margin-right: 15px;
@@ -517,11 +630,11 @@ p, table {
   border: none;
   transition: all 0.2s ease-in-out;
 }
-.dashform__main .dashform__form .dashform__file::file-selector-button:hover {
+.dashform__main #tabs .dashform__form .dashform__file::file-selector-button:hover {
   background-color: #9698D6;
   color: #fff;
 }
-.dashform__main .dashform__form .dashform__submit {
+.dashform__main #tabs .dashform__form .dashform__submit {
   height: 60px;
   width: 100%;
   margin-bottom: 45px;
@@ -532,8 +645,95 @@ p, table {
   text-align: left;
   transition: all 0.2s ease-in-out;
 }
-.dashform__main .dashform__form .dashform__submit:hover {
+.dashform__main #tabs .dashform__form .dashform__submit:hover {
   background-color: #F5F5F5;
+  color: #000;
+}
+
+.tableWrapper {
+  width: 90%;
+}
+.tableWrapper .table__box {
+  width: 100%;
+}
+.tableWrapper .table__box .table__title {
+  margin: 0 0 15px 0;
+}
+.tableWrapper .table__main {
+  width: 100%;
+  margin-bottom: 45px;
+}
+.tableWrapper .table__main .table__head {
+  padding: 15px 0;
+  text-align: left;
+}
+.tableWrapper .table__main .table__content {
+  padding: 10px 0;
+}
+
+.deletebutton {
+  background-color: #fff;
+  border: none;
+}
+.deletebutton img {
+  width: 25px;
+}
+
+.tableMainWrapper {
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.tableMainWrapper .table__box {
+  width: 49%;
+  height: 100%;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+#pagination {
+  width: 100%;
+  margin: 0 auto 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#pagination a {
+  margin: 0 15px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 9px 15px;
+  outline: 2px solid #DFE3E8;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #000;
+}
+#pagination a:hover {
+  outline: 2px solid #9698D6;
+  color: #9698D6;
+}
+#pagination .page-active {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-radius: 10px;
+  outline: 2px solid #9698D6;
+  color: #9698D6;
+}
+#pagination .inactive {
+  background-color: #919EAB;
+  color: #fff;
+  outline: none;
+}
+#pagination .inactive:hover {
+  background-color: #9698D6;
+  color: #fff;
+  outline: none;
+}
+#pagination #pagination--prev, #pagination #pagination--next {
   color: #000;
 }
 
@@ -548,11 +748,24 @@ main {
   flex-direction: row;
   justify-content: space-between;
 }
+@media screen and (max-width: 480px) {
+  main {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
 
 .dash__main {
   width: 78%;
   position: absolute;
   right: 0;
+}
+@media screen and (max-width: 480px) {
+  .dash__main {
+    width: 100%;
+    position: relative;
+    order: 1;
+  }
 }
 
 /*# sourceMappingURL=dashboard.css.map */

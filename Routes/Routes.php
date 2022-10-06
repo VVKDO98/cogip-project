@@ -123,14 +123,23 @@ $router->post( '/invoice', function () {
         "price" => "required|float",
         "company" => "required|integer"
     ]);
+
+    $gump->filter_rules([
+        "ref" => "trim|sanitize_string",
+        "price" => "trim|sanitize_floats",
+        "company" => "trim|sanitize_numbers"
+    ]);
+
+    $valid_data = $gump->run($_POST);
+
     if ($gump->errors()){
         $error = "invalid entry";
         header("location:/dashboard/addinvoice?error=".$error);
     }
     else{
-        $ref = $_POST["ref"];
-        $price = $_POST["price"];
-        $company = $_POST["company"];
+        $ref = $valid_data["ref"];
+        $price = $valid_data["price"];
+        $company = $valid_data["company"];
         (new DashboardController)->addInvoicePost($ref, $price, $company);
         header('location:/dashboard/addinvoice');
         exit();
@@ -145,15 +154,25 @@ $router->post("/companies",function (){
         "tva" => "required|max_len,50|min_len,4",
         "type"=> "required|integer"
     ]);
+
+    $gump->filter_rules([
+        "name"=>"trim|sanitize_string",
+        "country"=>"trim|sanitize_string",
+        "tva"=>"trim|sanitize_string",
+        "type"=>"trim|sanitize_numbers"
+    ]);
+
+    $valid_data = $gump->run(array_merge($_POST, $_FILES));
+
     if ($gump->errors()){
         $error = "invalid entry";
         header("location:/dashboard/addcompany?error=".$error);
     }
     else{
-        $name = $_POST["company"];
-        $country = $_POST["country"];
-        $tva = $_POST["tva"];
-        $type = $_POST["type"];
+        $name = $valid_data["company"];
+        $country = $valid_data["country"];
+        $tva = $valid_data["tva"];
+        $type = $valid_data["type"];
         (new DashboardController)->addCompanyPost($name, $country, $tva, $type);
         header("Location:/dashboard/addcompany");
         exit();
@@ -170,17 +189,30 @@ $router->post("/contact",function (){
         "company"=>"required|integer",
         "image" => "required|required_file|extension,png;jpg;gif"
     ]);
+
+    $gump->filter_rules([
+        "fname"=>"trim|sanitize_string",
+        "lname"=>"trim|sanitize_string",
+        "email"=>"trim|sanitize_email",
+        "phone"=>"trim|sanitize_string",
+        "company"=>"trim|sanitize_numbers",
+        "image" => "trim|sanitize_string"
+    ]);
+
+    $valid_data = $gump->run(array_merge($_POST, $_FILES));
+
+
     if ($gump->errors()){
         $error = "invalid entry";
         header("location:/dashboard/addcontact?error=".$error);
     }
     else{
-        $name = $_POST["fname"];
-        $surname = $_POST["lname"];
-        $email = $_POST["email"];
-        $phone = $_POST["phone"];
-        $company = $_POST["company"];
-        $img = $_FILES["image"];
+        $name = $valid_data["fname"];
+        $surname = $valid_data["lname"];
+        $email = $valid_data["email"];
+        $phone = $valid_data["phone"];
+        $company = $valid_data["company"];
+        $img = $valid_data["image"];
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new Exception("Invalide data");
         }
