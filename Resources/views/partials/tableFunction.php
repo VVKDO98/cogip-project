@@ -3,12 +3,11 @@
     {
         $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';
 
-        if(str_contains($type, 'add')){
-            $link = "dashboard/$type";
-        }else{
-            $link = $type;
-        }
-
+//        if(str_contains($type, 'add')){
+//            $link = "dashboard/$type";
+//        }else{
+//            $link = $type;
+//        }
         switch ($type){
             case "All contacts": $link = "contact";$title = $type;break;
             case "All invoices": $link = "invoice";$title = $type; break;
@@ -16,7 +15,6 @@
             case str_contains($type, 'add'): $link = "dashboard/$type";$title = str_replace('add', '', $type); break;
             default : $link = $type; $title = $type; break;
         }
-
         $data_content = $data['datas'];
         $html = "<div class='table__box'>";
         $html .= "<h2 class='table__title' id='table-".str_replace(' ', '', $type)."'>" . $title . "</h2>";
@@ -64,22 +62,24 @@
                     break;
             }
 
-                if($data['rows'][0]>10){
+            if($data['rows'][0]>10){
                 $nbrPage = ceil($data['rows'][0]/10);
 
-            $html .= '<nav id="pagination" >';
+                $html .= '<nav id="pagination" >';
 
-             $classprev = $data['page']>1?"":"inactive";
-            $html .=    '<a id="pagination--prev" class="'.$classprev.'" href="'.$root.$link.'/'.($data['page']-1).'#table-'.str_replace(' ', '', $type).'"> < </a>';
+                $classprev = $data['page']>1?"":"inactive";
+                $prevlink = $data['page']>1? 'href='.$root.$link.'/'.($data['page']-1).'#table-'.str_replace(' ', '', $type):"";
+                $html .=    '<a id="pagination--prev" class="'.$classprev.'" '.$prevlink.'> < </a>';
 
                 for ($i = 1; $i <= $nbrPage; $i++) {
                     if($i == $data['page']){$active = "page-active";}else($active = "");
-            $html .= '<a id="page-'.$i.'" class="'.$active.'" href="'.$root.$link.'/'.$i.'#table-'.str_replace(' ', '', $type).'">'.$i.' </a>';
+                    $html .= '<a id="page-'.$i.'" class="'.$active.'" href="'.$root.$link.'/'.$i.'#table-'.str_replace(' ', '', $type).'">'.$i.' </a>';
                  }
 
                 $classnext = $data['page']<$nbrPage? "": "inactive";
+                $nextlink = $data['page']<$nbrPage? 'href='.$root.$link.'/'.($data['page']+1).'#table-'.str_replace(' ', '', $type):"";
 
-                $html .= '<a id="pagination--next" class="'.$classnext.'" href="'.$root.$link.'/'.($data['page']+1).'#table-'.str_replace(' ', '', $type).'"> > </a>';
+                $html .= '<a id="pagination--next" class="'.$classnext.'" '.$nextlink.'> > </a>';
                 $html .= '</nav>';
              }
         }
