@@ -1,6 +1,8 @@
 .table__box{
     width: 100%;
-    overflow-x:auto
+    @include mobile {
+        overflow-x: auto;
+    }
 }
 h2{
     font-size: 60px;
@@ -25,8 +27,11 @@ table{
         z-index: -1;
         content: "";
         height: 100%;
-        width: 100%;
+        width: 80vw;
         background-color: $colorYellow;
+        @include mobile {
+            width: 100%;
+        }
     }
     .table__head{
         padding: 15px 30px;
@@ -45,8 +50,11 @@ table{
         z-index: -1;
         content: "";
         height: 100%;
-        width: 100%;
+        width: 80vw;
         background-color: white;
+        @include mobile {
+            width: 100%;
+        }
     }
     .table__row:nth-child(even){
         position: relative;
@@ -58,8 +66,11 @@ table{
         z-index: -1;
         content: "";
         height: 100%;
-        width: 100%;
+        width: 80vw;
         background-color: $colorGrey;
+        @include mobile {
+            width: 100%;
+        }
     }
 }
 

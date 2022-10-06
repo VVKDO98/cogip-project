@@ -597,7 +597,11 @@ nav #nav__cross {
 
 .table__box {
   width: 100%;
-  overflow-x: auto;
+}
+@media screen and (max-width: 480px) {
+  .table__box {
+    overflow-x: auto;
+  }
 }
 
 h2 {
@@ -627,8 +631,13 @@ table .table__header::after {
   z-index: -1;
   content: "";
   height: 100%;
-  width: 100%;
+  width: 80vw;
   background-color: #F9DE4E;
+}
+@media screen and (max-width: 480px) {
+  table .table__header::after {
+    width: 100%;
+  }
 }
 table .table__head {
   padding: 15px 30px;
@@ -647,8 +656,13 @@ table .table__row:nth-child(odd)::after {
   z-index: -1;
   content: "";
   height: 100%;
-  width: 100%;
+  width: 80vw;
   background-color: white;
+}
+@media screen and (max-width: 480px) {
+  table .table__row:nth-child(odd)::after {
+    width: 100%;
+  }
 }
 table .table__row:nth-child(even) {
   position: relative;
@@ -660,8 +674,13 @@ table .table__row:nth-child(even)::after {
   z-index: -1;
   content: "";
   height: 100%;
-  width: 100%;
+  width: 80vw;
   background-color: #F5F5F5;
+}
+@media screen and (max-width: 480px) {
+  table .table__row:nth-child(even)::after {
+    width: 100%;
+  }
 }
 
 #pagination {
