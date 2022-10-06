@@ -9,6 +9,15 @@
   top: 0;
   bottom: 0;
   left: 0;
+  @include mobile{
+    width: 90%;
+    height: 100%;
+    margin: 70px auto 40px auto;
+    order: 2;
+    border-radius: 10px;
+    background-color: $colorPurple;
+    position: relative;
+  }
   .dash__header{
     height: 25%;
     display: flex;
@@ -16,6 +25,9 @@
     align-items: center;
     justify-content: center;
     margin: 50px auto;
+    @include mobile{
+      display: none;
+    }
     .dash__imgprofile{
       width: 100px;
       border-radius: 50%;
@@ -29,13 +41,29 @@
   hr{
     border: 1px solid #E0E0E0;
     width: 90%;
+    @include mobile{
+      display: none;
+    }
   }
   .dash__nav{
     margin: 50px auto 0 auto;
+    @include mobile{
+      margin: auto;
+    }
     .dash__nav__item{
       width: 100%;
       list-style-type: none;
       padding: 0;
+      @include mobile{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+      img{
+        @include mobile{
+          display: none;
+        }
+      }
       li{
         width: 100%;
         display: flex;
@@ -51,6 +79,10 @@
           &:hover{
             color: $colorPurple;
           }
+          @include mobile{
+            font-size: 16px;
+            color: #fff;
+          }
         }
       }
     }
@@ -63,6 +95,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include mobile{
+      position: relative;
+    }
     .dash__logout__content{
       width: 90%;
       display: flex;
@@ -82,11 +117,10 @@
         &:hover{
           color: #000;
         }
+        @include mobile{
+          color: #fff;
+        }
       }
     }
-  }
-  @include mobile{
-    width: 100%;
-    position: relative;
   }
 }

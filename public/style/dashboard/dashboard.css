@@ -331,6 +331,17 @@ p, table {
   bottom: 0;
   left: 0;
 }
+@media screen and (max-width: 480px) {
+  .dash__menu {
+    width: 90%;
+    height: 100%;
+    margin: 70px auto 40px auto;
+    order: 2;
+    border-radius: 10px;
+    background-color: #9698D6;
+    position: relative;
+  }
+}
 .dash__menu .dash__header {
   height: 25%;
   display: flex;
@@ -338,6 +349,11 @@ p, table {
   align-items: center;
   justify-content: center;
   margin: 50px auto;
+}
+@media screen and (max-width: 480px) {
+  .dash__menu .dash__header {
+    display: none;
+  }
 }
 .dash__menu .dash__header .dash__imgprofile {
   width: 100px;
@@ -352,13 +368,35 @@ p, table {
   border: 1px solid #E0E0E0;
   width: 90%;
 }
+@media screen and (max-width: 480px) {
+  .dash__menu hr {
+    display: none;
+  }
+}
 .dash__menu .dash__nav {
   margin: 50px auto 0 auto;
+}
+@media screen and (max-width: 480px) {
+  .dash__menu .dash__nav {
+    margin: auto;
+  }
 }
 .dash__menu .dash__nav .dash__nav__item {
   width: 100%;
   list-style-type: none;
   padding: 0;
+}
+@media screen and (max-width: 480px) {
+  .dash__menu .dash__nav .dash__nav__item {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .dash__menu .dash__nav .dash__nav__item img {
+    display: none;
+  }
 }
 .dash__menu .dash__nav .dash__nav__item li {
   width: 100%;
@@ -377,6 +415,12 @@ p, table {
 .dash__menu .dash__nav .dash__nav__item li .dash__nav__link:hover {
   color: #9698D6;
 }
+@media screen and (max-width: 480px) {
+  .dash__menu .dash__nav .dash__nav__item li .dash__nav__link {
+    font-size: 16px;
+    color: #fff;
+  }
+}
 .dash__menu .dash__logout {
   width: 100%;
   position: absolute;
@@ -385,6 +429,11 @@ p, table {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .dash__menu .dash__logout {
+    position: relative;
+  }
 }
 .dash__menu .dash__logout .dash__logout__content {
   width: 90%;
@@ -408,9 +457,8 @@ p, table {
   color: #000;
 }
 @media screen and (max-width: 480px) {
-  .dash__menu {
-    width: 100%;
-    position: relative;
+  .dash__menu .dash__logout .dash__logout__content .dash__nav__logout {
+    color: #fff;
   }
 }
 
@@ -430,6 +478,11 @@ p, table {
 }
 .dash__banner .dash__banner__top .dash__banner__title {
   font-size: 30px;
+}
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__top .dash__banner__title {
+    display: none;
+  }
 }
 .dash__banner .dash__banner__top .dash__banner_breadcrumb {
   display: flex;
@@ -512,6 +565,12 @@ p, table {
   border-radius: 10px;
   font-family: "Inter", sans-serif;
   margin-bottom: 45px;
+}
+@media screen and (max-width: 480px) {
+  .dashform__main {
+    width: 90%;
+    margin: auto;
+  }
 }
 .dashform__main h2 {
   font-size: 20px;
@@ -615,6 +674,7 @@ main {
   .dash__main {
     width: 100%;
     position: relative;
+    order: 1;
   }
 }
 

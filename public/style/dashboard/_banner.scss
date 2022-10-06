@@ -10,6 +10,9 @@
     }
     .dash__banner__title{
       font-size: 30px;
+      @include mobile{
+        display: none;
+      }
     }
     .dash__banner_breadcrumb{
       display: flex;
