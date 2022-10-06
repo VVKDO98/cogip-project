@@ -33,7 +33,12 @@
         </thead>
         <tbody>";
         foreach ($data_content as $item) {
-            $html .= "<tr class='table__row table__left' onclick=\"window.location.href='/$link/$item->id'\">";
+            if (isset($dashboard)){
+                $onclick="/dashboard/details/$type/$item->id";
+            }else{
+                $onclick="/$link/$item->id";
+            }
+            $html .= "<tr class='table__row table__left' onclick=\"window.location.href='$onclick'\">";
             foreach ($item as $key => $value) {
                 if ($key != "id") {
                     $html.="<td class='table__content' > $value </td >";

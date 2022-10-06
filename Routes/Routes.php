@@ -74,6 +74,11 @@ $router->get("/dashboard/addinvoice/(\d+)", function ($page){
     (new DashboardController)->addInvoice($page);
 });
 
+//TODO
+$router->get("/dashboard/details/addinvoice/(\d+)", function ($id){
+    (new DashboardController)->invoiceDetail($id);
+});
+
 $router->get("/dashboard/addcontact", function (){
     (new DashboardController)->addContact();
 });

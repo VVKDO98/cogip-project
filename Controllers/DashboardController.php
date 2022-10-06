@@ -51,4 +51,11 @@ class DashboardController extends Controller
     public function deleteInvoice($id){
         return (new InvoicesModel)->deleteInvoice($id);
     }
+
+    public function invoiceDetail($id)
+    {
+        $invoice = (new InvoicesModel)->getInvoiceById($id);
+        $data = ["page" => "addcompany",$invoice];
+        return $this->view("dashboard", $data);
+    }
 }
