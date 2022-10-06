@@ -26,7 +26,9 @@
                 $html .= "<th class='table__head'>$key </th>";
             }
         }
-        $html .= "<th>*</th>";
+        if (isset($dashboard)) {
+            $html .= "<th>*</th>";
+        }
         $html .= "</tr>
         </thead>
         <tbody>";
@@ -36,9 +38,9 @@
                 if ($key != "id") {
                     $html.="<td class='table__content' > $value </td >";
                 }
-                if(isset($dashboard)){
-                    $html .= "<form method='post' action='/del/$title' ><input type='hidden' name='id' value='$item->id' ><button type='submit'>Del</button> </form>";
-                }
+            }
+            if(isset($dashboard)){
+                $html .= "<td class='table__content' > <form method='post' action='/del/$title' ><input type='hidden' name='id' value='$item->id' ><button type='submit'>Del</button> </form></td>";
             }
             $html .= "</tr>";
         }
