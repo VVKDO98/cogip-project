@@ -407,6 +407,12 @@ p, table {
 .dash__menu .dash__logout .dash__logout__content .dash__nav__logout:hover {
   color: #000;
 }
+@media screen and (max-width: 480px) {
+  .dash__menu {
+    width: 100%;
+    position: relative;
+  }
+}
 
 .dash__banner {
   width: 100%;
@@ -416,6 +422,11 @@ p, table {
   width: 100%;
   height: 100px;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__top {
+    height: 100%;
+  }
 }
 .dash__banner .dash__banner__top .dash__banner__title {
   font-size: 30px;
@@ -432,29 +443,63 @@ p, table {
   color: #000;
   font-family: "Inter", sans-serif;
 }
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__top .dash__banner_breadcrumb {
+    display: none;
+  }
+}
 .dash__banner .dash__banner__bottom {
   max-width: 98%;
   background-color: #9698D6;
   border-radius: 10px;
   position: relative;
 }
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__bottom {
+    max-width: 90%;
+    margin: auto;
+  }
+}
 .dash__banner .dash__banner__bottom .dash__banner__content {
   width: 50%;
   padding: 60px 0px 60px 70px;
+}
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__bottom .dash__banner__content {
+    width: 90%;
+    padding: 5px 10px;
+    margin: auto;
+  }
 }
 .dash__banner .dash__banner__bottom .dash__banner__content h2 {
   color: #fff;
   font-size: 35px;
   margin-bottom: 0;
 }
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__bottom .dash__banner__content h2 {
+    margin: 10px 0 10px 0;
+  }
+}
 .dash__banner .dash__banner__bottom .dash__banner__content p {
   color: #fff;
   font-size: 15px;
+}
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__bottom .dash__banner__content p {
+    margin: 0 0 10px 0;
+  }
 }
 .dash__banner .dash__banner__bottom img {
   position: absolute;
   bottom: 60px;
   right: 100px;
+}
+@media screen and (max-width: 480px) {
+  .dash__banner .dash__banner__bottom img {
+    display: none;
+    position: relative;
+  }
 }
 
 .dashform__main {
@@ -554,11 +599,23 @@ main {
   flex-direction: row;
   justify-content: space-between;
 }
+@media screen and (max-width: 480px) {
+  main {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
 
 .dash__main {
   width: 78%;
   position: absolute;
   right: 0;
+}
+@media screen and (max-width: 480px) {
+  .dash__main {
+    width: 100%;
+    position: relative;
+  }
 }
 
 /*# sourceMappingURL=dashboard.css.map */

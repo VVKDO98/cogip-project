@@ -1,4 +1,4 @@
-@import "../normalize","../variables","../fonts","header","banner", "dashform";
+@import "../normalize","../variables","../fonts","../mixin","header","banner", "dashform";
 
 body{
     width: 100%;
@@ -10,10 +10,18 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    @include mobile{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
 }
 
 .dash__main{
     width: 78%;
     position: absolute;
     right: 0;
+    @include mobile{
+        width: 100%;
+        position: relative;
+    }
 }
