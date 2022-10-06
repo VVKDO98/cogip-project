@@ -594,9 +594,33 @@ nav #nav__cross {
   font-size: 65px;
   font-weight: 800;
 }
+@media screen and (max-width: 480px) {
+  .calltoaction .calltoaction__title h2 {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .calltoaction .calltoaction__title {
+    margin: 100px auto;
+  }
+}
+.calltoaction .calltoaction__image img {
+  width: 100%;
+}
+@media screen and (max-width: 480px) {
+  .calltoaction .calltoaction__image {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .calltoaction {
+    flex-direction: column;
+  }
+}
 
 .table__box {
   width: 100%;
+  margin-bottom: 100px;
 }
 @media screen and (max-width: 480px) {
   .table__box {
