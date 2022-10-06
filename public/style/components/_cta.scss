@@ -14,7 +14,7 @@
             }
         }
         @include mobile{
-            margin: 100px auto;
+            margin: 0px auto 100px auto;
         }
     }
     .calltoaction__image{
@@ -27,5 +27,6 @@
     }
     @include mobile {
         flex-direction: column;
+        margin-bottom: 0;
     }
 }

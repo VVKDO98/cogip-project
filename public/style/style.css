@@ -601,7 +601,7 @@ nav #nav__cross {
 }
 @media screen and (max-width: 480px) {
   .calltoaction .calltoaction__title {
-    margin: 100px auto;
+    margin: 0px auto 100px auto;
   }
 }
 .calltoaction .calltoaction__image img {
@@ -615,6 +615,7 @@ nav #nav__cross {
 @media screen and (max-width: 480px) {
   .calltoaction {
     flex-direction: column;
+    margin-bottom: 0;
   }
 }
 
