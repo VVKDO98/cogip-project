@@ -54,12 +54,24 @@
                 </div>
             </article>
             <?php
+            include "../Resources/views/partials/tableFunction.php";
             if(isset( $data['page'])) {
-                include "../Resources/views/partials/tableFunction.php";
                 include "../Resources/views/partials/" . $data['page'] . ".php";
+            }
+            else{
+
+                echo "<div>";
+                foreach ($data["count"] as $key=> $item) {
+                    echo "<p> $key $item[row] </p>";
+                }
+                echo "</div>";
+                echo insertTable($data["invoices"], "invoice");
+                echo insertTable($data["companies"], "Company");
+                echo insertTable($data["contacts"], "contact");
             }
             ?>
         </div>
+
     </main>
 </body>
 </html>

@@ -30,4 +30,25 @@ class HomeModel
         $pdo=null; //close the connection before return
         return array("datas" =>$sql->fetchAll(\PDO::FETCH_CLASS));
     }
+    public function countTable(){
+        $pdo = (new bdd)->connect();
+
+        $invoice = $pdo->prepare("select count(id) as 'row' from invoices");
+        $invoice->execute();
+        $resultInvoices = $invoice->fetch();
+
+        $company= $pdo->prepare("select count(id) as 'row' from companies");
+        $company->execute();
+        $resultCompanies = $company->fetch();
+
+        $contact =$pdo->prepare("select count(id) as 'row' from contacts");
+        $contact->execute();
+        $resultContact = $contact->fetch();
+
+        $pdo = null;
+
+        $allTable = ["invoices"=>$resultInvoices,"companies" => $resultCompanies, "contacts"=> $resultContact ];
+
+        return $allTable;
+    }
 }

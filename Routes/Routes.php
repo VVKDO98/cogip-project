@@ -9,9 +9,9 @@ use App\Controllers\HomeController;
 use App\Controllers\InvoicesController;
 use App\Controllers\DashboardController;
 use App\Controllers\LoginController;
-use App\Model\ContactsModel;
 use Bramus\Router\Router;
 use GUMP;
+use Exception;
 
 $router = new Router();
 
@@ -137,15 +137,17 @@ $router->post("/companies",function (){
 
 $router->post("/contact",function (){
 
-        $name = $_POST["fname"];
-        $surname = $_POST["lname"];
-        $email = $_POST["email"];
-        $phone = $_POST["phone"];
-        $company = $_POST["company"];
-        $img = $_FILES["image"];
-        (new DashboardController)->addcontactPost($name,$surname,$email,$phone,$company,$img);
-        header("Location:/dashboard/addcontact");
-        exit();
+    $name = $_POST["fname"];
+    $surname = $_POST["lname"];
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
+    $company = $_POST["company"];
+    $img = $_FILES["image"];
+    if (!filter_var($email,FILTER_VALIDATE_EMAIL)){
+       throw new Exception("Invalide data");
+    }
+    (new DashboardController)->addcontactPost($name,$surname,$email,$phone,$company,$img);
+    header("Location:/dashboard/addcontact");
 });
 
 $router->delete("/invoice", function (){
