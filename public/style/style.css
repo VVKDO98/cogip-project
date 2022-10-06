@@ -596,8 +596,8 @@ nav #nav__cross {
 }
 
 .table__box {
-  display: block;
   width: 100%;
+  overflow-x: auto;
 }
 
 h2 {
@@ -616,36 +616,30 @@ table {
   border-collapse: collapse;
   width: fit-content;
 }
+table .table__header {
+  position: relative;
+  width: 100%;
+  text-align: left;
+}
 table .table__header::after {
   position: absolute;
   transform: translateY(-100%);
   z-index: -1;
   content: "";
   height: 100%;
-  width: 80vw;
+  width: 100%;
   background-color: #F9DE4E;
 }
-table .table__header {
-  position: relative;
-  width: fit-content;
-  text-align: left;
-}
 table .table__head {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px 30px;
 }
 table .table__content {
   text-align: left;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px 30px;
 }
 table .table__row:nth-child(odd) {
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
 table .table__row:nth-child(odd)::after {
   position: absolute;
@@ -653,12 +647,12 @@ table .table__row:nth-child(odd)::after {
   z-index: -1;
   content: "";
   height: 100%;
-  width: 80vw;
+  width: 100%;
   background-color: white;
 }
 table .table__row:nth-child(even) {
   position: relative;
-  width: fit-content;
+  width: 100%;
 }
 table .table__row:nth-child(even)::after {
   position: absolute;
@@ -666,11 +660,8 @@ table .table__row:nth-child(even)::after {
   z-index: -1;
   content: "";
   height: 100%;
-  width: 80vw;
+  width: 100%;
   background-color: #F5F5F5;
-}
-table .table__last {
-  width: 20%;
 }
 
 #pagination {
