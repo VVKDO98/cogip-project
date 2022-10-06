@@ -6,14 +6,22 @@ use App\Core\Controller;
 use App\Model\CompaniesModel;
 use App\Model\ContactsModel;
 use App\Model\DashboardModel;
+use App\Model\HomeModel;
 use App\Model\InvoicesModel;
 
 
 class DashboardController extends Controller
 {
     public function index(){
-        $dashboard = (new DashboardModel)->getAll();
-        return $this->view('dashboard', $dashboard);
+        $homemodel = new HomeModel();
+        $invoices = $homemodel->getLastInvoices();
+        $companies = $homemodel->getLastCompanies();
+        $contacts = $homemodel->getLastContacts();
+        $alltTable = $homemodel->countTable();
+
+        $data = ["invoices" => $invoices, "companies" => $companies, "contacts" =>$contacts, "count"=>$alltTable];
+       // $dashboard = (new DashboardModel)->getAll();
+        return $this->view('dashboard', $data);
     }
     public function addInvoice($page=1){
         $companies= (new CompaniesModel)->getAllCompanies(0);
