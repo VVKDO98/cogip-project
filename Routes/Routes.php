@@ -100,7 +100,7 @@ $router->get("/sign", function (){
     (new SignController)->index();
 });
 
-$router->post("sign",function (){
+$router->post("/sign",function (){
     $gump = new GUMP();
     $gump->validation_rules([
         "fname"=>"required|max_len,50|min_len,4",
