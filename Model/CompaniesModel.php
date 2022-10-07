@@ -30,7 +30,8 @@ class CompaniesModel
                 companies.id AS id,
                 companies.name AS Name,
                 companies.tva as TVA,
-                companies.country AS Country
+                companies.country AS Country,
+                companies.type_id AS typeid
             FROM 
                 companies
             WHERE

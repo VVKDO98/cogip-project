@@ -61,4 +61,13 @@ class DashboardController extends Controller
         $data = ["page" => "pageinvoice","invoice" => $invoice, "companies"=>$company];
         return $this->view("dashboard", $data);
     }
+
+    public function companyDetail($id)
+    {
+        $comp = new CompaniesModel();
+        $company= $comp->getCompanyById($id);
+        $types = $comp->getType();
+        $data = ["page" => "pagecompany","types" => $types, "company"=>$company];
+        return $this->view("dashboard", $data);
+    }
 }
