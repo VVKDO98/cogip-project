@@ -5,8 +5,8 @@
     <hr>
     <div id="tabs">
         <nav>
-            <button class="list" type="button">List Invoice</button>
-            <button class="form" type="button">Add Invoice</button>
+            <button class="list tabs__buttons" type="button">List Invoice</button>
+            <button class="form tabs__buttons" type="button">Add Invoice</button>
         </nav>
         <form action="/contact" method="post" class="dashform__form">
             <input type="text" name="fname" class="dashform__input" placeholder="Firstname">
