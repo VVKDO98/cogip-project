@@ -4,8 +4,8 @@
     <hr>
     <div id="tabs"> <!-- cette div casse votre style -->
         <nav>
-            <button class="list" type="button">List Invoice</button>
-            <button class="form" type="button">Add Invoice</button>
+            <button class="list tabs__buttons" type="button">List Invoice</button>
+            <button class="form tabs__buttons" type="button">Add Invoice</button>
         </nav>
         <form action="/invoice" method="post" id="addinvoice" class="dashform__form" style="display: none">
             <input type="text" name="ref" class="dashform__input"  id="reference" placeholder="Reference">

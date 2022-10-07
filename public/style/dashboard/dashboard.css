@@ -594,6 +594,20 @@ p, table {
   flex-direction: column;
   align-items: center;
 }
+.dashform__main #tabs nav {
+  margin-bottom: 45px;
+}
+.dashform__main #tabs nav .tabs__buttons {
+  border: none;
+  background-color: #F5F5F5;
+  width: 125px;
+  height: 60px;
+  border-radius: 10px;
+}
+.dashform__main #tabs nav .tabs__buttons:hover {
+  background-color: #9698D6;
+  color: #fff;
+}
 .dashform__main #tabs .dashform__form {
   width: 90%;
   display: flex;
