@@ -12,13 +12,13 @@
             case "All contacts": $link = "contact";$title = $type;break;
             case "All invoices": $link = "invoice";$title = $type; break;
             case "All companies": $link = "company";$title = $type; break;
-            case str_contains($type, 'add'): $dashboard=true;$link = "dashboard/$type";$title = str_replace('add', '', $type); break;
+            case str_contains($type, 'add'): $dashboard=true;$title = str_replace('add', '', $type);$link = "dashboard/$title"; break;
             default : $link = $type; $title = $type; break;
         }
         $data_content = $data['datas'];
         $html = "<div class='table__box'>";
         $html .= "<h2 class='table__title' id='table-".str_replace(' ', '', $type)."'>" . $title . "</h2>";
-        $html .= "<table class='table__main'>";
+        $html .= "<table class='table__main ".$title."'>";
         $html .= "<thead class='table__header'>";
         $html .= "<tr class='table__left'>";
         foreach ($data_content[0] as $key => $value) {
@@ -33,7 +33,9 @@
         </thead>
         <tbody>";
         foreach ($data_content as $item) {
-            $html .= "<tr class='table__row table__left' onclick=\"window.location.href='/$link/$item->id'\">";
+                $onclick="/$link/$item->id";
+
+            $html .= "<tr class='table__row table__left' onclick=\"window.location.href='$onclick'\">";
             foreach ($item as $key => $value) {
                 if ($key != "id") {
                     $html.="<td class='table__content' > $value </td >";
@@ -60,11 +62,20 @@
                 case "All contacts":
                     $link = "contacts";
                     break;
+                case "addcontact":
+                    $link = "dashboard/contacts";
+                    break;
                 case "All invoices":
                     $link = "invoices";
                     break;
+                case "addinvoice":
+                    $link = "dashboard/invoices";
+                    break;
                 case "All companies":
                     $link = "companies";
+                    break;
+                case "addcompany":
+                    $link = "dashboard/companies";
                     break;
             }
 

@@ -30,7 +30,8 @@ class CompaniesModel
                 companies.id AS id,
                 companies.name AS Name,
                 companies.tva as TVA,
-                companies.country AS Country
+                companies.country AS Country,
+                companies.type_id AS typeid
             FROM 
                 companies
             WHERE
@@ -86,5 +87,12 @@ class CompaniesModel
         $sql->execute();
         $pdo = null;
         return $sql->fetchAll(\PDO::FETCH_CLASS);
+    }
+    public function update($id, $name, $country, $tva, $type){
+        $pdo = (new bdd)->connect();
+        $sql = $pdo->prepare("update companies set name = '$name', country = '$country', tva = '$tva', updated_at = now(), type_id = '$type' where id = '$id'");
+        $sql->execute();
+        $pdo = null;
+        return $sql;
     }
 }

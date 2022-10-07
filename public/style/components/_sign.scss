@@ -1,0 +1,59 @@
+.sign__body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $colorDashBG;
+  .sign__main{
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    h1{
+      font-weight: 900;
+      margin-top: 0;
+      margin-bottom: 45px;
+    }
+    .sign__form{
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      .sign__input{
+        height: 60px;
+        margin-bottom: 45px;
+        padding-left: 30px;
+        border: none;
+        background-color: $colorGrey;
+        font-family: 'Inter', sans-serif;
+        color: #000000;
+        border-radius: 3px;
+        &:focus{
+          outline: 2px solid $colorPurple;
+        }
+      }
+      #sign__submit{
+        height: 60px;
+        border: 2px solid $colorPurple;
+        background-color: $colorPurple;
+        font-family: 'Inter', sans-serif;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 3px;
+        transition: all 0.2s ease;
+        &:hover{
+          background-color: #fff;
+          color: #000;
+        }
+      }
+    }
+    @include mobile{
+      width: 90%;
+      height: 60%;
+    }
+  }
+}

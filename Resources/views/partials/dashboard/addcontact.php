@@ -11,12 +11,16 @@
                 <option value="">-- Select a company --</option>
                 // data = name company in companies
                 <?php
-                    foreach($data[0]['datas'] as $item){?>
+                    foreach($data["companies"]['datas'] as $item){?>
                 <option value="<?= $item->id ?>"><?= $item->Name ?></option>;
                 <?php } ?>
             </select>
             <input type="file" name="photo" class="dashform__file">
             <input type="submit" class="dashform__submit" value="Submit">
         </form>
+
+        <div id="listinvoice" class="tableWrapper">
+            <?php echo insertTable( $data['companies'],'addcontact')?>
+        </div>
     </div>
 </article>

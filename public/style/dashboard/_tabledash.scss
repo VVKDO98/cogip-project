@@ -33,12 +33,109 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  @include mobile{
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
   .table__box{
     width: 49%;
     height: 100%;
     margin-bottom: 20px;
     background-color: #fff;
     border-radius: 10px;
+    @include mobile{
+      width: 90%;
+      margin: 0 auto 70px auto
+    }
+    .table__containNoti{
+      margin: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10%;
+      .table__notification{
+        width: 120px;
+        height: 120px;
+        background-color: red;
+        border-radius: 50%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:first-child{
+          background-color: #4D4CAC;
+        }
+        &:nth-child(2){
+          background-color: #9698D6;
+        }
+        &:nth-child(3){
+          background-color: #FF808B;
+        }
+        p{
+          color: #fff;
+          font-weight: 900;
+          font-family: 'Inter', sans-serif;
+        }
+      }
+    }
+    .table__title{
+      width: 90%;
+      margin: 30px auto;
+    }
+    .table__line{
+      width: 90%;
+      margin: auto;
+      border: 1px solid #E0E0E0;
+    }
+    .table__main{
+      width: 90%;
+      margin: 30px auto;
+      .table__head{
+        padding: 15px 0;
+        text-align: left;
+      }
+      .table__content{
+        padding: 10px 0;
+      }
+    }
+    .Invoice{
+      thead{
+        .table__left :nth-child(4){
+          display: none;
+        }
+      }
+      tbody{
+        .table__left :nth-child(4){
+          display: none;
+        }
+      }
+    }
+    .Company{
+      thead{
+        .table__left :nth-child(n+4){
+          display: none;
+        }
+      }
+      tbody{
+        .table__left :nth-child(n+4){
+          display: none;
+        }
+      }
+    }
+    .Contact{
+      thead{
+        .table__left :nth-child(n+4){
+          display: none;
+        }
+      }
+      tbody{
+        .table__left :nth-child(n+4){
+          display: none;
+        }
+      }
+    }
   }
 }
 

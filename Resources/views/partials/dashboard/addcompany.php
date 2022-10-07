@@ -12,11 +12,15 @@
             <select name="type" id="" class="dashform__select">
                 <?php
                 //data = type_id
-                foreach($data[0]as $item){?>
+                foreach($data['types']as $item){?>
                     <option value="<?= $item->id ?>"><?= $item->name ?></option>;
                 <?php } ?>
             </select>
             <input type="submit" value="Submit" class="dashform__submit">
         </form>
+
+        <div id="listinvoice" class="tableWrapper">
+            <?php echo insertTable( $data['companies'],'addcompany')?>
+        </div>
     </div>
 </article>

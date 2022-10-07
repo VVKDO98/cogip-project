@@ -16,7 +16,7 @@
         <!-- Content -->
          <?php
             require ('../Resources/views/partials/tableFunction.php');
-            echo insertTable($data, "All invoices");
+            echo insertTable($data, $data['name']);
          ?>
     </main>
      <?php require ('../Resources/views/partials/footer.php');?>
