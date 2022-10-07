@@ -49,6 +49,37 @@
       width: 90%;
       margin: 0 auto 70px auto
     }
+    .table__containNoti{
+      margin: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10%;
+      .table__notification{
+        width: 120px;
+        height: 120px;
+        background-color: red;
+        border-radius: 50%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:first-child{
+          background-color: #4D4CAC;
+        }
+        &:nth-child(2){
+          background-color: #9698D6;
+        }
+        &:nth-child(3){
+          background-color: #FF808B;
+        }
+        p{
+          color: #fff;
+          font-weight: 900;
+          font-family: 'Inter', sans-serif;
+        }
+      }
+    }
     .table__title{
       width: 90%;
       margin: 30px auto;
