@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Cogip Enterprise</title>
     <link rel="stylesheet" href="/style/dashboard/dashboard.css">
-    <script defer src="/public/js/formValidation.js"></script>
+    <script defer src="/js/formValidation.js"></script>
 </head>
 <body>
     <main>

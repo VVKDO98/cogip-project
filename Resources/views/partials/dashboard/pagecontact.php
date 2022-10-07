@@ -1,1 +1,1 @@
-<?php
+<script defer src="/js/dashboardEdit.js"></script>

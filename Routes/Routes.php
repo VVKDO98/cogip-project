@@ -92,7 +92,7 @@ $router->get("/dashboard/contacts/(\d+)", function ($page){
 });
 
 $router->get("/dashboard/contact/(\d+)", function ($id){
-    (new DashboardController)->contactDetail($id);
+    (new DashboardContactsController)->contactDetail($id);
 });
 
 $router->get("/dashboard/companies", function (){

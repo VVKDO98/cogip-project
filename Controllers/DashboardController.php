@@ -20,9 +20,4 @@ class DashboardController extends Controller
        // $dashboard = (new DashboardModel)->getAll();
         return $this->view('dashboard', $data);
     }
-
-
-
-
-
 }

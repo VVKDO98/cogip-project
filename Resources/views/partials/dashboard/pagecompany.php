@@ -1,3 +1,4 @@
+<script defer src="/js/dashboardEdit.js"></script>
 <form method="post" action="/update/company">
     <input type="hidden" name="id" value="<?= $data['company']['companies'][0]->id  ?>">
     <div>
