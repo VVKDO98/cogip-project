@@ -17,6 +17,11 @@
             <input type="password" name="password" class="login__input" placeholder="Password">
             <button type="submit" id="login__submit">Login</button>
         </form>
+        <form action="/login" method="post">
+            <input type="email" name="email" value="admin@test.com" hidden >
+            <input type="password" name="password" value="Dev-1234" hidden>
+            <button type="submit">Auto Log</button>
+        </form>
     </main>
 </body>
 </html>

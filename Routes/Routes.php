@@ -4,10 +4,13 @@ namespace App\Routes;
 
 use App\Controllers\CompaniesController;
 use App\Controllers\ContactController;
+use App\Controllers\DashboardContactsController;
+use App\Controllers\DashboardInvoicesController;
 use App\Controllers\errorController;
 use App\Controllers\HomeController;
 use App\Controllers\InvoicesController;
 use App\Controllers\DashboardController;
+use App\Controllers\DashboardCompanyController;
 use App\Controllers\LoginController;
 use App\Controllers\SignController;
 use Bramus\Router\Router;
@@ -68,24 +71,24 @@ $router->before("POST|GET","/dashboard/*.*",function (){
 });
 
 $router->get("/dashboard/invoices", function (){
-    (new DashboardController)->addInvoice();
+    (new DashboardInvoicesController())->addInvoice();
 });
 
 $router->get("/dashboard/invoices/(\d+)", function ($page){
-    (new DashboardController)->addInvoice($page);
+    (new DashboardInvoicesController())->addInvoice($page);
 });
 
 //TODO
 $router->get("/dashboard/invoice/(\d+)", function ($id){
-    (new DashboardController)->invoiceDetail($id);
+    (new DashboardInvoicesController())->invoiceDetail($id);
 });
 
 $router->get("/dashboard/contacts", function (){
-    (new DashboardController)->addContact();
+    (new DashboardContactsController())->addContact();
 });
 
 $router->get("/dashboard/contacts/(\d+)", function ($page){
-    (new DashboardController)->addContact($page);
+    (new DashboardContactsController())->addContact($page);
 });
 
 $router->get("/dashboard/contact/(\d+)", function ($id){
@@ -93,11 +96,11 @@ $router->get("/dashboard/contact/(\d+)", function ($id){
 });
 
 $router->get("/dashboard/companies", function (){
-    (new DashboardController)->addCompany();
+    (new DashboardCompanyController())->addCompany();
 });
 
 $router->get("/dashboard/companies/(\d+)", function ($page){
-    (new DashboardController)->addCompany($page);
+    (new DashboardCompanyController())->addCompany($page);
 });
 
 $router->get("/dashboard/company/(\d+)", function ($id){
@@ -206,7 +209,7 @@ $router->post( '/invoice', function () {
         $ref = $valid_data["ref"];
         $price = $valid_data["price"];
         $company = $valid_data["company"];
-        (new DashboardController)->addInvoicePost($ref, $price, $company);
+        (new DashboardInvoicesController())->addInvoicePost($ref, $price, $company);
         header('location:/dashboard/addinvoice');
         exit();
     }
@@ -239,7 +242,7 @@ $router->post("/companies",function (){
         $country = $valid_data["country"];
         $tva = $valid_data["tva"];
         $type = $valid_data["type"];
-        (new DashboardController)->addCompanyPost($name, $country, $tva, $type);
+        (new DashboardCompanyController())->addCompanyPost($name, $country, $tva, $type);
         header("Location:/dashboard/addcompany");
         exit();
     }
@@ -282,21 +285,21 @@ $router->post("/contact",function (){
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new Exception("Invalide data");
         }
-        (new DashboardController)->addcontactPost($name, $surname, $email, $phone, $company, $img);
+        (new DashboardContactsController())->addcontactPost($name, $surname, $email, $phone, $company, $img);
         header("Location:/dashboard/addcontact");
     }
 });
 
 $router->delete("/invoice", function (){
     $id=$_POST['id'];
-    (new DashboardController)->deleteInvoice($id);
+    (new DashboardInvoicesController())->deleteInvoice($id);
     header('location:/dashboard/addinvoice');
     exit();
 });
 
 $router->post("/del/invoice", function (){
     $id=$_POST['id'];
-    (new DashboardController)->deleteInvoice($id);
+    (new DashboardInvoicesController())->deleteInvoice($id);
     header('location:/dashboard/addinvoice');
     exit();
 });

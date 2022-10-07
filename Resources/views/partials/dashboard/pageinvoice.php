@@ -1,4 +1,3 @@
-<?php dd($data); ?>
 <form method="post">
     <div>
         <label for="ref">Ref</label>
@@ -22,4 +21,5 @@
         <label for="price">Price</label>
         <input type="number" step="0.01" name="price" id="price" value="<?= $data['invoice'][0]->price ?>">
     </div>
+    <button type="submit">modif invoice</button>
 </form>
