@@ -33,12 +33,22 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  @include mobile{
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
   .table__box{
     width: 49%;
     height: 100%;
     margin-bottom: 20px;
     background-color: #fff;
     border-radius: 10px;
+    @include mobile{
+      width: 90%;
+      margin: 0 auto 70px auto
+    }
     .table__title{
       width: 90%;
       margin: 30px auto;
