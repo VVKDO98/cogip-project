@@ -335,7 +335,7 @@ p, table {
   .dash__menu {
     width: 90%;
     height: 100%;
-    margin: 70px auto 40px auto;
+    margin: 0px auto 40px auto;
     order: 2;
     border-radius: 10px;
     background-color: #9698D6;
@@ -686,12 +686,57 @@ p, table {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+@media screen and (max-width: 480px) {
+  .tableMainWrapper {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}
 .tableMainWrapper .table__box {
   width: 49%;
   height: 100%;
   margin-bottom: 20px;
   background-color: #fff;
   border-radius: 10px;
+}
+@media screen and (max-width: 480px) {
+  .tableMainWrapper .table__box {
+    width: 90%;
+    margin: 0 auto 70px auto;
+  }
+}
+.tableMainWrapper .table__box .table__containNoti {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+}
+.tableMainWrapper .table__box .table__containNoti .table__notification {
+  width: 120px;
+  height: 120px;
+  background-color: red;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tableMainWrapper .table__box .table__containNoti .table__notification:first-child {
+  background-color: #4D4CAC;
+}
+.tableMainWrapper .table__box .table__containNoti .table__notification:nth-child(2) {
+  background-color: #9698D6;
+}
+.tableMainWrapper .table__box .table__containNoti .table__notification:nth-child(3) {
+  background-color: #FF808B;
+}
+.tableMainWrapper .table__box .table__containNoti .table__notification p {
+  color: #fff;
+  font-weight: 900;
+  font-family: "Inter", sans-serif;
 }
 .tableMainWrapper .table__box .table__title {
   width: 90%;
