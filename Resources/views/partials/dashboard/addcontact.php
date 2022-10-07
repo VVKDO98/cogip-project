@@ -18,5 +18,9 @@
             <input type="file" name="photo" class="dashform__file">
             <input type="submit" class="dashform__submit" value="Submit">
         </form>
+
+        <div id="listinvoice" class="tableWrapper">
+            <?php echo insertTable( $data['companies'],'addcontact')?>
+        </div>
     </div>
 </article>

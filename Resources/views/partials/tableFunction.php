@@ -62,11 +62,20 @@
                 case "All contacts":
                     $link = "contacts";
                     break;
+                case "addcontact":
+                    $link = "dashboard/contacts";
+                    break;
                 case "All invoices":
                     $link = "invoices";
                     break;
+                case "addinvoice":
+                    $link = "dashboard/invoices";
+                    break;
                 case "All companies":
                     $link = "companies";
+                    break;
+                case "addcompany":
+                    $link = "dashboard/companies";
                     break;
             }
 

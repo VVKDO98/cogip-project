@@ -28,4 +28,8 @@ class DashboardInvoicesController extends Controller
         $data = ["page" => "pageinvoice","invoice" => $invoice, "companies"=>$company];
         return $this->view("dashboard", $data);
     }
+    public function updateInvoice($id, $ref, $price, $company, $dueDate)
+    {
+        (new InvoicesModel())->update($id, $ref, $price, $company, $dueDate);
+    }
 }
