@@ -599,6 +599,13 @@ p, table {
   display: flex;
   flex-direction: column;
 }
+.dashform__main #tabs .dashform__form .dashform__label {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+.dashform__main #tabs .dashform__form .dashform__label:nth-child(2) {
+  margin-top: 45px;
+}
 .dashform__main #tabs .dashform__form .dashform__input {
   height: 60px;
   margin-bottom: 45px;
