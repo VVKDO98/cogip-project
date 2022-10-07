@@ -18,7 +18,8 @@
         $data_content = $data['datas'];
         $html = "<div class='table__box'>";
         $html .= "<h2 class='table__title' id='table-".str_replace(' ', '', $type)."'>" . $title . "</h2>";
-        $html .= "<table class='table__main'>";
+        $html .= "<hr class='table__line'>";
+        $html .= "<table class='table__main ".$title."'>";
         $html .= "<thead class='table__header'>";
         $html .= "<tr class='table__left'>";
         foreach ($data_content[0] as $key => $value) {

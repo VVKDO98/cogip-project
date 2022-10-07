@@ -6,8 +6,8 @@
 <?php endforeach; ?>
     </div>
 <?php
-    echo insertTable($data["invoices"], "invoice");
+    echo insertTable($data["invoices"], "Invoice");
     echo insertTable($data["companies"], "Company");
-    echo insertTable($data["contacts"], "contact");
+    echo insertTable($data["contacts"], "Contact");
 ?>
 </div>

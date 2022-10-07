@@ -693,6 +693,44 @@ p, table {
   background-color: #fff;
   border-radius: 10px;
 }
+.tableMainWrapper .table__box .table__title {
+  width: 90%;
+  margin: 30px auto;
+}
+.tableMainWrapper .table__box .table__line {
+  width: 90%;
+  margin: auto;
+  border: 1px solid #E0E0E0;
+}
+.tableMainWrapper .table__box .table__main {
+  width: 90%;
+  margin: 30px auto;
+}
+.tableMainWrapper .table__box .table__main .table__head {
+  padding: 15px 0;
+  text-align: left;
+}
+.tableMainWrapper .table__box .table__main .table__content {
+  padding: 10px 0;
+}
+.tableMainWrapper .table__box .Invoice thead .table__left :nth-child(4) {
+  display: none;
+}
+.tableMainWrapper .table__box .Invoice tbody .table__left :nth-child(4) {
+  display: none;
+}
+.tableMainWrapper .table__box .Company thead .table__left :nth-child(n+4) {
+  display: none;
+}
+.tableMainWrapper .table__box .Company tbody .table__left :nth-child(n+4) {
+  display: none;
+}
+.tableMainWrapper .table__box .Contact thead .table__left :nth-child(n+4) {
+  display: none;
+}
+.tableMainWrapper .table__box .Contact tbody .table__left :nth-child(n+4) {
+  display: none;
+}
 
 #pagination {
   width: 100%;
