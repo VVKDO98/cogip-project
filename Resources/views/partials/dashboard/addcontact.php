@@ -1,7 +1,13 @@
+
+<script defer src="/js/dashboardTabs.js"></script>
 <article class="dashform__main">
     <h2>Add Contact</h2>
     <hr>
     <div id="tabs">
+        <nav>
+            <button class="list" type="button">List Invoice</button>
+            <button class="form" type="button">Add Invoice</button>
+        </nav>
         <form action="/contact" method="post" class="dashform__form">
             <input type="text" name="fname" class="dashform__input" placeholder="Firstname">
             <input type="text" name="lname" class="dashform__input" placeholder="Lastname">

@@ -1,10 +1,16 @@
 <?php
 //dd($data[0]);
 //?>
+<script defer src="/js/dashboardTabs.js"></script>
 <article class="dashform__main">
     <h2>Add Company</h2>
     <hr>
     <div id="tabs">
+
+        <nav>
+            <button class="list" type="button">List Invoice</button>
+            <button class="form" type="button">Add Invoice</button>
+        </nav>
         <form action="/companies" method="post" class="dashform__form">
             <input type="text" name="company" class="dashform__input" placeholder="Company">
             <input type="text" name="country" class="dashform__input" placeholder="Country">
