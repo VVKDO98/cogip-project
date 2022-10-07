@@ -104,7 +104,7 @@ $router->get("/dashboard/companies/(\d+)", function ($page){
 });
 
 $router->get("/dashboard/company/(\d+)", function ($id){
-    (new DashboardController)->companyDetail($id);
+    (new DashboardCompanyController())->companyDetail($id);
 });
 
 $router->get("/login",function (){
@@ -231,7 +231,7 @@ $router->post("/companies",function (){
         "type"=>"trim|sanitize_numbers"
     ]);
 
-    $valid_data = $gump->run(array_merge($_POST, $_FILES));
+    $valid_data = $gump->run($_POST);
 
     if ($gump->errors()){
         $error = "invalid entry";
@@ -302,6 +302,81 @@ $router->post("/del/invoice", function (){
     (new DashboardInvoicesController())->deleteInvoice($id);
     header('location:/dashboard/addinvoice');
     exit();
+});
+
+$router->post("/update/invoice",function (){
+    $gump  = new GUMP();
+    $gump->validation_rules([
+        "id"=> "required|integer",
+        "ref" => "required|max_len,50|min_len,4",
+        "price" => "required|float",
+        "company" => "required|integer",
+        "duedates" => "required"
+    ]);
+
+    $gump->filter_rules([
+        "id"=>"trim|sanitize_numbers",
+        "ref" => "trim|sanitize_string",
+        "price" => "trim|sanitize_floats",
+        "company" => "trim|sanitize_numbers",
+        "duedates"=> "trim"
+    ]);
+
+    $valid_data = $gump->run($_POST);
+    if ($gump->errors()){
+        $error = "invalid entry";
+        header("location:/dashboard/invoice?error=".$error);
+    }
+    else{
+
+        $id = $valid_data["id"];
+        $ref = $valid_data["ref"];
+        $price = $valid_data["price"];
+        $company = $valid_data["company"];
+        $dueDate = $valid_data["duedates"];
+        (new DashboardInvoicesController())->updateInvoice($id, $ref, $price, $company, $dueDate);
+        header('location:/dashboard/invoice/'.$id);
+        exit();
+    }
+
+});
+
+$router->post("/update/company", function (){
+    $gump = new GUMP();
+    $gump->validation_rules([
+        "id"=> "required|integer",
+        "name"=>"required|max_len,50|min_len,4",
+        "country"=>"required|max_len,50|min_len,4",
+        "tva" => "required|max_len,50|min_len,4",
+        "types"=> "required|integer",
+
+    ]);
+
+    $gump->filter_rules([
+        "id"=>"trim|sanitize_numbers",
+        "name"=>"trim|sanitize_string",
+        "country"=>"trim|sanitize_string",
+        "tva"=>"trim|sanitize_string",
+        "types"=>"trim|sanitize_numbers"
+    ]);
+
+    $valid_data = $gump->run($_POST);
+
+    if ($gump->errors()){
+        $error = "invalid entry";
+        header("location:/dashboard/company?error=".$error);
+    }
+    else{
+        $id = $valid_data["id"];
+        $name = $valid_data["name"];
+        $country = $valid_data["country"];
+        $tva = $valid_data["tva"];
+        $type = $valid_data["types"];
+        (new DashboardCompanyController())->updateCompany($id, $name, $country, $tva, $type);
+        header("Location:/dashboard/company/".$id);
+        exit();
+    }
+
 });
 
 $router->set404(function (){

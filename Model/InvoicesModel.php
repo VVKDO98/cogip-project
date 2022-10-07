@@ -65,4 +65,11 @@ class InvoicesModel
         $pdo=null;
         return $sql;
     }
+    public function update($id, $ref, $price, $company, $dueDate){
+        $pdo = (new bdd)->connect();
+        $sql = $pdo->prepare("update invoices set ref = '$ref', price = '$price', id_company = '$company', updated_at = now(), due_dates = '$dueDate' where id = '$id'");
+        $sql->execute();
+        $pdo = null;
+        return $sql;
+    }
 }

@@ -88,4 +88,11 @@ class CompaniesModel
         $pdo = null;
         return $sql->fetchAll(\PDO::FETCH_CLASS);
     }
+    public function update($id, $name, $country, $tva, $type){
+        $pdo = (new bdd)->connect();
+        $sql = $pdo->prepare("update companies set name = '$name', country = '$country', tva = '$tva', updated_at = now(), type_id = '$type' where id = '$id'");
+        $sql->execute();
+        $pdo = null;
+        return $sql;
+    }
 }
