@@ -18,4 +18,11 @@ class DashboardContactsController extends Controller
     public function addcontactPost($name, $surname, $email, $phone, $company, $img){
         $post = (new ContactsModel())->postContact($name,$surname,$email,$phone,$company,$img);
     }
+    public function contactDetail($id){
+        $cont = new ContactsModel();
+        $contact= $cont->getContactById($id);
+        $company = (new CompaniesModel)->getAllCompanies(0);
+        $data = ["page" => "pagecontact","companies" => $company, "contact"=>$contact];
+        return $this->view("dashboard", $data);
+    }
 }

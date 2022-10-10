@@ -15,7 +15,7 @@
                 <option value="<?= $item->id ?>"><?= $item->Name ?></option>;
                 <?php } ?>
             </select>
-            <input type="file" name="photo" class="dashform__file">
+            <input type="file" name="image" class="dashform__file" multiple>
             <input type="submit" class="dashform__submit" value="Submit">
         </form>
 

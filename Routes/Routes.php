@@ -71,40 +71,40 @@ $router->before("POST|GET","/dashboard/*.*",function (){
 });
 
 $router->get("/dashboard/invoices", function (){
-    (new DashboardInvoicesController())->addInvoice();
+    (new DashboardInvoicesController)->addInvoice();
 });
 
 $router->get("/dashboard/invoices/(\d+)", function ($page){
-    (new DashboardInvoicesController())->addInvoice($page);
+    (new DashboardInvoicesController)->addInvoice($page);
 });
 
 //TODO
 $router->get("/dashboard/invoice/(\d+)", function ($id){
-    (new DashboardInvoicesController())->invoiceDetail($id);
+    (new DashboardInvoicesController)->invoiceDetail($id);
 });
 
 $router->get("/dashboard/contacts", function (){
-    (new DashboardContactsController())->addContact();
+    (new DashboardContactsController)->addContact();
 });
 
 $router->get("/dashboard/contacts/(\d+)", function ($page){
-    (new DashboardContactsController())->addContact($page);
+    (new DashboardContactsController)->addContact($page);
 });
 
 $router->get("/dashboard/contact/(\d+)", function ($id){
-    (new DashboardController)->contactDetail($id);
+    (new DashboardContactsController)->contactDetail($id);
 });
 
 $router->get("/dashboard/companies", function (){
-    (new DashboardCompanyController())->addCompany();
+    (new DashboardCompanyController)->addCompany();
 });
 
 $router->get("/dashboard/companies/(\d+)", function ($page){
-    (new DashboardCompanyController())->addCompany($page);
+    (new DashboardCompanyController)->addCompany($page);
 });
 
 $router->get("/dashboard/company/(\d+)", function ($id){
-    (new DashboardCompanyController())->companyDetail($id);
+    (new DashboardCompanyController)->companyDetail($id);
 });
 
 $router->get("/login",function (){
@@ -235,7 +235,7 @@ $router->post("/companies",function (){
 
     if ($gump->errors()){
         $error = "invalid entry";
-        header("location:/dashboard/addcompany?error=".$error);
+        header("location:/dashboard/companies?error=".$error);
     }
     else{
         $name = $valid_data["company"];
@@ -243,7 +243,7 @@ $router->post("/companies",function (){
         $tva = $valid_data["tva"];
         $type = $valid_data["type"];
         (new DashboardCompanyController())->addCompanyPost($name, $country, $tva, $type);
-        header("Location:/dashboard/addcompany");
+        header("Location:/dashboard/companies");
         exit();
     }
 });
@@ -256,7 +256,7 @@ $router->post("/contact",function (){
         "email"=>"required|valid_email",
         "phone"=>"required|max_len,50|min_len,4",
         "company"=>"required|integer",
-        "image" => "required|required_file|extension,png;jpg;gif"
+      //  "photo" => "required|required_file|extension,png;jpg;gif"
     ]);
 
     $gump->filter_rules([
@@ -265,7 +265,7 @@ $router->post("/contact",function (){
         "email"=>"trim|sanitize_email",
         "phone"=>"trim|sanitize_string",
         "company"=>"trim|sanitize_numbers",
-        "image" => "trim|sanitize_string"
+        //"photo" => "trim|sanitize_string"
     ]);
 
     $valid_data = $gump->run(array_merge($_POST, $_FILES));
@@ -273,7 +273,7 @@ $router->post("/contact",function (){
 
     if ($gump->errors()){
         $error = "invalid entry";
-        header("location:/dashboard/addcontact?error=".$error);
+        header("location:/dashboard/contacts?error=".$error);
     }
     else{
         $name = $valid_data["fname"];
@@ -281,12 +281,12 @@ $router->post("/contact",function (){
         $email = $valid_data["email"];
         $phone = $valid_data["phone"];
         $company = $valid_data["company"];
-        $img = $valid_data["image"];
+        $img = $_FILES["image"];
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new Exception("Invalide data");
         }
         (new DashboardContactsController())->addcontactPost($name, $surname, $email, $phone, $company, $img);
-        header("Location:/dashboard/addcontact");
+        header("Location:/dashboard/contacts");
     }
 });
 
@@ -306,7 +306,7 @@ $router->delete("/invoice", function (){
        throw new Exception("Invalide data");
     }
     (new DashboardController)->addcontactPost($name,$surname,$email,$phone,$company,$img);
-    header("Location:/dashboard/addcontact");
+    header("Location:/dashboard/contacts");
 });
 
 $router->post("/del/invoice", function (){
@@ -340,7 +340,6 @@ $router->post("/update/invoice",function (){
         header("location:/dashboard/invoice?error=".$error);
     }
     else{
-
         $id = $valid_data["id"];
         $ref = $valid_data["ref"];
         $price = $valid_data["price"];
@@ -350,7 +349,6 @@ $router->post("/update/invoice",function (){
         header('location:/dashboard/invoice/'.$id);
         exit();
     }
-
 });
 
 $router->post("/update/company", function (){
@@ -388,7 +386,6 @@ $router->post("/update/company", function (){
         header("Location:/dashboard/company/".$id);
         exit();
     }
-
 });
 
 $router->set404(function (){
