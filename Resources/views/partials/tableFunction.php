@@ -10,14 +10,17 @@
 //        }
         switch ($type){
             case "All contacts": $link = "contact";$title = $type;break;
+            case "Last contacts": $link = "contact";$title = $type;break;
             case "All invoices": $link = "invoice";$title = $type; break;
+            case "Last invoices": $link = "invoice";$title = $type; break;
             case "All companies": $link = "company";$title = $type; break;
-            case str_contains($type, 'add'): $dashboard=true;$title = str_replace('add', '', $type);$link = "dashboard/$title"; break;
-            default : $link = $type; $title = $type; break;
+            case "Last companies": $link = "company";$title = $type; break;
+            case str_contains($type, 'add'): $dashboard=true;$title = str_replace('add', '', $type);$link = "dashboard/".strtolower($title); break;
+            default : $link = strtolower($type); $title = $type; break;
         }
         $data_content = $data['datas'];
         $html = "<div class='table__box'>";
-        $html .= "<h2 class='table__title' id='table-".str_replace(' ', '', $type)."'>" . $title . "</h2>";
+        $html .= "<h2 class='table__title' id='table-".str_replace(' ', '', $type)."'>" . ucfirst($title) . "</h2>";
         $html .= "<table class='table__main ".$title."'>";
         $html .= "<thead class='table__header'>";
         $html .= "<tr class='table__left'>";
@@ -59,9 +62,9 @@
         if($pagination && isset($data['rows'])){
 
             switch ($type) {
-                case "All contacts":
-                    $link = "contacts";
-                    break;
+//                case "All contacts":
+//                    $link = "contacts";
+//                    break;
                 case "addcontact":
                     $link = "dashboard/contacts";
                     break;

@@ -8,8 +8,8 @@
         </div>
     </div>
 <?php
-    echo insertTable($data["invoices"], "Invoice");
-    echo insertTable($data["companies"], "Company");
-    echo insertTable($data["contacts"], "Contact");
+    echo insertTable($data["invoices"], "addinvoice");
+    echo insertTable($data["companies"], "addcompany");
+    echo insertTable($data["contacts"], "addcontact");
 ?>
 </div>

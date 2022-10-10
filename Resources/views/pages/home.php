@@ -16,7 +16,7 @@
         <!-- Content -->
         <?php require ('../Resources/views/partials/tableFunction.php');?>
         <?php
-            echo insertTable($data['invoices'], "Last invoice");
+            echo insertTable($data['invoices'], "Last invoices");
             echo insertTable($data['companies'], "Last companies");
             echo insertTable($data['contacts'], "Last contacts");
         ?>

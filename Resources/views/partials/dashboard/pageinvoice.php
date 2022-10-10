@@ -3,7 +3,7 @@
     <form method="post" action="/update/invoice" class="dashform__form">
         <input type="hidden" name="id" value="<?= $data['invoice'][0]->id  ?>">
         <label for="ref" class="dashform__label">Reference</label>
-        <input type="text" name="ref" id="ref" class="dashform__input" <?= $data['invoice'][0]->Ref ?>"  data-default="<?= $data['invoice'][0]->Ref ?>" disabled>
+        <input type="text" name="ref" id="ref" class="dashform__input" value="<?= $data['invoice'][0]->Ref ?>"  data-default="<?= $data['invoice'][0]->Ref ?>" disabled>
         <label for="duedates" class="dashform__label">Due dates</label>
         <input type="date" name="duedates" id="duedates" class="dashform__input" value="<?= date("Y-m-d", strtotime($data['invoice'][0]->{'Due dates'})) ?>" data-default="<?= date("Y-m-d", strtotime($data['invoice'][0]->{'Due dates'})) ?>" disabled>
         <label for="company" class="dashform__label">Company</label>

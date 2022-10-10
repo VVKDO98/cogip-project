@@ -8,7 +8,7 @@
             <button class="list tabs__buttons" type="button">List Invoice</button>
             <button class="form tabs__buttons" type="button">Add Invoice</button>
         </nav>
-        <form action="/contact" method="post" class="dashform__form">
+        <form action="/contact" method="post" class="dashform__form" enctype="multipart/form-data">
             <input type="text" name="fname" class="dashform__input" placeholder="Firstname">
             <input type="text" name="lname" class="dashform__input" placeholder="Lastname">
             <input type="email" name="email" class="dashform__input" placeholder="E-mail">
