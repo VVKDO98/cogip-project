@@ -10,14 +10,19 @@ use App\Model\HomeModel;
 class DashboardController extends Controller
 {
     public function index(){
-        $homemodel = new HomeModel();
-        $invoices = $homemodel->getLastInvoices();
-        $companies = $homemodel->getLastCompanies();
-        $contacts = $homemodel->getLastContacts();
-        $alltTable = $homemodel->countTable();
 
-        $data = ["invoices" => $invoices, "companies" => $companies, "contacts" =>$contacts, "count"=>$alltTable];
-       // $dashboard = (new DashboardModel)->getAll();
+        $dashboard = new DashboardModel();
+        $dashboardData = $dashboard->getAll();
+
+//        $homemodel = new HomeModel();
+//        $invoices = $homemodel->getLastInvoices();
+//        $companies = $homemodel->getLastCompanies();
+//        $contacts = $homemodel->getLastContacts();
+        $alltTable = $dashboard->countTable();
+//
+//        $data = ["invoices" => $invoices, "companies" => $companies, "contacts" =>$contacts, "count"=>$alltTable];
+        $data = [$dashboardData, "count"=>$alltTable];
+
         return $this->view('dashboard', $data);
     }
 }

@@ -21,5 +21,14 @@ class DashboardContactsController extends Controller
 
     public function contactDetail($id)
     {
+        $invoice = (new ContactsModel)->getContactById($id);
+        $company = (new CompaniesModel)->getAllCompanies(0);
+        $data = ["page" => "pagecontact","contacts" => $invoice, "companies"=>$company];
+        return $this->view("dashboard", $data);
+    }
+
+    public function updateContact( $id,  $name,  $email,  $company,  $phone)
+    {
+        (new ContactsModel)->update($id, $name, $email, $company, $phone);
     }
 }

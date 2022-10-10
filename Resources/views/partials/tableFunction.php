@@ -29,7 +29,7 @@
                 $html .= "<th class='table__head'>$key </th>";
             }
         }
-        if (isset($dashboard)) {
+        if (isset($dashboard) && $pagination) {
             $html .= "<th></th>";
         }
         $html .= "</tr>
@@ -44,7 +44,7 @@
                     $html.="<td class='table__content' > $value </td >";
                 }
             }
-            if(isset($dashboard)){
+            if(isset($dashboard) && $pagination){
                 $html .= "<td class='table__content' > <form method='post' action='/del/$title' ><input type='hidden' name='id' value='$item->id'><button type='submit' class='deletebutton'><img src='../../assets/img/remove.png'></button></form></td>";
             }
             $html .= "</tr>";

@@ -20,7 +20,7 @@
     <h2><?= isset($data[0]->Contact)?$data[0]->Contact:$data[0]->Company; ?></h2>
 
     <?php foreach ($data[0] as $key => $value): ?>
-        <?php if($key!='id'){ ?>
+        <?php if($key != 'id' && $key != 'company_id'){ ?>
         <p><?= $key." : ".$value?></p>
         <?php } ?>
     <?php endforeach; ?>

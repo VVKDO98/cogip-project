@@ -291,13 +291,6 @@ $router->post("/contact",function (){
     }
 });
 
-$router->delete("/invoice", function (){
-    $id=$_POST['id'];
-    (new DashboardInvoicesController())->deleteInvoice($id);
-    header('location:/dashboard/invoices');
-    exit();
-});
-
 $router->post("/del/invoice", function (){
     $id=$_POST['id'];
     (new DashboardInvoicesController())->deleteInvoice($id);
@@ -337,6 +330,45 @@ $router->post("/update/invoice",function (){
         $dueDate = $valid_data["duedates"];
         (new DashboardInvoicesController())->updateInvoice($id, $ref, $price, $company, $dueDate);
         header('location:/dashboard/invoice/'.$id);
+        exit();
+    }
+
+});
+
+$router->post("/update/contact",function (){
+    $gump  = new GUMP();
+    $gump->validation_rules([
+        "id"=> "required|integer",
+        "name" => "required|max_len,50|min_len,4",
+        "email" => "required|valid_email",
+        "company" => "required|integer",
+        "phone" => "required|max_len,50|min_len,4"
+    ]);
+
+    $gump->filter_rules([
+        "id"=>"trim|sanitize_numbers",
+        "name" => "trim|sanitize_string",
+        "email" => "trim|sanitize_email",
+        "company" => "trim|sanitize_numbers",
+        "phone"=> "trim"
+    ]);
+
+    $valid_data = $gump->run($_POST);
+    if ($gump->errors()){
+        $error = "invalid entry";
+        var_dump($gump->get_errors_array());
+//        header("location:/dashboard/contact/".$_POST['id']."?error=".$error);
+    }
+    else{
+
+        $id = $valid_data["id"];
+        $name = $valid_data["name"];
+        $email = $valid_data["email"];
+        $company = $valid_data["company"];
+        $phone = $valid_data["phone"];
+        (new DashboardContactsController())->updateContact($id, $name, $email, $company, $phone);
+        header('location:/dashboard/contact/'.$id);
+//        var_dump(array_merge($valid_data));
         exit();
     }
 

@@ -5,10 +5,10 @@
     <hr>
     <div id="tabs">
         <nav>
-            <button class="list tabs__buttons" type="button">List Invoice</button>
-            <button class="form tabs__buttons" type="button">Add Invoice</button>
+            <button class="list tabs__buttons" type="button">List Contacts</button>
+            <button class="form tabs__buttons" type="button">Add Contact</button>
         </nav>
-        <form action="/contact" method="post" class="dashform__form" enctype="multipart/form-data">
+        <form action="/contact" method="post" class="dashform__form" enctype="multipart/form-data" style="display:none">
             <input type="text" name="fname" class="dashform__input" placeholder="Firstname">
             <input type="text" name="lname" class="dashform__input" placeholder="Lastname">
             <input type="email" name="email" class="dashform__input" placeholder="E-mail">
@@ -26,7 +26,7 @@
         </form>
 
         <div id="listinvoice" class="tableWrapper">
-            <?php echo insertTable( $data['companies'],'addcontact')?>
+            <?php echo insertTable( $data['contacts'],'addcontact')?>
         </div>
     </div>
 </article>

@@ -26,13 +26,14 @@ class ContactsModel
 
     public function getContactById($id){
         $pdo= (new bdd)->connect();
-        $sql = $pdo->prepare('SELECT c.name as Contact, co.name as Company, c.phone as Phone, c.email as Email FROM contacts c LEFT JOIN companies co ON c.company_id = co.id WHERE c.id = :id');
+        $sql = $pdo->prepare('SELECT c.id as id, c.name as Contact, co.name as Company, c.phone as Phone, c.email as Email, c.company_id as company_id FROM contacts c LEFT JOIN companies co ON c.company_id = co.id WHERE c.id = :id');
         $sql->bindParam(':id', $id, \PDO::PARAM_INT);
         $sql->execute();
         $pdo=null; //close the connection before return
         return $sql->fetchAll(\PDO::FETCH_CLASS);
     }
-    public function postContact($name, $surname, $email, $phone, $company, $img){
+    public function postContact($name, $surname, $email, $phone, $company, $img): bool|\PDOStatement
+    {
         $fullName = $name." ".$surname;
         $this->newFile($img);
         $nameImg = $img["name"];
@@ -44,6 +45,21 @@ class ContactsModel
         $sql->bindParam("phone", $phone,\PDO::PARAM_STR_CHAR);
         $sql->bindParam("company", $company,\PDO::PARAM_INT);
         $sql->bindParam("avatar",$nameImg,\PDO::PARAM_STR_CHAR);
+        $sql->execute();
+        $pdo = null;
+        return $sql;
+    }
+
+    public function update($id, $name, $email, $company, $phone): bool|\PDOStatement
+    {
+//        $intcomp = intval($company);
+        $pdo = (new bdd)->connect();
+        $sql = $pdo->prepare("update contacts con set con.name = :name, con.email = :email, con.phone = :phone, con.updated_at = now(), con.company_id = :company where con.id = :id");
+        $sql->bindParam(":name", $name, \PDO::PARAM_STR_CHAR);
+        $sql->bindParam(":email", $email, \PDO::PARAM_STR_CHAR);
+        $sql->bindParam(":phone", $phone, \PDO::PARAM_STR_CHAR);
+        $sql->bindParam(":company", $company, \PDO::PARAM_STR_CHAR);
+        $sql->bindParam(":id", $id, \PDO::PARAM_INT);
         $sql->execute();
         $pdo = null;
         return $sql;

@@ -7,10 +7,10 @@
     <hr>
     <div id="tabs">
         <nav>
-            <button class="list tabs__buttons" type="button">List Invoice</button>
-            <button class="form tabs__buttons" type="button">Add Invoice</button>
+            <button class="list tabs__buttons" type="button">List Companies</button>
+            <button class="form tabs__buttons" type="button">Add Company</button>
         </nav>
-        <form action="/companies" method="post" class="dashform__form">
+        <form action="/companies" method="post" class="dashform__form"  style="display:none">
             <input type="text" name="company" class="dashform__input" placeholder="Company">
             <input type="text" name="country" class="dashform__input" placeholder="Country">
             <input type="text" name="tva" class="dashform__input" placeholder="Tva">

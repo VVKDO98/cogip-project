@@ -1,3 +1,4 @@
+<script defer src="/js/dashboardEdit.js"></script>
 <div class="dashform__main">
     <div id="tabs">
         <form method="post" action="/update/company" class="dashform__form">
@@ -24,50 +25,3 @@
         </form>
     </div>
 </div>
-<script>
-    const update = document.querySelector('#update')
-    const cancel = document.querySelector('#cancel')
-    const edit = document.querySelector('#edit')
-    const inputs = [...document.querySelectorAll('input')]
-    const select = document.querySelector('select')
-    const options = [...select.querySelectorAll('option')]
-    function showUpdate(){
-        update.style.display="block"
-        cancel.style.display="block"
-        edit.style.display="none"
-        inputs.map(input => {
-            input.disabled=false
-        })
-        select.disabled=false
-    }
-
-    function cancelUpdate(){
-        update.style.display="none"
-        cancel.style.display="none"
-        edit.style.display="block"
-        inputs.map(input => {
-            input.disabled=true
-        })
-        select.disabled=true
-    }
-
-    function resetValues(){
-        inputs.map(input => {
-            input.value = input.dataset.default
-        })
-        options.map(option => {
-            option.value === select.dataset.default? option.selected=true : option.selected=false
-        })
-    }
-
-    edit.addEventListener('click', e => {
-        e.preventDefault()
-        showUpdate()
-    })
-
-    cancel.addEventListener('click', e=>{
-        e.preventDefault()
-        resetValues()
-        cancelUpdate()
-    })
-</script>
