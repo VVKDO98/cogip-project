@@ -46,16 +46,16 @@ template engine for PHP) (optional)
 - Google Ligthouse Test 
 - Semantics
 
-### Team:
+## Team:
 
-# Back-end:
+### Back-end:
 benoit blaevoet
 Eddy Vervoort
 
-# Front-end:
+### Front-end:
 Hazem Maddouri
 Doriano Vanvolcksom
 
 
 
-<a href = "http://cogipfini.alwaysdata.net/> link to CogipProject </a>
+<a href = "http://cogipfini.alwaysdata.net/"> link to CogipProject </a>
