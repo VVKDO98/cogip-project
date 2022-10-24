@@ -49,12 +49,12 @@ template engine for PHP) (optional)
 ## Team:
 
 ### Back-end:
-<p>benoit blaevoet
-  Eddy Vervoort</p>
+<p>benoit blaevoet</p>
+<p>Eddy Vervoort</p>
 
 ### Front-end:
-Hazem Maddouri
-Doriano Vanvolcksom
+<p>Hazem Maddouri</p>
+<p>Doriano Vanvolcksom</p>
 
 
 
