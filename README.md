@@ -49,8 +49,8 @@ template engine for PHP) (optional)
 ## Team:
 
 ### Back-end:
-benoit blaevoet
-Eddy Vervoort
+<p>benoit blaevoet</p>
+<p>Eddy Vervoort</p>
 
 ### Front-end:
 Hazem Maddouri
