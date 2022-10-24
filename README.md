@@ -11,10 +11,6 @@ Your mission here is to code a web application which will respond to the needs a
 
 NOTE: Don't forget to add an SQL file containing the structure in the repository, as well as, an entry within the README detailing what each person did.
 
-## Where to start?
-
-- For the whole team, please clone this [basic project](base/) (not mandatory), it will help you to start the project.
-
 ## Languages Used & Mission(s)
 
 ### Back-end
@@ -49,3 +45,17 @@ template engine for PHP) (optional)
 - Using npm (tailwind or your preferences)
 - Google Ligthouse Test 
 - Semantics
+
+###Team:
+
+#Back-end:
+benoit blaevoet
+Eddy Vervoort
+
+#Front-end:
+Hazem Maddouri
+Doriano Vanvolcksom
+
+
+
+<a href = "http://cogipfini.alwaysdata.net/> link to CogipProject </a>
